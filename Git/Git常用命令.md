@@ -25,6 +25,9 @@ git add .
 
 //add所有文件（包括删除）
 git add --all
+
+//撤销add(撤销上次add,后边加文件可以只撤销单个文件)
+git reset HEAD [file]
 ```
 
 3. 提交文件
