@@ -41,3 +41,9 @@ git commit -m xxx
 ```
 git push
 ```
+
+5. 删除仓库
+
+```
+rm -rf .git
+```

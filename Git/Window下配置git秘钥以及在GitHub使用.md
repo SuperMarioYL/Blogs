@@ -53,6 +53,14 @@ ssh-keygen -t rsa -b 4096 -C "youremail@xxxxx.com"
 
 ![20200625162324](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200625162324.png)
 
+## 3.colone远程仓库到本地
 
+```
+git clone xxxx
+```
+
+要注意的是，GitHub有两种方式用来clone，一种是HTTPS，一种是ssh,HTTPS与ssh的切换在clone时可以选择，选择HTTPS是我们配置的sshkey是不生效的，也就是说每次push要输入账号密码，选择ssh形式就可以不用输入账号密码，为了方便，我们选择ssh格式就好了。
+
+![20200705190756](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200705190756.png)
   
 
