@@ -63,7 +63,7 @@ mkdir /sharefiles #创建linux共享目录
 ---
 ## <a id="network">网络相关</a>
 
-1.  `ip add` 显示当前id
+1.  `ip add` 显示当前ip
 
 ---
 ## <a id="yum">yum命令</a>
