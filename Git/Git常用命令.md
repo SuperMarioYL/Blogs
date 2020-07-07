@@ -56,7 +56,12 @@ exit
 ```
 
 7. 查看提交的修改
+   - 绿色代表已经添加（add）到暂存区（index）
+   - 而红色表示还在工作空间（workspace）中
+   - 已经提交（commit）已经到repo里的，所以查看不到状态
 
 ```
-
+git status
 ```
+
+![20200708011253](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200708011253.png)

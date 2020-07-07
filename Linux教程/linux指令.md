@@ -90,3 +90,5 @@ mkdir /sharefiles #创建linux共享目录
 
 
 
+
+
