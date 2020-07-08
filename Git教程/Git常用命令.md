@@ -38,6 +38,9 @@ git reset HEAD [file]
 ```
 //xxx为我们提交代码时的备注
 git commit -m xxx
+
+//将add与commit合起来，不需要两个命令来提交了
+git commit -am xxx
 ```
 4. 推送文件
 

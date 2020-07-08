@@ -1,6 +1,6 @@
 
 
-# [Markdown语法](#1)
+# <a id='1'>Markdown语法</a>
 ---
 &emsp;&emsp;大家在网络上写文章如果喜欢跨平台转载，那么用Markdown格式来写是一个非常好的选择，本文是对Markdown常用的格式的介绍。
 
