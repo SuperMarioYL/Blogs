@@ -21,15 +21,17 @@ git clone url
 //add指定文件
 git add (在gitbush中可以按tab快捷添加修改的文件)
 
-//add所有文件
+//add当前目录及其子目录的所有文件
 git add .
 
-//add所有文件
+//add所有文件（不管在哪个目录下执行，都会add整个仓库的所有修改）
 git add --all
 
 //撤销add(撤销上次add,后边加文件可以只撤销单个文件)
 git reset HEAD [file]
 ```
+
+注：在根目录下，`git add .`和`git add --all`没有区别，只有不是根目录的情况下有区别
 
 3. 提交文件
 
