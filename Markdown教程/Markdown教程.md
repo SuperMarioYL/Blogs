@@ -1,6 +1,6 @@
 
 
-# Markdown语法
+# [Markdown语法](#1)
 ---
 &emsp;&emsp;大家在网络上写文章如果喜欢跨平台转载，那么用Markdown格式来写是一个非常好的选择，本文是对Markdown常用的格式的介绍。
 
@@ -105,9 +105,13 @@ public static void main(String[] args) {
 [~~百度~~](http://www.baidu.com)
 ```
 效果：
+
 [**百度**](http://www.baidu.com)
+
 [*百度*](http://www.baidu.com)
+
 [***百度***](http://www.baidu.com)
+
 [~~百度~~](http://www.baidu.com)
 ---
 ## 9.添加空格
@@ -122,9 +126,13 @@ public static void main(String[] args) {
 &nbsp;不断行的空白
 ```
 效果：
+
 &ensp;半方大的空白
+
 &emsp;全方大的空白
+
 &nbsp;不断行的空白
+
 ---
 
 ## 10.表格
@@ -141,5 +149,24 @@ public static void main(String[] args) {
 |左对齐|中间对齐|右对齐|
 
 ## 11.跳转
+
+1. 同文件跳转
+
+```
+[Markdown语法](#1) //目录位置
+
+<a id='1'>Markdown语法</a> //要跳转到的位置
+```
+效果：
+
+[Markdown语法](#1)
+
+2. 不同文件跳转
+
+采用相对路径来实现
+
+```
+[Windows指令](./Windows教程/Windows指令.md)
+```
 
 

@@ -21,10 +21,10 @@ git clone url
 //add指定文件
 git add (在gitbush中可以按tab快捷添加修改的文件)
 
-//add所有文件(不包括删除)
+//add所有文件
 git add .
 
-//add所有文件（包括删除）
+//add所有文件
 git add --all
 
 //撤销add(撤销上次add,后边加文件可以只撤销单个文件)
