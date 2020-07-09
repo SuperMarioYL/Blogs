@@ -81,3 +81,7 @@ git reset head [file]
 
 - 撤销提交的更改
 
+- 撤销已经push的更改
+
+当我么已经把代码推送到remote时，可以通过reset命令回到某个版本
+
