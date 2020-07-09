@@ -73,3 +73,11 @@ git status
 
 ### <a id='2'>撤销</a>
 
+- 撤销暂存区的修改
+
+```
+git reset head [file]
+```
+
+- 撤销提交的更改
+
