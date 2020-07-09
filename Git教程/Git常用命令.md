@@ -85,3 +85,5 @@ git reset head [file]
 
 当我么已经把代码推送到remote时，可以通过reset命令回到某个版本
 
+git reset 只能修改本地版本库的内容，如果需要修改远程仓库需要使用Git revert
+
