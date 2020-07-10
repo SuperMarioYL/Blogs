@@ -1,6 +1,6 @@
+package Blogs.LeetCode;
 import java.util.regex.Pattern;
 
-import sun.security.util.Length;
 
 /*
  * @lc app=leetcode.cn id=10 lang=java
@@ -9,7 +9,6 @@ import sun.security.util.Length;
  */
 
 // @lc code=start
-import java.util.regex.Pattern;
 class Solution {
     public boolean isMatch(String s, String p) {
         return Pattern.matches(p, s);

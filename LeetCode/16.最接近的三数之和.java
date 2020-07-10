@@ -1,3 +1,4 @@
+package Blogs.LeetCode;
 import java.util.Arrays;
 
 /*

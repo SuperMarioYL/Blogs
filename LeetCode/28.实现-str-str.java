@@ -1,4 +1,4 @@
-import sun.reflect.generics.tree.ReturnType;
+package Blogs.LeetCode;
 
 /*
  * @lc app=leetcode.cn id=28 lang=java

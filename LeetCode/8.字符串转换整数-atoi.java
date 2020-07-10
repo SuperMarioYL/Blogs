@@ -3,7 +3,7 @@
  *
  * [8] 字符串转换整数 (atoi)
  */
-
+package Blogs.LeetCode;
 // @lc code=start
 class Solution {
     public int myAtoi(String str) {

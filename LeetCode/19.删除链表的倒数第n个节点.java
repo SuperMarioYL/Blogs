@@ -1,3 +1,5 @@
+package Blogs.LeetCode;
+
 /*
  * @lc app=leetcode.cn id=19 lang=java
  *
@@ -9,15 +11,15 @@
  * Definition for singly-linked list. public class ListNode { int val; ListNode
  * next; ListNode(int x) { val = x; } }
  */
-// private class ListNode {
-// int val;
-// ListNode next;
-// ListNode(int x) {
-// val = x;
-// }
-// }
+class ListNode {
+int val;
+ListNode next;
+ListNode(int x) {
+val = x;
+}
+}
 class Solution {
-    private int getNodeLength(ListNode node, int n) {
+    private int getNodeLength(final ListNode node, final int n) {
         if (node.next != null) {
             return getNodeLength(node.next, n + 1);
         } else {
@@ -25,7 +27,7 @@ class Solution {
         }
     }
 
-    private void nodeDelete(ListNode node, int n) {
+    private void nodeDelete(final ListNode node, int n) {
         if (n == 1) {
             node.next = node.next.next;
         } else {
@@ -33,8 +35,8 @@ class Solution {
         }
     }
 
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        int l = getNodeLength(head, 1);
+    public ListNode removeNthFromEnd(ListNode head, final int n) {
+        final int l = getNodeLength(head, 1);
         if (l - n == 0) {
             if (head.next != null) {
                 head = head.next;

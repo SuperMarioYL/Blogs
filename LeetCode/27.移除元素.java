@@ -1,3 +1,4 @@
+package Blogs.LeetCode;
 /*
  * @lc app=leetcode.cn id=27 lang=java
  *
