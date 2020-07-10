@@ -87,3 +87,5 @@ git reset head [file]
 
 git reset 只能修改本地版本库的内容，如果需要修改远程仓库需要使用Git revert
 
+
+
