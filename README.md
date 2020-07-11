@@ -16,6 +16,8 @@
 
 ---
 ### [Git教程](./Git教程/)
+- [Git基本概念理解](./Git教程/Git基本概念理解.md)
+- [Git配置](./Git教程/Git配置.md)
 - [Git常用命令](./Git教程/Git常用命令.md)
 - [Window下配置git秘钥以及在GitHub使用](./Git教程/Window下配置git秘钥以及在GitHub使用.md)
 - [为git配置全局代理](./Git教程/为git配置全局代理.md)
