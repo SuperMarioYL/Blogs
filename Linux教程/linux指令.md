@@ -40,7 +40,15 @@ mkdir /sharefiles #创建linux共享目录
 ## <a id="edit">编辑相关</a>
 
 1. 清除控制台 `clear`
-2. 新建文件夹 `mkdir xxx`
+2. 文件操作 
+   1. 创建文件夹 `mkdir xxx`
+   2. 创建文件 `touch xxx.txt`
+   3. 删除文件 `rm`
+      - 删除的既可以是目录也可以是文件，可以使用`rm *.txt`来删除所有TXT文件
+      - 参数：
+        - `-i`：删除时逐一询问
+        - `-f`：删除只读文件
+        - `-r`：递归删除所有子目录和子文件
 3. 翻页 
    - 向上翻页 `Shift + PgUp`
    - 向下翻页 `Shift + PgDn`
