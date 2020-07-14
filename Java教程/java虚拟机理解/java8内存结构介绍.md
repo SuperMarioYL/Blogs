@@ -22,7 +22,7 @@
 ---
 ### <a id=1>java8内存结构图</a>
 
-![java内存结构](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/java内存结构.png 'designed by leiyu')
+![java内存结构](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/java内存结构.png)
 
 ---
 ### <a id=2>虚拟机内存与本地内存的区别</a>
