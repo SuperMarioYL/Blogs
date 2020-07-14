@@ -1,12 +1,27 @@
 
 
-# <a id='1'>Markdown语法</a>
----
+# <a id=test>Markdown语法</a>
+
 &emsp;&emsp;大家在网络上写文章如果喜欢跨平台转载，那么用Markdown格式来写是一个非常好的选择，本文是对Markdown常用的格式的介绍。
 
+## 目录
+1. [标题](#1)
+2. [文字样式](#2)
+3. [引用](#3)
+4. [分割线](#4)
+5. [无序列表](#5)
+6. [代码块](#6)
+7. [图片](#7)
+8. [超链接](#8)
+9. [添加空格](#9)
+10. [表格](#10)
+11. [跳转](#11)
+
 ---
-## 1.标题
+## <a id=1>标题</a>
+
 '#'是标题，一共6级，可以和其他样式混用
+
 ```
 # 一级标题
 ## 二级标题
@@ -15,7 +30,9 @@
 ##### 五级标题
 ###### 六级标题
 ```
+
 效果：
+
 # 一级标题
 ## 二级标题
 ### 三级标题
@@ -24,7 +41,8 @@
 ###### 六级标题
 
 ---
- ## 2.文字样式
+ ## <a id=2>文字样式</a>
+
 ```
 **文字加粗**
 
@@ -34,7 +52,9 @@
 
 ~~加删除线~~
 ```
+
 效果：
+
 **文字加粗**
 
 *文字倾斜*
@@ -44,66 +64,100 @@
 ~~加删除线~~
 
 --- 
-## 3.引用
+## <a id=3>引用</a>
+
 ```
 > 引用
 > > 引用
 > > > > >多级引用
 ```
+
 效果：
+
 > 引用
 > > 引用
 > > > > >多级引用
 ---
-##4.分割线
+## <a id=4>分割线</a>
+
 以下两种都可以
+
 ```
 ***
 ---
 ```
 效果：
+
 ***
 ---
-##5.无序列表
+
+## <a id=5>无序列表</a>
+
 以下三种都可以，注意加空格
+
 ```
 * 无序列表
 - 无序列表
 + 无序列表
 ```
-效果
+
+效果：
+
 * 无序列表
 - 无序列表
 + 无序列表
+
 ---
-## 6.代码块
+## <a id=6>代码块</a>
+
 单行代码用“`”,多行代码用“```”
-```
+
+- 单行代码例子：
+
+	```
+	`单行代码`
+	```
+效果：
+
 `单行代码`
+
+- 多行代码例子：
+
+	![20200714170646](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200714170646.png)
+
+效果：
+
 ```
-```
-多行代码
 public static void main(String[] args) {
 	system.out.println("Hello World!");
 }
 ```
+
 ---
-##7.图片
+## <a id=7>图片</a>
+
 ```
-格式：![图片名](https://upload-images.jianshu.io/upload_images/22982124-07d686a87602657d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"图片URL")
+格式：![图片名](图片URL)
+
+例子：
 ![你的名字](https://upload-images.jianshu.io/upload_images/22982124-07d686a87602657d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ```
 效果：
 ![你的名字](https://upload-images.jianshu.io/upload_images/22982124-07d686a87602657d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ---
-##8.超链接
+## <a id=8>超链接</a>
+
 ```
 格式：[链接名](链接URL)
+
+例子：
 [**百度**](http://www.baidu.com)
 [*百度*](http://www.baidu.com)
 [***百度***](http://www.baidu.com)
 [~~百度~~](http://www.baidu.com)
 ```
+
 效果：
 
 [**百度**](http://www.baidu.com)
@@ -113,8 +167,10 @@ public static void main(String[] args) {
 [***百度***](http://www.baidu.com)
 
 [~~百度~~](http://www.baidu.com)
+
 ---
-## 9.添加空格
+## <a id=9>添加空格</a>
+
 ```
 半方大的空白&ensp;或&#8194;
 全方大的空白&emsp;或&#8195;
@@ -134,8 +190,8 @@ public static void main(String[] args) {
 &nbsp;不断行的空白
 
 ---
+## <a id=10>表格</a>
 
-## 10.表格
 ```
 |表格以竖线划分|第一行是标题|~~可以加效果~~|
 |:--|:-:|--:|
@@ -148,18 +204,20 @@ public static void main(String[] args) {
 |第二行是格式|以-:设置对齐格式|总共不少于三个|
 |左对齐|中间对齐|右对齐|
 
-## 11.跳转
+
+---
+## <a id=11>跳转</a>
 
 1. 同文件跳转
 
 ```
-[Markdown语法](#1) //目录位置
+[Markdown语法](#test) //目录位置
 
-<a id='1'>Markdown语法</a> //要跳转到的位置
+<a id=test>Markdown语法</a> //要跳转到的位置
 ```
 效果：
 
-[Markdown语法](#1)
+[Markdown语法](#test)
 
 2. 不同文件跳转
 
