@@ -27,14 +27,20 @@ set bell-style none
    2. 安装vmtools
    3. linux 命令
 
-```
-vmware-hgfsclient #查看共享文件夹名称
+   ```
+   vmware-hgfsclient #查看共享文件夹名称
 
-mkdir /sharefiles #创建linux共享目录
+   mkdir /sharefiles #创建linux共享目录
 
-/usr/bin/vmhgfs-fuse .host:/ /sharefiles -o subtype=vmhgfs-fuse,allow_other 
-#/sharefiles 即为我设置的共享文件夹在虚拟机下的位置
-```
+   /usr/bin/vmhgfs-fuse .host:/ /sharefiles -o subtype=vmhgfs-fuse,allow_other 
+   #/sharefiles 即为我设置的共享文件夹在虚拟机下的位置
+   ```
+
+3. 查看磁盘使用情况
+   1. `df -h [dir]`展示文件系统的磁盘容量以及使用量，加文件夹展示该文件所在磁盘的使用情况
+   2. `du -h [dir]`展示某个文件夹的使用情况
+
+
 ---
 
 ## <a id="edit">编辑相关</a>
