@@ -11,7 +11,7 @@
 |[commit](#commit)|将修改提交到本地仓库|
 |[push](#push)|将本地当前分支的提交推送到远端仓库|
 |[log](#log)|查看提交的日志|
-|[](#)||
+|[reset](#reset)|将提交回退到某一次提交时的状态|
 |[](#)||
 
 
@@ -114,47 +114,36 @@ git log [branch]
 
 ![20200728163705](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200728163705.png)
 
+---
+## <a id=reset>reset</a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## <a id='2'>撤销</a>
-
+重新设置head指针指向的commit记录，即可以将提交回退到某一次提交时的状态
 
 ```
-//撤销add(撤销上次add,后边加文件可以只撤销单个文件)
-git reset HEAD [file]
+git reset [--soft]|[--mixed]|[--hard] <commitID>
 ```
 
-- 撤销暂存区的修改
+reset有三个参数：
+- `git reset --soft <commitID>`
+  - 本地仓库回到指定commitID提交时，加上`--soft`,则表示暂存区和工作区的修改都不会受到影响
+- `git reset --mixed <commitID>`
+  - 回到指定commit的状态，加上`--mixed`则暂存区会被清空，修改会回到工作区
+  - **--mixed是默认参数，即不加参数就默认为--mixed**
+- `git reset --hard <commitID>`
+  - 回到指定commit的状态，加上`--hard`则暂存区和工作区都会被清空
 
-```
-git reset head [file]
-```
+从之前的Git基本概念的理解中我们知道，head其实就是一个指向最新commit的指针，我们从git log的日志中也可以看到，最新的commit右边有（head->master）表示head当前是master分支，并且指向这个commit。
 
-- 撤销提交的更改
+![20200728210505](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200728210505.png)
 
-- 撤销已经push的更改
+由此，我们也可以在使用commitID的地方用HEAD代替：
+- `git reset head` 
+  - 回退到最新的commitid，暂存区的修改会回到工作区
+  - 既然是回到最新的commit，那么`git reset --soft head`便没什么意义了，因为他什么也没改
 
-当我么已经把代码推送到remote时，可以通过reset命令回到某个版本
+- `git reset head^`回退到最新提交的上一次提交
+- `git reset head^^`回退到最新提交的上一次的上一次提交，往后以此类推
 
-git reset 只能修改本地版本库的内容，如果需要修改远程仓库需要使用Git revert
+- `git reset head~0`回退到最新提交
+- `git reset head~1`回退到最新提交的上一次提交，往下依次类推
 
-
-
-commit1
-commit2
