@@ -127,10 +127,10 @@ reset有三个参数：
 - `git reset --soft <commitID>`
   - 本地仓库回到指定commitID提交时，加上`--soft`,则表示暂存区和工作区的修改都不会受到影响
 - `git reset --mixed <commitID>`
-  - 回到指定commit的状态，加上`--mixed`则暂存区会被清空，修改会回到工作区
+  - 回到指定commit的状态，加上`--mixed`则暂存区的修改会回到工作区
   - **--mixed是默认参数，即不加参数就默认为--mixed**
 - `git reset --hard <commitID>`
-  - 回到指定commit的状态，加上`--hard`则暂存区和工作区都会被清空
+  - 回到指定commit的状态，加上`--hard`则暂存区和工作区的修改都会被清空，和commit保持一致
 
 从之前的Git基本概念的理解中我们知道，head其实就是一个指向最新commit的指针，我们从git log的日志中也可以看到，最新的commit右边有（head->master）表示head当前是master分支，并且指向这个commit。
 
