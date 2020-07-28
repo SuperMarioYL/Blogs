@@ -1,39 +1,58 @@
-## Git常用命令
+# Git常用命令
 
-### 目录
+## 目录
 
-1. [常用命令](#1)
-2. [撤销](#2)
+|关键词|含义|
+|:--|:--|
+|[clone](#clone)|从远端克隆仓库|
+|[add](#add)|将工作区修改保存到暂存区|
+|[commit](#commit)|将修改提交到本地仓库|
+|[](#)||
+|[](#)||
+|[](#)||
+|[](#)||
 
 ---
+## <a id=clone>clone</a>
 
-### <a id='1'>常用命令</a>
-1. 从远端clone仓库
-   - 要注意的是URL有两种，一种是ssh形式，一种是http形式，在使用http形式推送时必须要验证账号密码，为了方便一般采用ssh形式
-
-```
-git clone url
-```
-
-1. 添加修改到暂存区
+从远端克隆仓库
 
 ```
-//add指定文件
-git add (在gitbush中可以按tab快捷添加修改的文件)
+git clone URL
 
-//add当前目录及其子目录的所有文件
-git add .
+例:
+git clone git@github.com:leiyu1997/Blogs.git
+```
+URL有两种形式：
+- http格式，如`https://github.com/leiyu1997/Blogs.git`
+  - 在推送的时候，这种形式clone下来的仓库需要每次校验用户名和密码，不实用
+- ssh格式，如`git@github.com:leiyu1997/Blogs.git`
+  - 在推送的时候，如果配置了ssh keys，就不需要验证用户名和密码了，比较方便
 
-//add所有文件（不管在哪个目录下执行，都会add整个仓库的所有修改）
-git add --all
+---
+## <a id=add>add</a>
 
+将工作区修改保存到暂存区
+
+- `git add [file]`
+  - add指定文件，在`git bash`中可以用TAB键选择文件
+- `git add .`
+  - add当前目录及其子目录的所有文件
+- `git add --all`
+  - add所有文件（不管在哪个目录下执行，都会add整个仓库的所有修改）
+
+在根目录下， `git add .` 和 `git add --all` 没有区别，只有不是根目录的情况下有区别
+
+
+
+
+
+```
 //撤销add(撤销上次add,后边加文件可以只撤销单个文件)
 git reset HEAD [file]
 ```
 
-注：在根目录下，`git add .`和`git add --all`没有区别，只有不是根目录的情况下有区别
-
-3. 提交文件
+1. 提交文件
 
 ```
 //xxx为我们提交代码时的备注
@@ -71,7 +90,7 @@ git status
 
 ![20200708011253](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200708011253.png)
 
-### <a id='2'>撤销</a>
+## <a id='2'>撤销</a>
 
 - 撤销暂存区的修改
 
