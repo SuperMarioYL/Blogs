@@ -98,11 +98,19 @@ git push
 ---
 ## <a id=log>log</a>
 
-查看提交的日志,按Q退出
+查看提交的日志,按Q退出,可选择查看的分支
 
 ```
-git log
+git log [branch]
 ```
+- `git log`
+  - 什么都不加默认查看本地当前分支的日志
+- `git log branch`
+  - 加上分支名查看要查看的分支的日志
+- `git log origin/HEAD`
+  - 查看远端当前分支的日志
+- `git log origin/branch`
+  - 也可以查看其他远程分支的日志 
 
 ![20200728163705](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200728163705.png)
 
