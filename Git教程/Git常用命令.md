@@ -2,15 +2,34 @@
 
 ## 目录
 
-|关键词|含义|
+|Git命令|含义|
 |:--|:--|
+|[init](#init)|将本地工程初始化为本地仓库，纳入版本控制|
 |[clone](#clone)|从远端克隆仓库|
 |[add](#add)|将工作区修改保存到暂存区|
+|[status](#status)|查看暂存区（green）和工作区（red）的修改|
 |[commit](#commit)|将修改提交到本地仓库|
+|[push](#push)|将本地当前分支的提交推送到远端仓库|
+|[log](#log)|查看提交的日志|
 |[](#)||
 |[](#)||
-|[](#)||
-|[](#)||
+
+
+|普通命令|含义|
+|:--|:--|
+|`rm -rf [file]|[dir]`|删除文件或文件夹|
+|`rm -rf .git`|根目录执行，删除仓库|
+|`exit`|退出 git bash|
+|`clear`|清空 git bash 界面|
+
+---
+## <a id=init>init</a>
+
+将本地工程初始化为本地仓库，纳入版本控制
+
+```
+git init
+```
 
 ---
 ## <a id=clone>clone</a>
@@ -43,54 +62,75 @@ URL有两种形式：
 
 在根目录下， `git add .` 和 `git add --all` 没有区别，只有不是根目录的情况下有区别
 
+---
+## <a id=status>status</a>
+
+查看暂存区（green）和工作区（red）的修改
+
+```
+git status
+```
+- 绿色代表已经添加（add）到暂存区（index）
+- 而红色表示还在工作空间（workspace）中
+- 已经提交（commit）已经到repo里的，查看不到状态
+
+![20200708011253](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200708011253.png)
+
+---
+## <a id=commit>commit</a>
+
+将修改提交到本地仓库
+
+- `git commit -m [memo]`
+  - 将暂存区的修改提交到本地仓库，memo为提交的备注
+- `git commit -am [memo]`
+  - 将暂存区的修改以及工作区已加入版本控制的文件修改提交到本地仓库，memo为提交的备注
+
+---
+## <a id=push>push</a>
+
+将本地当前分支的提交推送到远端仓库
+
+```
+git push
+```
+
+---
+## <a id=log>log</a>
+
+查看提交的日志,按Q退出
+
+```
+git log
+```
+
+![20200728163705](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200728163705.png)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## <a id='2'>撤销</a>
 
 
 ```
 //撤销add(撤销上次add,后边加文件可以只撤销单个文件)
 git reset HEAD [file]
 ```
-
-1. 提交文件
-
-```
-//xxx为我们提交代码时的备注
-git commit -m xxx
-
-//将add与commit合起来，不需要两个命令来提交了（只限于已经加入git追踪的文件，新文件还是需要add）
-git commit -am xxx
-```
-4. 推送文件
-
-```
-git push
-```
-
-5. 删除仓库
-
-```
-rm -rf .git
-```
-
-6. 退出
-
-```
-exit
-```
-
-7. 查看添加的修改
-   - 绿色代表已经添加（add）到暂存区（index）
-   - 而红色表示还在工作空间（workspace）中
-   - 已经提交（commit）已经到repo里的，所以查看不到状态
-
-```
-git status
-```
-
-![20200708011253](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200708011253.png)
-
-## <a id='2'>撤销</a>
 
 - 撤销暂存区的修改
 
