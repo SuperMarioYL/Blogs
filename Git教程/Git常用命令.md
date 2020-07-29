@@ -12,7 +12,7 @@
 |[push](#push)|将本地当前分支的提交推送到远端仓库|
 |[log](#log)|查看提交的日志|
 |[reset](#reset)|将提交回退到某一次提交时的状态|
-|[](#)||
+|[branch](#branch)||
 
 
 |普通命令|含义|
@@ -103,14 +103,13 @@ git push
 ```
 git log [branch]
 ```
-- `git log`
-  - 什么都不加默认查看本地当前分支的日志
-- `git log branch`
-  - 加上分支名查看要查看的分支的日志
-- `git log origin/HEAD`
-  - 查看远端当前分支的日志
-- `git log origin/branch`
-  - 也可以查看其他远程分支的日志 
+|命令|含义|
+|:--|:--|
+|`git log`|什么都不加默认查看本地当前分支的日志|
+|`git log [branch]`|加上分支名查看要查看的分支的日志|
+|`git log origin/HEAD`|查看远端当前分支的日志|
+|`git log origin/[branch]`|查看其他远程分支的日志|
+|`git log --online`|加上--online展示缩略日志|
 
 ![20200728163705](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200728163705.png)
 
@@ -124,13 +123,12 @@ git reset [--soft]|[--mixed]|[--hard] <commitID>
 ```
 
 reset有三个参数：
-- `git reset --soft <commitID>`
-  - 本地仓库回到指定commitID提交时，加上`--soft`,则表示暂存区和工作区的修改都不会受到影响
-- `git reset --mixed <commitID>`
-  - 回到指定commit的状态，加上`--mixed`则暂存区的修改会回到工作区
-  - **--mixed是默认参数，即不加参数就默认为--mixed**
-- `git reset --hard <commitID>`
-  - 回到指定commit的状态，加上`--hard`则暂存区和工作区的修改都会被清空，和commit保持一致
+
+|命令|暂存区|工作区|含义|
+|:--|:-:|:-:|:--|
+|`git reset --soft <commitID>`|不影响|不影响|本地仓库回到指定commitID提交时，加上`--soft`,则表示暂存区和工作区的修改都不会受到影响|
+|`git reset --mixed <commitID>`|影响|不影响|回到指定commit的状态，加上`--mixed`则暂存区的修改会回到工作区。**--mixed是默认参数，即不加参数就默认为--mixed**|
+|`git reset --hard <commitID>`|影响|影响|回到指定commit的状态，加上`--hard`则暂存区和工作区的修改都会被清空，和commit保持一致|
 
 从之前的Git基本概念的理解中我们知道，head其实就是一个指向最新commit的指针，我们从git log的日志中也可以看到，最新的commit右边有（head->master）表示head当前是master分支，并且指向这个commit。
 
@@ -147,3 +145,9 @@ reset有三个参数：
 - `git reset head~0`回退到最新提交
 - `git reset head~1`回退到最新提交的上一次提交，往下依次类推
 
+---
+## <a id=branch>branch</a>
+
+新增或浏览分支
+
+![20200729173331](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200729173331.png)
