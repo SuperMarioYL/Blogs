@@ -17,7 +17,7 @@
 
 |普通命令|含义|
 |:--|:--|
-|`rm -rf [file]|[dir]`|删除文件或文件夹|
+|`rm -rf [file|dir]`|删除文件或文件夹|
 |`rm -rf .git`|根目录执行，删除仓库|
 |`exit`|退出 git bash|
 |`clear`|清空 git bash 界面|
