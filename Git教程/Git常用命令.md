@@ -109,7 +109,7 @@ git log [branch]
 |`git log [branch]`|加上分支名查看要查看的分支的日志|
 |`git log origin/HEAD`|查看远端当前分支的日志|
 |`git log origin/[branch]`|查看其他远程分支的日志|
-|`git log --online`|加上--online展示缩略日志|
+|`git log --online`|加上`--online`展示缩略日志|
 
 ![20200728163705](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200728163705.png)
 
