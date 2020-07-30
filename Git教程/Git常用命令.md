@@ -148,6 +148,17 @@ reset有三个参数：
 ---
 ## <a id=branch>branch</a>
 
-新增或浏览分支
+分支的新增、浏览、删除等
+
+- `git branch` 浏览本地分支（被`'*'`标记的分支为当前本地主分支）
+- `git branch <branch>` 创建新的本地分支，本地主分支不变
 
 ![20200729173331](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200729173331.png)
+
+- `git branch -a` 浏览本地（green/white）和远端分支（red） 
+
+![20200730193833](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200730193833.png)
+
+- `git branch -d <branch>` 删除本地分支
+
+![20200730194054](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200730194054.png)
