@@ -4,7 +4,14 @@
 `插件之后作为Markdown编辑器非常好用。既可以预览，对语法的支持也非常好，唯一的一点缺点就是不能上传图片，以至于每次写博客的时候都要切到网站上粘图片再拷贝连接回来，非常麻烦。
 
 ![20200527214215](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200527214215.png)
-![20200527214505](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200527214505.png)
+
+<!-- TOC -->
+
+- [picgo介绍](#picgo介绍)
+- [Github图床设置](#github图床设置)
+- [picgo设置](#picgo设置)
+
+<!-- /TOC -->
 
 ## picgo介绍
 &emsp;好在，vscode上有一个picgo插件，可以让我们用快捷键即可上传图片到默认的免费服务器，具体的使用方法是，安装完成后：
