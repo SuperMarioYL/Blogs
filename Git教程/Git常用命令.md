@@ -23,7 +23,7 @@
 |`clear`|清空 git bash 界面|
 
 ---
-## <a id=init>init</a>
+## <a id='init'>init</a>
 
 将本地工程初始化为本地仓库，纳入版本控制
 
@@ -32,7 +32,7 @@ git init
 ```
 
 ---
-## <a id=clone>clone</a>
+## <a id='clone'>clone</a>
 
 从远端克隆仓库
 
