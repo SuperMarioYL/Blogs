@@ -6,6 +6,8 @@
 - [关闭Linux防火墙](#关闭linux防火墙)
 - [设置虚拟网络编辑器](#设置虚拟网络编辑器)
 - [Windows防火墙调整（非必要）](#windows防火墙调整非必要)
+- [Win10防火墙调整（非必要）](#win10防火墙调整非必要)
+- [总结](#总结)
 
 <!-- /TOC -->
 
@@ -78,3 +80,39 @@ ifconfig
 
 选择入站规则，点击新建规则
 
+![20200801011955](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200801011955.png)
+
+选择端口
+
+![20200801012028](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200801012028.png)
+
+选择TCP，选择特定端口，将之前设置的主机端口写上
+
+![sdfsad](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/Snipaste_2020-08-01_01-24-41.png)
+
+选择允许连接
+
+![sdfsad](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/Snipaste_2020-08-01_01-24-58.png)
+
+全选
+
+![sdfsad](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/Snipaste_2020-08-01_01-25-08.png)
+
+输入一个自己的名字
+
+![sdfsad](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/Snipaste_2020-08-01_01-25-20.png)
+
+结果如下，这样就可以将这个端口排除在防火墙外了
+
+![sdfsad](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/Snipaste_2020-08-01_01-25-34.png)
+
+## Win10防火墙调整（非必要）
+
+如果你是Win10，上面的这些操作你都设置了都不生效，那么把入站规则的这3个都勾选在尝试一下
+
+![20200801013430](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200801013430.png)
+
+
+## 总结
+
+以上便是VMware端口转发的流程，如果还不成功，欢迎私信我
