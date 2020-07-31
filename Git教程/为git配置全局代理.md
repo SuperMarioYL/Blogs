@@ -1,4 +1,4 @@
-## 为git配置全局代理，解决GitHub colone慢的问题
+# 为git配置全局代理，解决GitHub colone慢的问题
 
 &emsp;在网上搜索了许多的教程，不管是配置host文件还是别的教程，都没有办法提升GitHub clone的速度，在配置了代理之后速度终于上来了，本教程的前提是你已经配置了ssr。
 

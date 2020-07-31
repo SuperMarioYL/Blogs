@@ -1,6 +1,7 @@
 # windows下配置git密钥以及在GitHub使用
 
-## 1.git配置公钥私钥
+
+## git配置公钥私钥
 
 &emsp;git在使用过程中，如果没有配置秘钥，那么每次提交代码的时候都需要验证密码，非常麻烦，所以，我们需要配置秘钥，并把公钥放到要推送的远端仓库中。步骤如下：
 
@@ -35,7 +36,7 @@ ssh-keygen -t rsa -b 4096 -C "youremail@xxxxx.com"
 
 ---
 
-## 2.将秘钥放到GitHub中
+## 将秘钥放到GitHub中
 
 1. 打开GitHub，打开右上角的settings
 
@@ -53,7 +54,7 @@ ssh-keygen -t rsa -b 4096 -C "youremail@xxxxx.com"
 
 ![20200625162324](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200625162324.png)
 
-## 3.colone远程仓库到本地
+## colone远程仓库到本地
 
 ```
 git clone xxxx

@@ -1,26 +1,23 @@
-## git配置文件解析，配置命令详解
+# git配置文件解析，配置命令详解
 
 Git有三个等级的系统文件，Git默认不会创建这些配置文件，只有你编辑他们的时候，他们才会被创建，平常我们使用命令行来修改就可以了，他们分别存放于不同的位置。
 
-### 目录
-1. [配置文件介绍](#1)
-2. [配置命令详解](#2)
-   - [编辑配置文件](#21)
-   - [编辑单个配置](#22)
-   - [查看某个配置](#23)
-   - [重置某个配置](#24)
----
-### <a id='1'>配置文件介绍</a>
 
-#### system
+---
+## 配置文件介绍
+
+### system
+
 - 系统级别，一般存放系统设置，作用范围最大
 - 一般存放于`[Git安装目录]\mingw64\etc\gitconfig`,但是Git不会自动生成这个文件只有通过命令编辑文件后，该文件才会生成,编辑命令`git config --system --edit`
 
-#### global
+### global
+
 - 全局文件，整个系统用户范围内生效，作用范围比system小
 - 配置文件不会自动生成，通过命令`git config --global --edit`编辑之后生成，位置默认在`C:\Users\Administrator\.gitconfig`
 
-#### local
+### local
+
 - 每个仓库的配置文件，作用范围最小，只在本仓库生效
 - clone或者init时自动生成，位置在`.git\config`
 
@@ -28,18 +25,18 @@ Git有三个等级的系统文件，Git默认不会创建这些配置文件，�
 答：作用范围越小的优先生效，这不难理解，这样可以为每个仓库每个用户做单独的配置
 
 ---
-### <a id='2'>配置命令详解</a>
+## 配置命令详解
 
-- <a id='21'>编辑配置文件</a>
-  - 加上`--global`可以编辑全局配置，其他配置文件以此类推，放在`-e`或者`--edit`的左右两侧都可以
-  - `--edit`可简写成`-e`
-  - 如果不加`--global`等参数，默认编辑的是仓库配置文件
-    ```
-    git config [--global|--local|--system] --edit
-    git config [--global|--local|--system] -e
-    ```
+### 编辑配置文件
 
-    例子：
+- 加上`--global`可以编辑全局配置，其他配置文件以此类推，放在`-e`或者`--edit`的左右两侧都可以
+- `--edit`可简写成`-e`
+- 如果不加`--global`等参数，默认编辑的是仓库配置文件
+  ```
+  git config [--global|--local|--system] --edit
+  git config [--global|--local|--system] -e
+  ```
+  例子：
     
     ![20200711174319](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200711174319.png)
 
@@ -47,7 +44,7 @@ Git有三个等级的系统文件，Git默认不会创建这些配置文件，�
 
     ![20200711174410](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200711174410.png)
 
-- <a id='22'>编辑单个配置</a>
+### 编辑单个配置
 
 打开我的全局配置文件会发现如下的属性：
 
@@ -70,7 +67,7 @@ git config [--global|--system|--local] xxx 'sss'
 git config --global user.name 'leilei'
 ```
 
-- <a id='23'>查看某个配置</a>
+### 查看某个配置
 
 ```
 //xxx为要获取的配置

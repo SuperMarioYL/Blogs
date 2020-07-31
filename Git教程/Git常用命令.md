@@ -49,7 +49,7 @@ URL有两种形式：
   - 在推送的时候，如果配置了ssh keys，就不需要验证用户名和密码了，比较方便
 
 ---
-## <a id=add>add</a>
+## <a id='add'>add</a>
 
 将工作区修改保存到暂存区
 
@@ -63,7 +63,7 @@ URL有两种形式：
 在根目录下， `git add .` 和 `git add --all` 没有区别，只有不是根目录的情况下有区别
 
 ---
-## <a id=status>status</a>
+## <a id='status'>status</a>
 
 查看暂存区（green）和工作区（red）的修改
 
@@ -77,7 +77,7 @@ git status
 ![20200708011253](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200708011253.png)
 
 ---
-## <a id=commit>commit</a>
+## <a id='commit'>commit</a>
 
 将修改提交到本地仓库
 
@@ -87,7 +87,7 @@ git status
   - 将暂存区的修改以及工作区已加入版本控制的文件修改提交到本地仓库，memo为提交的备注
 
 ---
-## <a id=push>push</a>
+## <a id='push'>push</a>
 
 将本地当前分支的提交推送到远端仓库
 
@@ -96,7 +96,7 @@ git push
 ```
 
 ---
-## <a id=log>log</a>
+## <a id='log'>log</a>
 
 查看提交的日志,按Q退出,可选择查看的分支
 
@@ -114,7 +114,7 @@ git log [branch]
 ![20200728163705](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200728163705.png)
 
 ---
-## <a id=reset>reset</a>
+## <a id='reset'>reset</a>
 
 重新设置head指针指向的commit记录，即可以将提交回退到某一次提交时的状态
 
@@ -146,7 +146,7 @@ reset有三个参数：
 - `git reset head~1`回退到最新提交的上一次提交，往下依次类推
 
 ---
-## <a id=branch>branch</a>
+## <a id='branch'>branch</a>
 
 分支的新增、浏览、删除等
 
