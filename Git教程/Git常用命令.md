@@ -12,7 +12,8 @@
 |[push](#push)|将本地当前分支的提交推送到远端仓库|
 |[log](#log)|查看提交的日志|
 |[reset](#reset)|将提交回退到某一次提交时的状态|
-|[branch](#branch)||
+|[branch](#branch)|分支的新增、浏览、删除等，不能切换分支|
+|[checkout](#checkout)|切换分支|
 
 
 |普通命令|含义|
@@ -23,7 +24,7 @@
 |`clear`|清空 git bash 界面|
 
 ---
-## <a id='init'>init</a>
+## init
 
 将本地工程初始化为本地仓库，纳入版本控制
 
@@ -32,7 +33,7 @@ git init
 ```
 
 ---
-## <a id='clone'>clone</a>
+## clone
 
 从远端克隆仓库
 
@@ -49,7 +50,7 @@ URL有两种形式：
   - 在推送的时候，如果配置了ssh keys，就不需要验证用户名和密码了，比较方便
 
 ---
-## <a id='add'>add</a>
+## add
 
 将工作区修改保存到暂存区
 
@@ -63,7 +64,7 @@ URL有两种形式：
 在根目录下， `git add .` 和 `git add --all` 没有区别，只有不是根目录的情况下有区别
 
 ---
-## <a id='status'>status</a>
+## status
 
 查看暂存区（green）和工作区（red）的修改
 
@@ -77,17 +78,15 @@ git status
 ![20200708011253](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200708011253.png)
 
 ---
-## <a id='commit'>commit</a>
+## commit
 
 将修改提交到本地仓库
 
-- `git commit -m [memo]`
-  - 将暂存区的修改提交到本地仓库，memo为提交的备注
-- `git commit -am [memo]`
-  - 将暂存区的修改以及工作区已加入版本控制的文件修改提交到本地仓库，memo为提交的备注
+- `git commit -m [memo]` 将暂存区的修改提交到本地仓库，memo为提交的备注
+- `git commit -am [memo]` 将暂存区的修改以及工作区已加入版本控制的文件修改提交到本地仓库，memo为提交的备注
 
 ---
-## <a id='push'>push</a>
+## push
 
 将本地当前分支的提交推送到远端仓库
 
@@ -96,7 +95,7 @@ git push
 ```
 
 ---
-## <a id='log'>log</a>
+## log
 
 查看提交的日志,按Q退出,可选择查看的分支
 
@@ -109,12 +108,12 @@ git log [branch]
 |`git log [branch]`|加上分支名查看要查看的分支的日志|
 |`git log origin/HEAD`|查看远端当前分支的日志|
 |`git log origin/[branch]`|查看其他远程分支的日志|
-|`git log --online`|加上`--online`展示缩略日志|
+|`git log --oneline`|加上`--oneline`展示缩略日志|
 
 ![20200728163705](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200728163705.png)
 
 ---
-## <a id='reset'>reset</a>
+## reset
 
 重新设置head指针指向的commit记录，即可以将提交回退到某一次提交时的状态
 
@@ -124,11 +123,11 @@ git reset [--soft]|[--mixed]|[--hard] <commitID>
 
 reset有三个参数：
 
-|命令|暂存区|工作区|含义|
+|命令|影响暂存区|影响工作区|含义|
 |:--|:-:|:-:|:--|
-|`git reset --soft <commitID>`|不影响|不影响|本地仓库回到指定commitID提交时，加上`--soft`,则表示暂存区和工作区的修改都不会受到影响|
-|`git reset --mixed <commitID>`|影响|不影响|回到指定commit的状态，加上`--mixed`则暂存区的修改会回到工作区。**--mixed是默认参数，即不加参数就默认为--mixed**|
-|`git reset --hard <commitID>`|影响|影响|回到指定commit的状态，加上`--hard`则暂存区和工作区的修改都会被清空，和commit保持一致|
+|`git reset --soft <commitID>`|N|N|回到指定commit的状态，暂存区和工作区的修改都不会受到影响|
+|`git reset --mixed <commitID>`|Y|N|回到指定commit的状态，暂存区的修改会回到工作区。<br/>**--mixed是默认参数，即不加参数就默认为--mixed**|
+|`git reset --hard <commitID>`|Y|Y|回到指定commit的状态，暂存区和工作区的修改都会被删除|
 
 从之前的Git基本概念的理解中我们知道，head其实就是一个指向最新commit的指针，我们从git log的日志中也可以看到，最新的commit右边有（head->master）表示head当前是master分支，并且指向这个commit。
 
@@ -146,19 +145,26 @@ reset有三个参数：
 - `git reset head~1`回退到最新提交的上一次提交，往下依次类推
 
 ---
-## <a id='branch'>branch</a>
+## branch
 
-分支的新增、浏览、删除等
+分支的新增、浏览、删除等，不能切换分支
 
 - `git branch` 浏览本地分支（被`'*'`标记的分支为当前本地主分支）
 - `git branch <branch>` 创建新的本地分支，本地主分支不变
 
-![20200729173331](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200729173331.png)
+  ![20200729173331](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200729173331.png)
+
+- `git branch <branch> <commitID>` 基于某一分支的一个commitID创建新分支
 
 - `git branch -a` 浏览本地（green/white）和远端分支（red） 
 
-![20200730193833](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200730193833.png)
+  ![20200730193833](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200730193833.png)
 
 - `git branch -d <branch>` 删除本地分支
 
-![20200730194054](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200730194054.png)
+  ![20200730194054](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200730194054.png)
+
+---
+## checkout
+
+切换分支
