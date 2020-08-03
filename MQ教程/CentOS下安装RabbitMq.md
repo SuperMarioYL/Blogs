@@ -1,31 +1,65 @@
-# CentOS环境安装RabbitMq
+# CentOS环境RabbitMQ安装与使用
+
+<!-- TOC -->
+
+- [RabbitMQ安装](#rabbitmq安装)
+- [RabbitMQ使用](#rabbitmq使用)
+  - [启动mq](#启动mq)
+  - [查看状态](#查看状态)
+  - [停止服务](#停止服务)
+  - [插件管理](#插件管理)
+    - [启用插件](#启用插件)
+    - [插件默认访问地址](#插件默认访问地址)
+
+<!-- /TOC -->
+
+---
+## RabbitMQ安装
 
 ```
-准备：
-yum install \
-build-essential openssl openssl-devel unixODBC unixODBC-devel \
-make gcc gcc-c++ kernel-devel m4 ncurses-devel tk tc xz -y
-
-下载：
-wget www.rabbitmq.com/releases/erlang/erlang-18.3-1.el7.centos.x86_64.rpm
-wget http://repo.iotti.biz/CentOS/7/x86_64/socat-1.7.3.2-5.el7.lux.x86_64.rpm
-wget www.rabbitmq.com/releases/rabbitmq-server/v3.6.5/rabbitmq-server-3.6.5-1.noarch.rpm
-
-安装：
-rpm -ivh erlang-18.3-1.el7.centos.x86_64.rpm 
-rpm -ivh socat-1.7.3.2-1.1.el7.x86_64.rpm  --nodeps --force
-rpm -ivh rabbitmq-server-3.6.5-1.noarch.rpm 
-
 配置文件：
 vi /usr/lib/rabbitmq/lib/rabbitmq_server-3.6.5/ebin/rabbit.app
 比如修改密码、配置等等，例如：loopback_users 中的 <<"guest">>,只保留guest
-服务启动和停止：
-启动 rabbitmq-server start &
-停止 rabbitmqctl stop
 查看服务是否成功：
 yum install lsof
 lsof -i:5672
 
-管理插件：rabbitmq-plugins enable rabbitmq_management
-访问地址：http://192.168.147.146:15672/
+```
+
+---
+## RabbitMQ使用
+
+默认端口：5672
+默认用户：guest/guest
+
+### 启动mq
+
+```
+rabbitmq-server start
+```
+
+### 查看状态
+
+```
+rabbitmq-server status
+```
+
+### 停止服务
+
+```
+rabbitmqctl stop
+```
+
+### 插件管理
+
+#### 启用插件
+
+```
+rabbitmq-plugins enable rabbitmq_management
+```
+
+#### 插件默认访问地址
+
+```
+http://127.0.0.1:15672/
 ```

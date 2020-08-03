@@ -12,8 +12,6 @@
   - [防火墙相关（CentOS8）](#防火墙相关centos8)
 - [yum](#yum)
 - [系统设置](#系统设置)
-  - [去掉虚拟机报警声](#去掉虚拟机报警声)
-  - [设置共享文件夹](#设置共享文件夹)
   - [查看磁盘使用情况](#查看磁盘使用情况)
 
 <!-- /TOC -->
@@ -98,34 +96,6 @@
 
 ---
 ## 系统设置
-
-### 去掉虚拟机报警声
-```
-方法1：
-rmmod pcspkr
-
-方法2：
-
-vim /etc/inputrc 
-
-把这一行的注释去掉重启即可
-
-set bell-style none
-```
-
-### 设置共享文件夹
-1. 设置windows共享文件夹
-2. 安装vmtools
-3. linux 命令
-
-```
-vmware-hgfsclient #查看共享文件夹名称
-
-mkdir /sharefiles #创建linux共享目录
-
-/usr/bin/vmhgfs-fuse .host:/ /sharefiles -o subtype=vmhgfs-fuse,allow_other 
-#/sharefiles 即为我设置的共享文件夹在虚拟机下的位置
-```
 
 ### 查看磁盘使用情况
 1. `df -h [dir]`展示文件系统的磁盘容量以及使用量，加文件夹展示该文件所在磁盘的使用情况
