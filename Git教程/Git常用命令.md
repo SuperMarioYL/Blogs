@@ -165,4 +165,13 @@ reset有三个参数：
 ---
 ## checkout
 
-切换分支
+查看当前分支状态，切换分支
+
+- `git checkout` 查看当前分支状态
+
+  ![20200805000155](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200805000155.png)
+
+- `git checkout <branch>` 切换到branch分支
+
+- `git checkout -b <branch>` 创建branch分支并切换到该分支
+
