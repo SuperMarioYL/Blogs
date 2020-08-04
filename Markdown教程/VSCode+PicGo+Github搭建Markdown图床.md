@@ -7,13 +7,13 @@
 
 <!-- TOC -->
 
-- [picgo介绍](#picgo介绍)
-- [Github图床设置](#github图床设置)
-- [picgo设置](#picgo设置)
+- [1. picgo介绍](#1-picgo介绍)
+- [2. Github图床设置](#2-github图床设置)
+- [3. picgo设置](#3-picgo设置)
 
 <!-- /TOC -->
 
-## picgo介绍
+## 1. picgo介绍
 &emsp;好在，vscode上有一个picgo插件，可以让我们用快捷键即可上传图片到默认的免费服务器，具体的使用方法是，安装完成后：
 ![20200527215147](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200527215147.png)
 windows下`ctrl+alt+U`从剪贴板粘贴图片，`ctrl+alt+E`打开资源管理器选择图片，这是最常用的两个快捷键，其他快捷键如图所示。
@@ -27,7 +27,7 @@ windows下`ctrl+alt+U`从剪贴板粘贴图片，`ctrl+alt+E`打开资源管理�
 --- 
 
 
-## Github图床设置
+## 2. Github图床设置
 
 1. 注册登录GitHub
    1. 略
@@ -53,7 +53,7 @@ windows下`ctrl+alt+U`从剪贴板粘贴图片，`ctrl+alt+E`打开资源管理�
 
 ---
 
-## picgo设置
+## 3. picgo设置
 
 &emsp;GitHub设置完之后，我们需要修改picgo插件的设置，把服务器编程我们的图床，具体设置如下：
 

@@ -2,9 +2,9 @@
 
 <!-- TOC -->
 
-- [picgo介绍](#picgo介绍)
-- [阿里云oss 购买以及图床设置](#阿里云oss-购买以及图床设置)
-- [picgo设置](#picgo设置)
+- [1. picgo介绍](#1-picgo介绍)
+- [2. 阿里云oss 购买以及图床设置](#2-阿里云oss-购买以及图床设置)
+- [3. picgo设置](#3-picgo设置)
 
 <!-- /TOC -->
 
@@ -14,7 +14,7 @@
 ![20200527214215](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200527214215.png)
 
 
-## picgo介绍
+## 1. picgo介绍
 &emsp;好在，vscode上有一个picgo插件，可以让我们用快捷键即可上传图片到默认的免费服务器，具体的使用方法是，安装完成后：
 ![20200527215147](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200527215147.png)
 windows下`ctrl+alt+U`从剪贴板粘贴图片，`ctrl+alt+E`打开资源管理器选择图片，这是最常用的两个快捷键，其他快捷键如图所示。
@@ -26,7 +26,7 @@ windows下`ctrl+alt+U`从剪贴板粘贴图片，`ctrl+alt+E`打开资源管理�
 --- 
 
 
-## 阿里云oss 购买以及图床设置
+## 2. 阿里云oss 购买以及图床设置
 
 1. 注册阿里云并登陆
     - 略过
@@ -86,7 +86,7 @@ windows下`ctrl+alt+U`从剪贴板粘贴图片，`ctrl+alt+E`打开资源管理�
 
 ---
 
-## picgo设置
+## 3. picgo设置
 
 &emsp; 阿里云oss设置完之后，我们需要修改picgo插件的设置，把服务器编程我们的图床，具体设置如下：
 
