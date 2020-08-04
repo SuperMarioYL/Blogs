@@ -10,7 +10,7 @@
 
 &emsp;反映在我们的文件里便如下图所示
 
-![20200711012643](https://cdn.jsdelivr.net/gh/leiyu1997/PicBed@master/blogs/pictures/20200711012643.png)
+![20200711012643](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200711012643.png)
 
 打开.git文件，会发现里面有很多内容，其实，版本库也是划分了许多区域的，比如我们进行add操作会把我们在工作区修改的内容放到暂存区，提交会把暂存区的内容提交到本地仓库，那么这些概念到底是什么意思呢？
 
