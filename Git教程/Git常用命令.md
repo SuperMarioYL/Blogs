@@ -185,7 +185,11 @@ reset有三个参数：
 
 合并分支
 
-
+要将B分支的代码合并到A分支上，要先将head指向A分支，然后执行合并B的操作，这样，B中的修改就合并到A上了
+```
+git checkout A
+git merge B
+```
 
 ---
 ## diff
