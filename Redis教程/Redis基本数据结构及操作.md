@@ -36,10 +36,11 @@ string存储的可以是字符串、整数、浮点数.
 
 |命令|操作|
 |:--|:--|
-|`lpush/rpush key value [value...]`|在列表的左/右端插入元素(可以插入多个值)|
-|`lpop/rpop key`|在列表的左/右端弹出元素|
+|`lpush/rpush key value [value...]`|在列表的左/右端插入元素(可以插入多个值)，返回插入的个数|
+|`lpop/rpop key`|在列表的左/右端弹出元素，返回弹出元素的值|
 |`lrange key begin end`|从左到右列出从begin开始到end的所有元素，`lrange key 0 -1`可以获取列表的所有值|
 |`lindex key index`|获取key为键的列表的index位置上的值|
+|`del key`|删除以key为键的列表的所有值|
 
 ![20200810214538](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200810214538.png)
 
