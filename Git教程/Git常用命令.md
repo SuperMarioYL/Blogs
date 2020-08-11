@@ -172,6 +172,7 @@ reset有三个参数：
   ![20200805000155](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200805000155.png)
 
 - `git checkout <branch>` 切换到branch分支
-
-- `git checkout -b <branch>` 创建branch分支并切换到该分支
+- `git checkout -b <branch>` 创建branch分支并切换到该分支（如果branch分支已经被创建，那么该语句将报错）
+- `git checkout -B <branch>` 强制创建branch分支并切换到该分支（如果branch分支已经创建，该命令会将原来的分支强制覆盖）
+- 
 
