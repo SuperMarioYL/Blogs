@@ -167,6 +167,8 @@ reset有三个参数：
 
 查看当前分支状态，切换分支
 
+注：工作区和暂存区的修改会随着分支的切换在不同分支间移动，而已提交的修改则不会随着分支移动
+
 - `git checkout` 查看当前分支状态
 
   ![20200805000155](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200805000155.png)
