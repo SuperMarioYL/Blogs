@@ -11,7 +11,9 @@
 |[log](#log)|查看提交的日志|
 |[reset](#reset)|将提交回退到某一次提交时的状态|
 |[branch](#branch)|分支的新增、浏览、删除等，不能切换分支|
-|[checkout](#checkout)|切换分支|
+|[checkout](#checkout)|查看当前分支状态，切换分支|
+|[merge](#merge)|合并分支|
+|[diff](#diff)|查看工作区的修改|
 
 ---
 |普通命令|含义|
@@ -178,3 +180,20 @@ reset有三个参数：
 - `git checkout -B <branch>` 强制创建branch分支并切换到该分支（如果branch分支已经创建，该命令会将原来的分支强制覆盖）
 - 
 
+---
+## merge
+
+合并分支
+
+
+
+---
+## diff
+
+查看工作区的修改
+
+```
+git diff
+```
+
+![20200811203604](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200811203604.png)
