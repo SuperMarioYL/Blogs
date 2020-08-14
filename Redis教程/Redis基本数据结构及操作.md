@@ -23,11 +23,16 @@ string存储的可以是字符串、整数、浮点数.是键值对结构
 
 有如下命令：
 
-|指令|命令|操作|
-|:--|:--|:--|
-|`get`|`get key`|获取给定键的值，如果是空返回`(nil)`|
-|`set`|`set key value`|设置要存储的键值|
-|`del`|`del key [key...]`|删除指定的键值，可同时删除多个，返回删除的数量|
+|命令|操作|
+|:--|:--|
+|`get key`|获取给定键的值，如果是空返回`(nil)`|
+|`set key value`|设置要存储的键值|
+|`del key [key...]`|删除指定的键值，可同时删除多个，返回删除的数量|
+|`incr key`|将key对应的值加1|
+|`decr key`|将key对应的值减1|
+|`incrby key num`|将key对应的值加上num|
+|`decrby key num`|将key对应的值减去num|
+|`incrbyfloat key num`|将key对应的值加上一个浮点数|6
 
 ![20200810211955](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200810211955.png)
 
