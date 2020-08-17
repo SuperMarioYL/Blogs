@@ -2,19 +2,21 @@
 
 <!-- TOC -->
 
-- [HashMap的源码分析](#hashmap的源码分析)
-  - [默认参数](#默认参数)
-  - [存储结构](#存储结构)
-- [面试题题解](#面试题题解)
+- [**HashMap的源码分析**](#hashmap的源码分析)
+  - [**默认参数**](#默认参数)
+  - [**存储结构**](#存储结构)
+  - [**增加元素的方法——put()**](#增加元素的方法put)
+- [**面试题题解**](#面试题题解)
+  - [***transient关键字的作用？***](#transient关键字的作用)
 
 <!-- /TOC -->
 
 ---
-## HashMap的源码分析
+## **HashMap的源码分析**
 
 hashmap是java.util包下的一个集合类，支持序列化，作为一个面试热门考点，我以jdk1.8的源码为例，讲述一下我对于hashmap的理解
 
-### 默认参数
+### **默认参数**
 
 hashmap的在初始化的时候，有许多的默认参数，这些参数的含义为：
 
@@ -58,7 +60,70 @@ static final int UNTREEIFY_THRESHOLD = 6;
 static final int MIN_TREEIFY_CAPACITY = 64;
 ```
 
-### 存储结构
+### **存储结构**
+
+hashmap的存储结构是`数组+链表+红黑树`，默认的数组容量为16，每个容量都称为桶，即初始有16个桶，通过hash将键值对存储到桶中，如果发生hash冲突就会将值存储到该桶的下一位，即生成一个链表。当一个链表的数值超过树形阈值时，链表会自动转换为红黑树，以获取更高的查询效率。当有最大容量*加载因子个桶存在值时，数组将会扩容，具体的是增加到原来的一倍。
+
+- 最基本的存储结构——Node
+
+  node是hashmap最基础的存储结构，他是存储具体键值对的节点
+
+  ```
+      static class Node<K,V> implements Map.Entry<K,V> {
+          final int hash;
+          final K key;
+          V value;
+          Node<K,V> next;
+
+          Node(int hash, K key, V value, Node<K,V> next) {
+              this.hash = hash;
+              this.key = key;
+              this.value = value;
+              this.next = next;
+          }
+
+          public final K getKey()        { return key; }
+          public final V getValue()      { return value; }
+          public final String toString() { return key + "=" + value; }
+
+          public final int hashCode() {
+              return Objects.hashCode(key) ^ Objects.hashCode(value);
+          }
+
+          public final V setValue(V newValue) {
+              V oldValue = value;
+              value = newValue;
+              return oldValue;
+          }
+
+          public final boolean equals(Object o) {
+              if (o == this)
+                  return true;
+              if (o instanceof Map.Entry) {
+                  Map.Entry<?,?> e = (Map.Entry<?,?>)o;
+                  if (Objects.equals(key, e.getKey()) &&
+                      Objects.equals(value, e.getValue()))
+                      return true;
+              }
+              return false;
+          }
+      }
+  ```
+- 数组结构
+
+  在源码中。一个hashmap对象所有的键值对都是存储在table这个node数组中的，他的每一个元素都可以成为一个链表
+
+  ```
+  transient Node<K,V>[] table;
+  ```
+
+### **增加元素的方法——put()**
+
+
 
 ---
-## 面试题题解
+## **面试题题解**
+
+### ***transient关键字的作用？***
+
+加上transient关键字，在序列化的时候，这个属性就不会被序列化
