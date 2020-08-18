@@ -5,6 +5,8 @@
 - [**HashMap的源码分析**](#hashmap的源码分析)
   - [**默认参数**](#默认参数)
   - [**存储结构**](#存储结构)
+  - [**决定存储位置的方法——hash()**](#决定存储位置的方法hash)
+    - [**HashCode()方法是怎么获取值的？**](#hashcode方法是怎么获取值的)
   - [**增加元素的方法——put()**](#增加元素的方法put)
 - [**面试题题解**](#面试题题解)
   - [***transient关键字的作用？***](#transient关键字的作用)
@@ -117,7 +119,152 @@ hashmap的存储结构是`数组+链表+红黑树`，默认的数组容量为16�
   transient Node<K,V>[] table;
   ```
 
+### **决定存储位置的方法——hash()**
+
+将键值对存到桶中时，是通过对key进行hash，得到一个int值然后与容量与操作来获取这个键值对应该存放在哪个桶中的，而hash方法是怎么计算hash值的呢？
+步骤如下：
+1. 校验对象是否为null，如果是null，返回0
+2. 通过hashcode方法获取这个key的hash值
+3. 将这个hash值与这个hash值无符号右移16位的值做异或操作，获取最终的值
+
+```
+    static final int hash(Object key) {
+        int h;
+        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+    }
+```
+
+#### **HashCode()方法是怎么获取值的？**
+
+在object类中，hashcode方法是一个本地方法，在不同的系统中的实现是不同的，但总得来说是通过对象在虚拟机中的内存地址计算出来的，如果两个对象有不同的hashcode，那这两个对象一定不等，而hashcode相同也不代表两个对象相等。
+
+```
+public native int hashCode();
+```
+
+
 ### **增加元素的方法——put()**
+
+put方法是调用了内部的putval方法的，将key、value、以及key的hash值等都传到了putval方法中
+
+```
+    public V put(K key, V value) {
+        return putVal(hash(key), key, value, false, true);
+    }
+```
+
+putval方法源代码如下：
+
+```
+    /**
+     * Implements Map.put and related methods.
+     *
+     * @param hash hash for key
+     * @param key the key
+     * @param value the value to put
+     * @param onlyIfAbsent if true, don't change existing value
+     * @param evict if false, the table is in creation mode.
+     * @return previous value, or null if none
+     */
+    final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
+                   boolean evict) {
+        Node<K,V>[] tab; Node<K,V> p; int n, i;
+        if ((tab = table) == null || (n = tab.length) == 0)
+            n = (tab = resize()).length;
+        if ((p = tab[i = (n - 1) & hash]) == null)
+            tab[i] = newNode(hash, key, value, null);
+        else {
+            Node<K,V> e; K k;
+            if (p.hash == hash &&
+                ((k = p.key) == key || (key != null && key.equals(k))))
+                e = p;
+            else if (p instanceof TreeNode)
+                e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);
+            else {
+                for (int binCount = 0; ; ++binCount) {
+                    if ((e = p.next) == null) {
+                        p.next = newNode(hash, key, value, null);
+                        if (binCount >= TREEIFY_THRESHOLD - 1) // -1 for 1st
+                            treeifyBin(tab, hash);
+                        break;
+                    }
+                    if (e.hash == hash &&
+                        ((k = e.key) == key || (key != null && key.equals(k))))
+                        break;
+                    p = e;
+                }
+            }
+            if (e != null) { // existing mapping for key
+                V oldValue = e.value;
+                if (!onlyIfAbsent || oldValue == null)
+                    e.value = value;
+                afterNodeAccess(e);
+                return oldValue;
+            }
+        }
+        ++modCount;
+        if (++size > threshold)
+            resize();
+        afterNodeInsertion(evict);
+        return null;
+    }
+```
+
+分行解析putval方法：
+
+node数组tab指向本对象的table，p表示要存储的桶的第一个元素，n表示table数组的长度,i表示要存储的位置
+``` 
+Node<K,V>[] tab; Node<K,V> p; int n, i;
+```
+
+将table、n赋值，如果此时table数组中还没有定初始化，则调用resize方法，将table数组初始化并扩容至初始容量（默认为16）
+
+```
+if ((tab = table) == null || (n = tab.length) == 0)
+    n = (tab = resize()).length;
+```
+
+```        
+        if ((p = tab[i = (n - 1) & hash]) == null)
+            tab[i] = newNode(hash, key, value, null);
+        else {
+            Node<K,V> e; K k;
+            if (p.hash == hash &&
+                ((k = p.key) == key || (key != null && key.equals(k))))
+                e = p;
+            else if (p instanceof TreeNode)
+                e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);
+            else {
+                for (int binCount = 0; ; ++binCount) {
+                    if ((e = p.next) == null) {
+                        p.next = newNode(hash, key, value, null);
+                        if (binCount >= TREEIFY_THRESHOLD - 1) // -1 for 1st
+                            treeifyBin(tab, hash);
+                        break;
+                    }
+                    if (e.hash == hash &&
+                        ((k = e.key) == key || (key != null && key.equals(k))))
+                        break;
+                    p = e;
+                }
+            }
+            if (e != null) { // existing mapping for key
+                V oldValue = e.value;
+                if (!onlyIfAbsent || oldValue == null)
+                    e.value = value;
+                afterNodeAccess(e);
+                return oldValue;
+            }
+        }
+        ++modCount;
+        if (++size > threshold)
+            resize();
+        afterNodeInsertion(evict);
+        return null;
+    }
+```
+
+
 
 
 
