@@ -212,17 +212,35 @@ putval方法源代码如下：
 
 分行解析putval方法：
 
-node数组tab指向本对象的table，p表示要存储的桶的第一个元素，n表示table数组的长度,i表示要存储的位置
+node数组tab指向本对象的table，p表示要存储的桶的第一个元素，n表示table数组的长度即容量大小,i表示要存储的位置
 ``` 
 Node<K,V>[] tab; Node<K,V> p; int n, i;
 ```
 
-将table、n赋值，如果此时table数组中还没有定初始化，则调用resize方法，将table数组初始化并扩容至初始容量（默认为16）
+将table、n赋值，如果此时table数组中还没有定初始化，则调用resize方法，将table数组初始化并扩容至初始容量（默认为16）,并将n赋值为容量大小
 
 ```
 if ((tab = table) == null || (n = tab.length) == 0)
     n = (tab = resize()).length;
 ```
+
+如果table已经初始化了，则将key的hash值与n-1做与操作，获取一个肯定包含在n-1内的数，用i来表示，tab[i]便是将要存储的位置，p指向这个位置，如果tab[i]的值是空的，则用键值初始化一个node放入tab[i]中
+
+```
+if ((p = tab[i = (n - 1) & hash]) == null)
+    tab[i] = newNode(hash, key, value, null);
+```
+
+如果已经初始化，并且经过计算后的位置上也有了数据，则接着进行下一步的逻辑
+
+```
+else{
+    ...
+}
+```
+
+
+
 
 ```        
         if ((p = tab[i = (n - 1) & hash]) == null)
