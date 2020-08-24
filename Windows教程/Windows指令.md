@@ -1,31 +1,65 @@
-## windows指令
+# windows指令
 
-### 目录
-- [切换盘符](#1)
-- [切换文件夹](#2)
-- [查看ip](#3)
-  - 刷新缓存
-- [查看端口占用](#4)
+<!-- TOC -->
+
+- [常用指令](#常用指令)
+  - [切换盘符](#切换盘符)
+  - [切换文件夹](#切换文件夹)
+- [网络相关命令](#网络相关命令)
+  - [查看ip](#查看ip)
+    - [刷新DNS缓存(修改hosts之后要执行)](#刷新dns缓存修改hosts之后要执行)
+  - [查看端口占用](#查看端口占用)
+    - [查询端口或者PID包括xxx的数据](#查询端口或者pid包括xxx的数据)
+
+<!-- /TOC -->
 
 ---
-- <a id='1'>切换盘符</a>
+## 常用指令
+
+### 切换盘符
 
 ![20200627174614](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200627174614.png)
 
-- `cd xx` <a id='2'>切换文件夹</a>
+### 切换文件夹
+
+```
+cd xxx
+```
 
 ![20200627174649](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200627174649.png)
 
-- `ipconfig` <a id='3'>查看ip</a>
-   - `ipconfig /flushdns` 刷新DNS缓存，修改hosts之后要执行
+---
+## 网络相关命令
+
+###  查看ip
+
+```
+ipconfig
+```
+
+#### 刷新DNS缓存(修改hosts之后要执行)
+
+```
+ipconfig /flushdns
+```
 
 ![20200627180230](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200627180230.png)
 
 
-- `netstat -ano` <a id='4'>查看端口占用</a>
-   - `netstat -ano|findstr "1080"` 查询端口或者PID包括1080的数据
+### 查看端口占用
+
+```
+netstat -ano
+```
 
 ![20200627175129](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200627175129.png)
+
+
+#### 查询端口或者PID包括xxx的数据
+
+```
+netstat -ano|findstr "xxx"
+```
 
 ![20200627175805](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200627175805.png)
 
