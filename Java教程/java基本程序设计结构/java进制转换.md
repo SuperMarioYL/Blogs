@@ -57,7 +57,7 @@
 
 ### 十进制转换为其他进制
 
-```
+```java
 public class Main {
     public static void main(String[] args) throws Exception {
         //转换为二进制（输出补码，省略0）
@@ -78,7 +78,7 @@ public class Main {
 
 在Java代码中，默认的整数进制就是十进制，就算你定义了一个其他进制的数，在输出或者运算时都是按照十进制来的，不需要刻意转换：
 
-```
+```java
 public class Main {
     public static void main(String[] args) throws Exception {
         int int16=0xfff;
@@ -94,7 +94,7 @@ public class Main {
 
 当然，对于没有标识的整形，java中也保留了转换进制的方法：
 
-```
+```java
 public class Main {
 
     public static void main(String[] args) {

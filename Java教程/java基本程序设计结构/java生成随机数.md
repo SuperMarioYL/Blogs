@@ -10,7 +10,7 @@ java生成随机数最常用的有3种方法，3种方法如下
    - 构造方法
      - `Random r=new Random()`不带随机种子，每次执行都产生不一样的结果
      - `Random r=new Random(5)`带有随机种子，随机种子相同时执行相同的次数，生成的随机数是一样的
-    ```
+    ```java
     public class Main {
         public static void main(String[] args) {
             Random r=new Random(5);
@@ -47,7 +47,7 @@ java生成随机数最常用的有3种方法，3种方法如下
     -337598557|-1206292926|1674370019|
     ```
     - 方法
-    ```
+    ```java
     //生成int类型随机数(加入bound参数生成[0,bound)的随机数，不加参数生成[0,integer.max_value)的随机数)
     nextInt([bound])
 
@@ -64,7 +64,7 @@ java生成随机数最常用的有3种方法，3种方法如下
 
 生成一个当前时间毫秒数的随机数，所以循环生成可能只有一个值。
 
-```
+```java
 public class Main {
     public static void main(String[] args) {
         for (int i = 0; i < 3; i++) {

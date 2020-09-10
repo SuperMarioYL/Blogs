@@ -11,7 +11,7 @@
 ## 1. 控制台输入输出
 &emsp;java控制台的输入输出主要依赖于scanner类，使用`Scanner scanner=new Scanner(System.in)`获取了控制台输入的字段，其中system.in就表示这个对象读取的是控制台。
 
-```
+```java
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         while (scanner.hasNext()){
@@ -38,7 +38,7 @@
 2. 写入文件
    1. `FileWriter`
 
-    ```
+    ```java
         FileWriter out =new FileWriter("javaproject\\sortsource.txt");//初始化，指定要写入的文件
         Random r=new Random();//获取随机数
         for (int i = 0; i < 10000000; i++) {
@@ -50,7 +50,7 @@
 
     2. `BufferWriter`
 
-    ```
+    ```java
         BufferedWriter out=new BufferedWriter(new FileWriter("javaproject\\sortsource.txt"));//初始化，指定写入文件，这里需要filewriter类型
         Random r=new Random();
         for (int i = 0; i < 10000000; i++) {
@@ -62,7 +62,7 @@
     ```
     3. 文件续写
 
-    ```
+    ```java
     //覆盖写入
     new FileWriter("javaproject\\sortsource.txt")
 
@@ -71,7 +71,7 @@
     ```
 
 3. 文件读取
-   ```
+   ```java
     public class FileReaderTest {
         public static void main(String[] args) {
             try {

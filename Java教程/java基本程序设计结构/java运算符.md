@@ -39,7 +39,7 @@
 
 以32位int为例：
 
-```
+```java
 int a=0b1010,b=0b1100,c=-0b1010;
 System.out.println("a&b:\t"+Integer.toBinaryString(a&b));
 System.out.println("a|b:\t"+Integer.toBinaryString(a|b));
