@@ -12,8 +12,15 @@
 ---
 ## TCP的数据包格式
 
-TCP数据包的报文头有6位控制位，包括SYN和ACK用来握手使用
+TCP数据包的报文头有6位控制位:
+- `ACK` 回应报文，握手和挥手使用
+- `SYN` 握手使用
+- `RST` 连接建立失败时使用
+- `URG`
+- `PSH`
+- `FIN` 挥手时使用
 
+![20200913205053](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200913205053.png)
 
 ---
 ## TCP的三次握手
@@ -30,6 +37,11 @@ TCP数据包的报文头有6位控制位，包括SYN和ACK用来握手使用
 ![TCP三次握手](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/TCP三次握手.png)
 
 ### 如果在第三次握手时失败会怎样？
+
+第三次握手失败时：
+- 客户端认为建立了连接，从而向服务端发送数据
+- 服务端没有收到信息，在等待一段时间后，会关闭连接
+- 如果服务端接收到客户端的数据，会返回RST报文
 
 ---
 ## TCP的四次挥手

@@ -6,6 +6,9 @@
 - [事务并发可能出现的问题](#事务并发可能出现的问题)
 - [事务的4个隔离级别](#事务的4个隔离级别)
 - [事务的开启、关闭和回滚](#事务的开启关闭和回滚)
+- [Innodb在Repeatable Read隔离级别下解决幻读的方法](#innodb在repeatable-read隔离级别下解决幻读的方法)
+  - [MVCC 多版本并发控制](#mvcc-多版本并发控制)
+  - [Next-Key Lock 算法](#next-key-lock-算法)
 
 <!-- /TOC -->
 
@@ -35,7 +38,7 @@
 |:--|:--|:-:|:-:|:-:|:--|
 | `Read Uncommited`|读未提交|是|是|是|A事务可以读取B事务没有提交的数据|
 | `Read Commited`|不可重复读（读已提交）|否|是|是|事务只能读取已提交的数据|
-| `Repeatable Read`|可重复读（MySQL默认隔离级别）|否|否|是|查询时受影响的行不允许修改（MySQL通过MVCC在可重复读等级解决了幻读）|
+| `Repeatable Read`|可重复读（MySQL默认隔离级别）|否|否|是|查询时受影响的行不允许修改（Innodb通过MVCC和next-key lock算法在可重复读等级解决了幻读）|
 | `Serialization`|串行化|否|否|否|只允许并发一个事务|
 
 ---
@@ -44,3 +47,25 @@
 - 开启事务 `begin`
 - 回滚事务 `rollback`
 - 提交事务 `commit`
+
+## Innodb在Repeatable Read隔离级别下解决幻读的方法
+
+先说结论：
+
+Innodb通过MVCC和next-key lock算法在可重复读隔离级别解决了幻读问题
+
+### MVCC 多版本并发控制
+
+&emsp;MVXCC解决的是 `普通读` 情况下的幻读问题（普通读是指在没有加锁的情况下的操作）
+
+&emsp;MVCC多版本并发控制的具体实现请看 [多版本并发控制MVCC](./多版本并发控制MVCC.md) 
+
+### Next-Key Lock 算法
+
+&emsp;Next-Key Lock算法解决的是在 `当前读` 情况下的幻读问题（当前读是指加锁状态下的操作）
+
+具体实现：
+```sql
+select * from table where id >100 and id < 1000);
+```
+&emsp;以如上语句为例，在加锁情况下，Next-Key Lock算法会锁定受查找范围内的所有行，在本例中即锁定了100-1000的所有行
