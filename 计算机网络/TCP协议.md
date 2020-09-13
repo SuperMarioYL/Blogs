@@ -4,6 +4,8 @@
 
 - [TCP的数据包格式](#tcp的数据包格式)
 - [TCP的三次握手](#tcp的三次握手)
+  - [如果在第三次握手时失败会怎样？](#如果在第三次握手时失败会怎样)
+- [TCP的四次挥手](#tcp的四次挥手)
 
 <!-- /TOC -->
 
@@ -26,3 +28,8 @@ TCP数据包的报文头有6位控制位，包括SYN和ACK用来握手使用
 如图所示：
 
 ![TCP三次握手](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/TCP三次握手.png)
+
+### 如果在第三次握手时失败会怎样？
+
+---
+## TCP的四次挥手
