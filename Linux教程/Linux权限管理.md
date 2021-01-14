@@ -27,9 +27,15 @@
 
 用有Root权限的账号登陆，修改位于`/etc/`文件夹下的`sudoers`文件
 
-```
-vi /etc/sudoers
-```
+- 最好的编辑方式：
+  ```
+  pkexec visudo
+  ```
+- 该方式会遇到权限问题：
+  ```
+  vi /etc/sudoers
+  ```
+
 在 `root ALL=(ALL) ALL` 的下面加上一句：
 
 ```
