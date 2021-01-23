@@ -8,8 +8,10 @@
   - [**决定存储位置的方法——hash()**](#决定存储位置的方法hash)
     - [**HashCode()方法是怎么获取值的？**](#hashcode方法是怎么获取值的)
   - [**增加元素的方法——put()**](#增加元素的方法put)
+  - [**HashMap的扩容机制resize()**](#hashmap的扩容机制resize)
 - [**面试题题解**](#面试题题解)
   - [***transient关键字的作用？***](#transient关键字的作用)
+  - [***hashmap为什么线程不安全？***](#hashmap为什么线程不安全)
 
 <!-- /TOC -->
 
@@ -153,47 +155,67 @@ put方法是调用了内部的putval方法的，将key、value、以及key的has
     }
 ```
 
-putval方法源代码如下：
+putval方法源代码解析如下：
 
 ```java
-    /**
-     * Implements Map.put and related methods.
-     *
-     * @param hash hash for key
-     * @param key the key
-     * @param value the value to put
-     * @param onlyIfAbsent if true, don't change existing value
-     * @param evict if false, the table is in creation mode.
-     * @return previous value, or null if none
-     */
     final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
                    boolean evict) {
+        /*node数组tab指向本对象的table，
+        p表示要存储的桶的第一个元素，
+        n表示table数组的长度即容量大小,
+        i表示要存储的位置*/
         Node<K,V>[] tab; Node<K,V> p; int n, i;
+        /*如果此时table数组中还没有定初始化，则调用resize()方法，
+        将table数组初始化并扩容至初始容量（默认为16）,并将n赋值为容量大小*/
         if ((tab = table) == null || (n = tab.length) == 0)
             n = (tab = resize()).length;
+        /*如果table已经初始化了，则将key的hash值与n-1做与操作，
+        获取一个肯定包含在n-1内的数，用i来表示，tab[i]便是将要存储的位置，
+        p指向这个位置，即p指向tab[i]的第一个元素，
+        如果tab[i]的值是空的，则用键值初始化一个node放入tab[i]中*/
         if ((p = tab[i = (n - 1) & hash]) == null)
             tab[i] = newNode(hash, key, value, null);
         else {
+            /*如果tab[i]中已经有了元素，即发生了hash冲突，则进行else代码块中的操作
+            e为该位置与当前key相同的元素，即若有相同可key则e不为空，否则为空
+            k为tab[i]位置收个元素的key
+            */
             Node<K,V> e; K k;
+            /*如果当前桶的第一个元素的hash值与要插入元素和hash值相同，
+            且，key也相同，则将e指向第一个元素*/
             if (p.hash == hash &&
                 ((k = p.key) == key || (key != null && key.equals(k))))
                 e = p;
+            /*如果p是树节点，则调用树节点put方法putTreeVal()来put值，
+            如果有重复key则返回e,
+            如果没有重复的key,则在树上新加上一个元素并返回空值*/
             else if (p instanceof TreeNode)
                 e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);
             else {
+                /*若以上条件都不成立，则说明该位置是一段链表，
+                用for循环遍历该链表，bincount为遍历的链表深度*/
                 for (int binCount = 0; ; ++binCount) {
+                    /*如果全部遍历完没有key是相同的，
+                    则将要入的元素挂到链表末尾，即尾插法，然后中断循环*/
                     if ((e = p.next) == null) {
                         p.next = newNode(hash, key, value, null);
+                        /*如果添加上元素后，发现已经达到了树型阈值，
+                        则调用treeifyBin()方法将链表转换成红黑树*/
                         if (binCount >= TREEIFY_THRESHOLD - 1) // -1 for 1st
                             treeifyBin(tab, hash);
                         break;
                     }
+                    /*如果遍历到有key和要插入的元素key一样，
+                    则中断循环，此时e指向key值相同的元素*/
                     if (e.hash == hash &&
                         ((k = e.key) == key || (key != null && key.equals(k))))
                         break;
+                    /*此时e=p.next,所以这句代码的意思是：
+                    将p指针沿链表指向下一个元素*/
                     p = e;
                 }
             }
+            /*如果e不为空，那么说明在tab[i]位置上有元素key值和要插入的元素相同，e指向旧元素，所以进行value值的修改，返回旧的元素值*/
             if (e != null) { // existing mapping for key
                 V oldValue = e.value;
                 if (!onlyIfAbsent || oldValue == null)
@@ -202,6 +224,14 @@ putval方法源代码如下：
                 return oldValue;
             }
         }
+        /*
+        modcount:记录该map修改的次数
+        size:记录该map的容量大小
+        threshold:要调整的大小值，默认为table数组容量*负载因子（如16*0.75=12）
+
+        即put值之后，修改次数modcount加一，当前容量size加一，
+        如果当前容量比容量*负载因子要大，则触发扩容机制。
+        */
         ++modCount;
         if (++size > threshold)
             resize();
@@ -210,78 +240,96 @@ putval方法源代码如下：
     }
 ```
 
-分行解析putval方法：
+### **HashMap的扩容机制resize()**
 
-node数组tab指向本对象的table，p表示要存储的桶的第一个元素，n表示table数组的长度即容量大小,i表示要存储的位置
-``` java
-Node<K,V>[] tab; Node<K,V> p; int n, i;
-```
+&emsp;hashmap的扩容机制就是加倍扩容，即如果容量为16，扩容完之后会变为32，里面的元素会重新用key的hash值与新的n-1进行与（&）操作，重新修改位置。
 
-将table、n赋值，如果此时table数组中还没有定初始化，则调用resize方法，将table数组初始化并扩容至初始容量（默认为16）,并将n赋值为容量大小
 
+下面是代码分析：
 ```java
-if ((tab = table) == null || (n = tab.length) == 0)
-    n = (tab = resize()).length;
-```
-
-如果table已经初始化了，则将key的hash值与n-1做与操作，获取一个肯定包含在n-1内的数，用i来表示，tab[i]便是将要存储的位置，p指向这个位置，如果tab[i]的值是空的，则用键值初始化一个node放入tab[i]中
-
-```java
-if ((p = tab[i = (n - 1) & hash]) == null)
-    tab[i] = newNode(hash, key, value, null);
-```
-
-如果已经初始化，并且经过计算后的位置上也有了数据，则接着进行下一步的逻辑
-
-```java
-else{
-    ...
-}
-```
-
-
-
-
-```java        
-        if ((p = tab[i = (n - 1) & hash]) == null)
-            tab[i] = newNode(hash, key, value, null);
-        else {
-            Node<K,V> e; K k;
-            if (p.hash == hash &&
-                ((k = p.key) == key || (key != null && key.equals(k))))
-                e = p;
-            else if (p instanceof TreeNode)
-                e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);
-            else {
-                for (int binCount = 0; ; ++binCount) {
-                    if ((e = p.next) == null) {
-                        p.next = newNode(hash, key, value, null);
-                        if (binCount >= TREEIFY_THRESHOLD - 1) // -1 for 1st
-                            treeifyBin(tab, hash);
-                        break;
+    /*返回扩容后的数组*/
+    final Node<K,V>[] resize() {
+        /*
+        oldTab  当前数组
+        oldCap  当前数组容量
+        oldThr  当前数组要调整的大小值
+        newCap  扩容后的容量
+        newThr  扩容后的要调整大小值
+        */
+        Node<K,V>[] oldTab = table;
+        int oldCap = (oldTab == null) ? 0 : oldTab.length;
+        int oldThr = threshold;
+        int newCap, newThr = 0;
+        if (oldCap > 0) {
+            if (oldCap >= MAXIMUM_CAPACITY) {
+                threshold = Integer.MAX_VALUE;
+                return oldTab;
+            }
+            else if ((newCap = oldCap << 1) < MAXIMUM_CAPACITY &&
+                     oldCap >= DEFAULT_INITIAL_CAPACITY)
+                newThr = oldThr << 1; // double threshold
+        }
+        else if (oldThr > 0) // initial capacity was placed in threshold
+            newCap = oldThr;
+        else {               // zero initial threshold signifies using defaults
+            newCap = DEFAULT_INITIAL_CAPACITY;
+            newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);
+        }
+        if (newThr == 0) {
+            float ft = (float)newCap * loadFactor;
+            newThr = (newCap < MAXIMUM_CAPACITY && ft < (float)MAXIMUM_CAPACITY ?
+                      (int)ft : Integer.MAX_VALUE);
+        }
+        threshold = newThr;
+        @SuppressWarnings({"rawtypes","unchecked"})
+        Node<K,V>[] newTab = (Node<K,V>[])new Node[newCap];
+        table = newTab;
+        if (oldTab != null) {
+            for (int j = 0; j < oldCap; ++j) {
+                Node<K,V> e;
+                if ((e = oldTab[j]) != null) {
+                    oldTab[j] = null;
+                    if (e.next == null)
+                        newTab[e.hash & (newCap - 1)] = e;
+                    else if (e instanceof TreeNode)
+                        ((TreeNode<K,V>)e).split(this, newTab, j, oldCap);
+                    else { // preserve order
+                        Node<K,V> loHead = null, loTail = null;
+                        Node<K,V> hiHead = null, hiTail = null;
+                        Node<K,V> next;
+                        do {
+                            next = e.next;
+                            if ((e.hash & oldCap) == 0) {
+                                if (loTail == null)
+                                    loHead = e;
+                                else
+                                    loTail.next = e;
+                                loTail = e;
+                            }
+                            else {
+                                if (hiTail == null)
+                                    hiHead = e;
+                                else
+                                    hiTail.next = e;
+                                hiTail = e;
+                            }
+                        } while ((e = next) != null);
+                        if (loTail != null) {
+                            loTail.next = null;
+                            newTab[j] = loHead;
+                        }
+                        if (hiTail != null) {
+                            hiTail.next = null;
+                            newTab[j + oldCap] = hiHead;
+                        }
                     }
-                    if (e.hash == hash &&
-                        ((k = e.key) == key || (key != null && key.equals(k))))
-                        break;
-                    p = e;
                 }
             }
-            if (e != null) { // existing mapping for key
-                V oldValue = e.value;
-                if (!onlyIfAbsent || oldValue == null)
-                    e.value = value;
-                afterNodeAccess(e);
-                return oldValue;
-            }
         }
-        ++modCount;
-        if (++size > threshold)
-            resize();
-        afterNodeInsertion(evict);
-        return null;
+        return newTab;
     }
-```
 
+```
 
 
 
@@ -291,4 +339,22 @@ else{
 
 ### ***transient关键字的作用？***
 
-加上transient关键字，在序列化的时候，这个属性就不会被序列化
+&emsp;加上transient关键字，在序列化的时候，这个属性就不会被序列化
+
+### ***hashmap为什么线程不安全？***
+
+&emsp;两个并发的线程，其本质其实是CPU时间片的串行进行，所以在jdk1.8中,并发put操作时会造成数据覆盖的情况，主要有以下两点：
+
+1. 在进行hash碰撞时产生的数据覆盖情况
+    
+    &emsp;两个并发的线程，其本质其实是CPU时间片的串行进行，所以在jdk1.8中,并发put操作时会造成数据覆盖的情况。假设现在线程A获取到了CPU时间片并进行了hash验算，得知tab[i]的位置没有元素，然后时间片结束，线程B获取到了时间片，并同时进行了hash验算，也算出了tab[i]的位置，同样得到了没有元素的结果并将B的元素赋值到了tab[i]的位置，这时CPU时间到了A线程，A进行了赋值操作，这样，B的元素就被覆盖掉了。
+    ```java
+    if ((p = tab[i = (n - 1) & hash]) == null)
+        tab[i] = newNode(hash, key, value, null);
+    ```
+
+2. 在进行++size操作会产生size计算错误的情况
+
+    &emsp;java的内存模型中，分为主内存和工作内存，size的值存储在主内存中，而进行++操作要从主内存获取值到工作内存，然后在工作内存进行+1操作，然后将修改传回主内存。若此时线程A从主内存获取了size为10，然后CPU时间片耗尽，线程B也从主内存获取了size为10并进行了+1操作并回传主内存，然后CPU时间轮到线程A，线程A将11的值传回了主内存，这样，有一次++操作便被覆盖了。
+    
+    &emsp;由于size的值会影响扩容时机，所以出现覆盖的情况会影响map的扩容。
