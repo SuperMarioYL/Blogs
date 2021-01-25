@@ -49,3 +49,4 @@
 ---
 ## 5. Bean的生命周期
 
+![Bean的声明周期](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/Bean的声明周期.jpg)
