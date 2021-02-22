@@ -10,6 +10,11 @@ vi ~/.bashrc
 alias rootsql = 'mysql -u root -p123456'
 ```
 
+执行多个命令可以用 `;` 来分隔，例如：
+```
+alias mv ='commandA;commandB'
+```
+
 完成之后执行编译操作
 
 ```
