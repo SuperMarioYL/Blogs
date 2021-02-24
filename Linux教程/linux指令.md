@@ -10,6 +10,7 @@
   - [显示网络属性、IP地址](#显示网络属性ip地址)
   - [重启网络](#重启网络)
   - [防火墙相关（CentOS8）](#防火墙相关centos8)
+  - [查看网络连接、端口属性——netstat](#查看网络连接端口属性netstat)
 - [yum](#yum)
 - [系统设置](#系统设置)
   - [查看磁盘使用情况](#查看磁盘使用情况)
@@ -89,6 +90,27 @@
   禁用防火墙
   systemctl disable firewalld.service
   ```
+
+### 查看网络连接、端口属性——netstat
+
+常用实例——查看某个端口被哪个应用占用：
+```
+netstat -anp | grep 端口号
+```
+![20210223104218](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20210223104218.png)
+
+常用参数：
+
+* -a (all)显示所有选项，netstat默认不显示LISTEN相关
+* -t (tcp)仅显示tcp相关选项
+* -u (udp)仅显示udp相关选项
+* -n 拒绝显示别名，能显示数字的全部转化成数字。(重要)
+* -l 仅列出有在 Listen (监听) 的服務状态
+* -p 显示建立相关链接的程序名(macOS中表示协议 -p protocol)
+* -r 显示路由信息，路由表
+* -e 显示扩展信息，例如uid等
+* -s 按各个协议进行统计 (重要)
+* -c 每隔一个固定时间，执行该netstat命令。
 
 ---
 ## yum

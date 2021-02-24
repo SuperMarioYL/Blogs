@@ -22,5 +22,4 @@ source ~/.bashrc
 ```
 
 然后就可以在bash使用这个操作了
-#rootsql
 
