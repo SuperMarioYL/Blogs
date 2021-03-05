@@ -36,6 +36,13 @@ killall mysqld
 mysqladmin -u root shutdown
 ```
 
+- linux下数据竖向显示
+
+加 `\G`
+```
+mysql> select * from tableA \G;
+```
+
 ---
 ## 遇到的问题
 
