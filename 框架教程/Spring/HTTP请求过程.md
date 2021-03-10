@@ -12,9 +12,9 @@
 ![20210309235613](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20210309235613.png)
 
 
-## Tomcat的处理流程
+## 请求在Tomcat的处理流程
 
-
+源码分析
 ```mermaid
 graph TD
   1(HTTP请求) --> 2
@@ -22,3 +22,11 @@ graph TD
   2(connector) --> saf
   end
 ```
+
+Tomcat通过connector组件来监听端口（默认是8080），具体把请求打到到代码中则是在Acceptor（接收器）线程中，该线程是主要是用来接收请求使用的。
+
+`org.apache.tomcat.util.net.Acceptor.run()`
+
+在执行到该行（G：95）时会等待请求进来，在接收到请求后会继续走下一步代码
+
+![20210311014616](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20210311014616.png)
