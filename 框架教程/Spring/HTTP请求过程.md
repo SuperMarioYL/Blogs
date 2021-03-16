@@ -21,11 +21,21 @@
 ## 请求在Tomcat的处理流程
 
 源码分析
-```mermai
+```mermaid
 graph TD
-  1(HTTP请求) --> 2
+  1(request) --> 2
   subgraph Tomcat
-  2(connector) --> saf
+  2(Acceptor.run) --> 3
+  3(SocketProcessorBase.run) --> 4
+  4(SocketProcessorBase.doRun) --> 5
+  5(NioEndPoint.SocketProcessor.doRun) --> 6
+  6(org.apache.coyote.AbstractProtocol.process) --> 7
+  7(org.apache.coyote.AbstractProcessorLight.process) -->8
+  8(org.apache.coyote.http11.Http11Processor.service) -->9
+  9-->10
+  10-->11
+  11-->12
+  12-->13
   end
 ```
 
