@@ -29,13 +29,19 @@ graph TD
   3(SocketProcessorBase.run) --> 4
   4(SocketProcessorBase.doRun) --> 5
   5(NioEndPoint.SocketProcessor.doRun) --> 6
-  6(org.apache.coyote.AbstractProtocol.process) --> 7
-  7(org.apache.coyote.AbstractProcessorLight.process) -->8
-  8(org.apache.coyote.http11.Http11Processor.service) -->9
-  9-->10
-  10-->11
-  11-->12
-  12-->13
+  6(AbstractProtocol.process) --> 7
+  7(AbstractProcessorLight.process) -->8
+  8(http11.Http11Processor.service) -->9
+  9(connector.CoyoteAdapter.service)-->10
+  10(core.StandardWrapperValve.invoke)-->11
+  11(ApplicationFilterChain.doFilter)-->12
+  12(ApplicationFilterChain.internalDoFilter)-->13
+  13(HttpServlet.service)-->14
+  14(FrameworkServlet.doPost)-->15
+  15(FrameworkServlet.processRequest)
+  end
+  15-->DispatcherServlet
+  subgraph DispatcherServlet
   end
 ```
 
