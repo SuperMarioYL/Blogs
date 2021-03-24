@@ -69,3 +69,7 @@ tail -f /home/work/abc.log |grep 'bbb' -A 100
 ```
 ls | grep 'my*'
 ```
+
+grep 'aaa' xxx.txt 从xxx.txt查找aaa
+
+grep -v 'aaaa' 排除关键字
