@@ -1,0 +1,38 @@
+# IDEA插件推荐
+
+## Codota
+- 代码提示
+
+## Java Stream Debugger
+- 流式处理debug
+
+## SequenceDiagram
+- 方法时序图
+
+## Rainbow Brackets
+- 括号颜色
+
+## translation
+- 翻译插件
+
+## GrepConsole
+- 日志颜色
+
+## CodeGlance
+- 滚动条缩略图
+
+![20210325153404](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20210325153404.png)
+
+## Material Theme UI 
+- IDEA主题
+
+## Key Promoter X
+- 快捷键提示
+
+## MyBatis Log Plugin
+- mybatis sql日志解析
+- 目前已经收费
+
+## SQL Params Setter
+- MyBatis Log Plugin的替代
+- 选择日志->右键->解析
