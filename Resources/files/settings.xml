@@ -3,11 +3,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
     
+    <!-- 本文件是国内 Maven 的 settings.xml 通用文件 -->
+
     <pluginGroups />
     <proxies />
     <servers />
-    
-    <localRepository>D:/ProgrammeJar/maven-jar</localRepository>
+    <!-- 下载仓库位置 -->
+    <localRepository>D:\Maven\repo</localRepository>
     
     <mirrors>
         <mirror>
