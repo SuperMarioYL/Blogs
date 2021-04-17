@@ -20,7 +20,7 @@ TCP数据包的报文头有6位控制位:
 - `PSH`
 - `FIN` 挥手时使用
 
-![20200913205053](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200913205053.png)
+![20200913205053](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200913205053.png)
 
 ---
 ## TCP的三次握手
@@ -34,7 +34,7 @@ TCP数据包的报文头有6位控制位:
 
 如图所示：
 
-![TCP三次握手](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/TCP三次握手.png)
+![TCP三次握手](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/TCP三次握手.png)
 
 ### 如果在第三次握手时失败会怎样？
 

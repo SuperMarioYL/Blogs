@@ -18,7 +18,7 @@
 
 ### 切换盘符
 
-![20200627174614](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200627174614.png)
+![20200627174614](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200627174614.png)
 
 ### 切换文件夹
 
@@ -26,7 +26,7 @@
 cd xxx
 ```
 
-![20200627174649](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200627174649.png)
+![20200627174649](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200627174649.png)
 
 ---
 ## 网络相关命令
@@ -43,7 +43,7 @@ ipconfig
 ipconfig /flushdns
 ```
 
-![20200627180230](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200627180230.png)
+![20200627180230](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200627180230.png)
 
 
 ### 查看端口占用
@@ -52,7 +52,7 @@ ipconfig /flushdns
 netstat -ano
 ```
 
-![20200627175129](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200627175129.png)
+![20200627175129](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200627175129.png)
 
 
 #### 查询端口或者PID包括xxx的数据
@@ -61,6 +61,6 @@ netstat -ano
 netstat -ano|findstr "xxx"
 ```
 
-![20200627175805](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200627175805.png)
+![20200627175805](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200627175805.png)
 
 

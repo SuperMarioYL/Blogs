@@ -36,7 +36,7 @@
 
 效果：
 
-![20200731155141](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200731155141.png)
+![20200731155141](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200731155141.png)
 
 ---
  ## 文字样式
@@ -124,7 +124,7 @@
 
 - 多行代码例子：
 
-	![20200714170646](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200714170646.png)
+	![20200714170646](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200714170646.png)
 
 效果：
 

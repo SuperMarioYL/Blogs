@@ -22,7 +22,7 @@
 ---
 ### <a id=1>java8内存结构图</a>
 
-![java内存结构](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/java内存结构.png)
+![java内存结构](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/java内存结构.png)
 
 ---
 ### <a id=2>虚拟机内存与本地内存的区别</a>
@@ -47,7 +47,7 @@
 
 #### <a id=32>虚拟机栈（JVM Stacks）</a>
 
-![虚拟机栈](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/虚拟机栈.png)
+![虚拟机栈](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/虚拟机栈.png)
 
 &emsp;虚拟机栈是`线程私有`的，随线程生灭。虚拟机栈描述的是线程中的方法的内存模型：
 - 每个方法被执行的时候，都会在虚拟机栈中同步创建一个栈帧（stack frame）

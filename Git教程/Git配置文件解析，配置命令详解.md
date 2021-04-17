@@ -51,17 +51,17 @@ Git有三个等级的系统文件，Git默认不会创建这些配置文件，�
   ```
   例子：
     
-    ![20200711174319](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200711174319.png)
+    ![20200711174319](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200711174319.png)
 
     执行编辑全局配置文件的命令后，配置文件会自动打开，git bash 会等待你编辑完配置文件后才会进行下一步的动作，用什么编辑器打开文件则是使用的在你安装Git时选择的编辑器。
 
-    ![20200711174410](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200711174410.png)
+    ![20200711174410](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200711174410.png)
 
 ### 编辑单个配置
 
 打开我的全局配置文件会发现如下的属性：
 
-![20200711174936](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200711174936.png)
+![20200711174936](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200711174936.png)
 
 怎么看配置文件呢？
 
@@ -89,7 +89,7 @@ git config --get [--global|--local|--system] xxx
 
 举例：
 
-![20200711175821](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200711175821.png)
+![20200711175821](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200711175821.png)
 
 ### 重置某个配置
 

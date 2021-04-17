@@ -34,7 +34,7 @@ string存储的可以是字符串、整数、浮点数.是键值对结构
 |`decrby key num`|将key对应的值减去num|
 |`incrbyfloat key num`|将key对应的值加上一个浮点数|6
 
-![20200810211955](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200810211955.png)
+![20200810211955](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200810211955.png)
 
 ---
 ## 列表(List)
@@ -49,7 +49,7 @@ string存储的可以是字符串、整数、浮点数.是键值对结构
 |`lindex listname index`|获取列表的index位置上的值|
 |`del listname`|删除列表的所有值|
 
-![20200810214538](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200810214538.png)
+![20200810214538](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200810214538.png)
 
 ---
 ## 集合(Set)
@@ -77,7 +77,7 @@ hash结构可以存放多个键值对结构
 |`hgetall hashname`|获取hash所有的值|
 |`hdel hashname key`|从hash中删除指定键值|
 
-![20200811224250](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200811224250.png)
+![20200811224250](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200811224250.png)
 
 ---
 ## 有序集合(ZSet)
@@ -92,8 +92,8 @@ zset有序集合和散列一样存储的是键值对，不同的是有序集合�
 |`zrem zsetname key`|移除zset里的成员|
 
 
-![20200812010047](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200812010047.png)
+![20200812010047](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200812010047.png)
 
 可在 `zrange` 和 `zrangebyscore` 命令的后面加上 `withscores` 关键字，可以将分值展示出来
 
-![20200812010654](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200812010654.png)
+![20200812010654](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200812010654.png)

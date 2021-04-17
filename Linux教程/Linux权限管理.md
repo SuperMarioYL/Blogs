@@ -16,7 +16,7 @@
 
 看命令行前的字符即可，普通用户为 `$` 而管理员则为 `#` 
 
-![20200803213844](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200803213844.png)
+![20200803213844](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200803213844.png)
 
 ---
 ## 为普通用户赋管理员权限
@@ -50,7 +50,7 @@ leiyu  ALL=(All) NOPASSWD: ALL
 
 即可，如下图所示，然后`Esc+:wq`退出即可
 
-![20200803203823](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200803203823.png)
+![20200803203823](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200803203823.png)
 
 ### sudo 使用方法
 
@@ -80,4 +80,4 @@ sudo vi /etc/sudoers
 
 执行 `exit` 即可
 
-![20200803214408](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200803214408.png)
+![20200803214408](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200803214408.png)

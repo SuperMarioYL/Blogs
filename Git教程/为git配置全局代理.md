@@ -3,7 +3,7 @@
 &emsp;在网上搜索了许多的教程，不管是配置host文件还是别的教程，都没有办法提升GitHub clone的速度，在配置了代理之后速度终于上来了，本教程的前提是你已经配置了ssr。
 
 1. 下载shadowsocksR并配置好代理，保证可用，此部分比较敏感，请自行找解决方法
-![20200625171019](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200625171019.png)
+![20200625171019](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200625171019.png)
 
 配置完之后将鼠标放到软件图标上就可以看到他正运行在哪个端口上
 
@@ -23,4 +23,4 @@ git config --global --unset https.porxy
 
 在没有配置代理前速度一直是十几kb每秒，配置完后速度起飞
 
-![20200625163409](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200625163409.png)
+![20200625163409](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200625163409.png)

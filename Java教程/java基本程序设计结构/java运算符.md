@@ -51,7 +51,7 @@ System.out.println("c>>>2:\t"+Integer.toBinaryString(c>>>2));
 System.out.println("c<<2:\t"+Integer.toBinaryString(c<<2));
 ```
 
-![20200809114626](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200809114626.png)
+![20200809114626](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200809114626.png)
 
-![20200809114658](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200809114658.png)
+![20200809114658](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200809114658.png)
 

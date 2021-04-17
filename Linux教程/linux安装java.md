@@ -20,14 +20,14 @@ tzdata-java.noarch 即为检查已安装的java版本的名字
     yum list java*
     ```
 
-    ![20200627210116](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200627210116.png)
+    ![20200627210116](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200627210116.png)
 
     2. 选择想要安装的版本并安装
 
     ```
     yum install java-1.8.0-openjdk.x86_64
     ```
-    ![20200627210707](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200627210707.png)
+    ![20200627210707](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200627210707.png)
 
     3. 检查是否安装成功
 
@@ -35,7 +35,7 @@ tzdata-java.noarch 即为检查已安装的java版本的名字
     java -version 
     ```
 
-    ![20200627210917](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200627210917.png)
+    ![20200627210917](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200627210917.png)
 
     如图所示，如果有版本信息则表示安装成功
 

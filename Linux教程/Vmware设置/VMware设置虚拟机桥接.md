@@ -11,7 +11,7 @@
 
 右键虚拟机选择设置，打开设置之后选择网络适配器，将网络连接模式改为桥接模式。
 
-![20200731211448](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200731211448.png)
+![20200731211448](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200731211448.png)
 
 ## 设置虚拟网络编辑器
 
@@ -19,7 +19,7 @@
 
 如果打开之后没有vmnet0,如下图所示：
 
-![20200731220640](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200731220640.png)
+![20200731220640](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200731220640.png)
 
 可能的原因是你不使用管理员登陆的
 
@@ -30,7 +30,7 @@
 3. 找到“兼容性”
 4. 勾选以管理员身份登陆
 
-![20200731221627](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200731221627.png)
+![20200731221627](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200731221627.png)
 
 5. VMware打开编辑--虚拟网络编辑器
 6. 点击移除所有网络
@@ -38,7 +38,7 @@
 
 这样vmnet0就出来了
 
-![20200731221218](https://cdn.jsdelivr.net/gh/leiyu1997/Blogs@master/Resources/pictures/20200731221218.png)
+![20200731221218](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200731221218.png)
 
 随后将已桥接改为自己的网卡
 
