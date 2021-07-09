@@ -18,6 +18,9 @@ redis-cli 是Redis连接工具命令
 
 ```
 redis-server [--port 6379]
+
+或者依赖redis.conf 启动
+redis-server /home/yulei12/.jumbo/etc/redis.conf
 ```
 
 2. 关闭redis服务
