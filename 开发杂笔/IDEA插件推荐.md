@@ -15,7 +15,7 @@
 ## translation
 - 翻译插件
 
-## GrepConsole
+## Grep Console
 - 日志颜色
 
 ## CodeGlance
