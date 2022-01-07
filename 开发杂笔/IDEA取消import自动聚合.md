@@ -1,4 +1,4 @@
-# IDEA取消自动import java.*
+# IDEA取消自动import自动聚合
 
 打开设置 > Editor > Code Style > Java > Scheme Default > Imports
 
