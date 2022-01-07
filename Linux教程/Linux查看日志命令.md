@@ -54,7 +54,7 @@ cat /home/work/abc.log
 |-A n|查看输出行的后n行内容|
 |-B n|查看输出行的前n行内容|
 |-C n|查看输出行的前后n行内容|
-|--color|关键字带颜色|
+|--color=auto|关键字带颜色|
 
 
 常用命令
