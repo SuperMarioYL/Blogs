@@ -66,6 +66,6 @@ Innodb通过MVCC和next-key lock算法在可重复读隔离级别解决了幻读
 
 具体实现：
 ```sql
-select * from table where id >100 and id < 1000);
+select * from table where id >100 and id < 1000;
 ```
 &emsp;以如上语句为例，在加锁情况下，Next-Key Lock算法会锁定受查找范围内的所有行，在本例中即锁定了100-1000的所有行
