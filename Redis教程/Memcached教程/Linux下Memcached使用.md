@@ -58,11 +58,11 @@ telnet localhost 8968
 
 成功进入后会有如下提示：
 
-![20210222113224](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20210222113224.png)
+![20210222113224](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20210222113224.png)
 
 退出方式为 `quit` 成功后有如下提示：
 
-![20210222113338](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20210222113338.png)
+![20210222113338](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20210222113338.png)
 
 
 ---
@@ -70,8 +70,8 @@ telnet localhost 8968
 
 ### set
 
-![20210222113505](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20210222113505.png)
+![20210222113505](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20210222113505.png)
 
 ### get 
 
-![20210222113522](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20210222113522.png)
+![20210222113522](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20210222113522.png)

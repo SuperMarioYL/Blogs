@@ -48,6 +48,6 @@ HTTPS是由HTTP与SSL/TSL加密传输协议整合而来，用为了解决HTTP的
 
 单向非对称加密指的是在客户端不存储固定的密钥对，只在服务端存储，在构建了双方都知道的秘钥之后，采用双向对称加密来保证安全性。具体流程如下：
 
-![单向非对称加密](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/单向非对称加密.png)
+![单向非对称加密](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/单向非对称加密.png)
 
 

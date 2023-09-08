@@ -28,7 +28,7 @@
 
 - 滚动条缩略图
 
-![20210325153404](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20210325153404.png)
+![20210325153404](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20210325153404.png)
 
 ## Material Theme UI
 

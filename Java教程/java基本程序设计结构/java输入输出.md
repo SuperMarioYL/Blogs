@@ -91,27 +91,27 @@
    ```
     结果：
     
-    ![20200705194011](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200705194011.png)
+    ![20200705194011](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200705194011.png)
 
 4. `File*`与`Buffer*`的区别
     - 首先与其他文章讲的file没有缓冲区buffer有缓冲区所以导致file频繁刷新磁盘导致效率不高不同，其实file也是有缓冲区的，我们来做一个实验：
       - 我们在flush之前打上断点，可以看到，还有167条数据没有写入文件，还在缓冲区里
-    ![20200627180230](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/Snipaste_2020-07-05_18-06-01.png)
+    ![20200627180230](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/Snipaste_2020-07-05_18-06-01.png)
 
-    ![20200705180844](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200705180844.png)
+    ![20200705180844](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200705180844.png)
     
       - 解除debug之后1000万条数据都写入了
 
-    ![20200705181107](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200705181107.png)
+    ![20200705181107](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200705181107.png)
 
     - buffer只是将file的缓冲区优化了，所以效率会更高一些，我们再来看一下例子：
       - 和之前一样，我们也在flush之前打上断点
 
-    ![20200705181345](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200705181345.png)
+    ![20200705181345](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200705181345.png)
 
       - 可以看到，有874条数据还没有刷新到磁盘文件里，从这里可以看到buffer类的默认缓冲区是要比file大的，这样他可以进行更少次数的io，效率会更高
 
-    ![20200705181414](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200705181414.png)
+    ![20200705181414](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200705181414.png)
     
     - file换行时必须要使用换行符，但是在不同的系统中，换行符往往是不同的，有的系统换行是`'\r\n'`，而有的则是`'\n'`,跨平台性不好，而buffer则提供了换行的方法`newLine()`
     - 综上所述，在实际使用中，尽量选择buffer类就好了。 
@@ -120,14 +120,14 @@
 
 通过之前对于两个类区别的探讨我们知道buffer效率上是比file高的，但是具体高多少呢？我们试一下下面的例子,每个类分别写入一亿条随机数，看一下范别耗时多久：
 
-![20200705183104](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200705183104.png)
+![20200705183104](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200705183104.png)
 
 写入完成：
 
-![20200705190528](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200705190528.png)
+![20200705190528](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200705190528.png)
 
 最终结果：
 
-![20200705190458](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200705190458.png)
+![20200705190458](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200705190458.png)
 
 可以看到buffer类比file类快了一半的时间，所以在平常使用的时候，我们使用buffer类就好了

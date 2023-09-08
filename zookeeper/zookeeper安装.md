@@ -11,7 +11,7 @@
 wget https://mirrors.ustc.edu.cn/apache/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz && tar xzvf apache-zookeeper-3.6.3-bin.tar.gz
 ```
 
-![20210701193127](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20210701193127.png)
+![20210701193127](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20210701193127.png)
 
 ## 文件介绍
 
@@ -114,7 +114,7 @@ cp zoo_sample.cfg zoo.cfg
 
 打开文件，会发现如下信息
 
-![20210701194319](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20210701194319.png)
+![20210701194319](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20210701194319.png)
 
 预装的默认有5个属性:
 
@@ -149,6 +149,6 @@ cp zoo_sample.cfg zoo.cfg
 
 实例如下：
 
-![20210702170946](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20210702170946.png)
+![20210702170946](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20210702170946.png)
 
 说明Java版本不一致，建议使用Java8及以上版本

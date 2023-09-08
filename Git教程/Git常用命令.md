@@ -58,12 +58,12 @@ git init
 git clone URL
 
 例:
-git clone git@github.com:leiyu1997/Blogs.git
+git clone git@github.com:SuperMarioYL/Blogs.git
 ```
 URL有两种形式：
-- http格式，如`https://github.com/leiyu1997/Blogs.git`
+- http格式，如`https://github.com/SuperMarioYL/Blogs.git`
   - 在推送的时候，这种形式clone下来的仓库需要每次校验用户名和密码，不实用
-- ssh格式，如`git@github.com:leiyu1997/Blogs.git`
+- ssh格式，如`git@github.com:SuperMarioYL/Blogs.git`
   - 在推送的时候，如果配置了ssh keys，就不需要验证用户名和密码了，比较方便
 
 ---
@@ -92,7 +92,7 @@ git status
 - 而红色表示还在工作空间（workspace）中
 - 已经提交（commit）已经到repo里的，查看不到状态
 
-![20200708011253](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200708011253.png)
+![20200708011253](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200708011253.png)
 
 ---
 ## commit
@@ -139,7 +139,7 @@ git log [branch]
 |`git log origin/[branch]`|查看其他远程分支的日志|
 |`git log --oneline`|加上`--oneline`展示缩略日志|
 
-![20200728163705](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200728163705.png)
+![20200728163705](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200728163705.png)
 
 ---
 ## reset
@@ -160,7 +160,7 @@ reset有三个参数：
 
 从之前的Git基本概念的理解中我们知道，head其实就是一个指向最新commit的指针，我们从git log的日志中也可以看到，最新的commit右边有（head->master）表示head当前是master分支，并且指向这个commit。
 
-![20200728210505](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200728210505.png)
+![20200728210505](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200728210505.png)
 
 由此，我们也可以在使用commitID的地方用HEAD代替：
 - `git reset head` 
@@ -181,17 +181,17 @@ reset有三个参数：
 - `git branch` 浏览本地分支（被`'*'`标记的分支为当前本地主分支）
 - `git branch <branch>` 创建新的本地分支，本地主分支不变
 
-  ![20200729173331](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200729173331.png)
+  ![20200729173331](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200729173331.png)
 
 - `git branch <branch> <commitID>` 基于某一分支的一个commitID创建新分支
 
 - `git branch -a` 浏览本地（green/white）和远端分支（red） 
 
-  ![20200730193833](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200730193833.png)
+  ![20200730193833](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200730193833.png)
 
 - `git branch -d <branch>` 删除本地分支
 
-  ![20200730194054](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200730194054.png)
+  ![20200730194054](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200730194054.png)
 
 ---
 ## checkout
@@ -202,7 +202,7 @@ reset有三个参数：
 
 - `git checkout` 查看当前分支状态
 
-  ![20200805000155](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200805000155.png)
+  ![20200805000155](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200805000155.png)
 
 - `git checkout <branch>` 切换到branch分支
 - `git checkout -b <branch>` 创建branch分支并切换到该分支（如果branch分支已经被创建，那么该语句将报错）
@@ -240,4 +240,4 @@ git merge B
 git diff
 ```
 
-![20200811203604](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200811203604.png)
+![20200811203604](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200811203604.png)

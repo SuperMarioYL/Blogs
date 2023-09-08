@@ -17,7 +17,7 @@ $ git config --globa user.email "youremail@xxxxx.com"
 ```
 $ git config --get user.name
 ```
-![20200625160703](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200625160703.png)
+![20200625160703](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200625160703.png)
 
 3. 生成秘钥文件
     - 注：命令点击以后需要点三次确认
@@ -30,7 +30,7 @@ ssh-keygen -t rsa -b 4096 -C "youremail@xxxxx.com"
 
 4. 秘钥会在之前确认过的目录下生成
 
-![20200625161205](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200625161205.png)
+![20200625161205](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200625161205.png)
 
 打开`id_rsa.pub`文件，将内容复制，稍后将内容粘贴到GitHub上。
 
@@ -40,19 +40,19 @@ ssh-keygen -t rsa -b 4096 -C "youremail@xxxxx.com"
 
 1. 打开GitHub，打开右上角的settings
 
-![20200625161701](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200625161701.png)
+![20200625161701](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200625161701.png)
 
 2. 选择`SSH and GPG keys`,选择`NEW SSH keys`
 
-![20200625161830](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200625161830.png)
+![20200625161830](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200625161830.png)
 
 3. 将复制的`id_rsa.pub`的内容粘贴到key中，起一个名字，然后点`add ssh key`
 
-![20200625162052](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200625162052.png)
+![20200625162052](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200625162052.png)
 
 4. 这样,秘钥就可以在GitHub使用啦
 
-![20200625162324](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200625162324.png)
+![20200625162324](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200625162324.png)
 
 ## colone远程仓库到本地
 
@@ -62,6 +62,6 @@ git clone xxxx
 
 要注意的是，GitHub有两种方式用来clone，一种是HTTPS，一种是ssh,HTTPS与ssh的切换在clone时可以选择，选择HTTPS是我们配置的sshkey是不生效的，也就是说每次push要输入账号密码，选择ssh形式就可以不用输入账号密码，为了方便，我们选择ssh格式就好了。
 
-![20200705190756](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200705190756.png)
+![20200705190756](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200705190756.png)
   
 

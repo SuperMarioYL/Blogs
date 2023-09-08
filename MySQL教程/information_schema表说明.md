@@ -30,7 +30,7 @@ SELECT * FROM information_schema.SCHEMATA;
 SHOW DATABASES;
 ```
 
-![20200628202104](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200628202104.png)
+![20200628202104](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200628202104.png)
 
 ### <a id=tables>TABLES</a>
 
@@ -41,7 +41,7 @@ SELECT * FROM information_schema.`TABLES`;
 
 SHOW TABLES [from database]
 ```
-![20200628204453](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200628204453.png)
+![20200628204453](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200628204453.png)
 
 ### <a id="columns">COLUMNS</a>
 
@@ -52,7 +52,7 @@ SELECT * FROM information_schema.`COLUMNS`
 
 SHOW COLUMNS FROM test.student
 ```
-![20200628205315](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200628205315.png)
+![20200628205315](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200628205315.png)
 
 ### <a id="lockwait">INNODB_LOCK_WAITS</a>
 

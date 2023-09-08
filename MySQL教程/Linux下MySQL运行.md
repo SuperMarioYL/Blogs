@@ -61,7 +61,7 @@ mysqld --user=mysql
 mysql --verbose --help|grep -A 1 'Default options'
 ```
 
-![20210205105032](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20210205105032.png)
+![20210205105032](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20210205105032.png)
 
 如果存在多个值，则MySQL是按照先后顺序读取的，找不到第一个就找第二个，以此类推
 
@@ -79,7 +79,7 @@ skip-name-resolve
 ```
 如图所示：
 
-![20210205143402](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20210205143402.png)
+![20210205143402](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20210205143402.png)
 
 即可
 
@@ -88,7 +88,7 @@ skip-name-resolve
 
 报错信息如下图所示：
 
-![20210205143530](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20210205143530.png)
+![20210205143530](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20210205143530.png)
 
 说明没有开启远程登录的权限
 

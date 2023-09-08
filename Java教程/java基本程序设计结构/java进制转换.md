@@ -72,7 +72,7 @@ public class Main {
 }
 ```
 结果：
-![20200707202014](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200707202014.png)
+![20200707202014](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200707202014.png)
 
 ### 其他进制转换为十进制
 
@@ -90,7 +90,7 @@ public class Main {
 
 ```
 
-![20200707205523](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200707205523.png)
+![20200707205523](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200707205523.png)
 
 当然，对于没有标识的整形，java中也保留了转换进制的方法：
 
@@ -107,4 +107,4 @@ public class Main {
 
 结果为：
 
-![20200708005800](https://cdn.jsdelivr.net/gh/leiyu1997/ImageHostingService@master/resources/blogs/20200708005800.png)
+![20200708005800](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/20200708005800.png)
