@@ -1,0 +1,191 @@
+.domains {
+  padding: 6rem 0;
+  background: var(--ifm-background-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  color: var(--ifm-color-emphasis-1000);
+}
+
+.sectionSubtitle {
+  text-align: center;
+  font-size: 1.125rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 4rem;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.domainCard {
+  position: relative;
+  padding: 2.5rem;
+  border-radius: 18px;
+  color: white;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.domainCard:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  color: white;
+}
+
+.domainCard:hover .cardGlow {
+  opacity: 1;
+}
+
+.domainCard:hover .arrow {
+  transform: translateX(8px);
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.cardTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: white;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: auto;
+  flex: 1;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.articleCount {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.arrow {
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+/* 光效 */
+.cardGlow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* 响应式设计 */
+@media (max-width: 996px) {
+  .domains {
+    padding: 4rem 0;
+  }
+
+  .sectionTitle {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  .sectionSubtitle {
+    margin-bottom: 3rem;
+  }
+
+  .cardsGrid {
+    gap: 1.5rem;
+  }
+
+  .domainCard {
+    padding: 2rem;
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .domains {
+    padding: 3rem 0;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .domainCard {
+    min-height: 240px;
+  }
+
+  .domainCard:hover {
+    transform: translateY(-6px) scale(1.01);
+  }
+
+  .cardIcon {
+    font-size: 2.5rem;
+  }
+
+  .cardTitle {
+    font-size: 1.5rem;
+  }
+
+  .cardDescription {
+    font-size: 0.9375rem;
+  }
+}
+
+/* 暗色模式适配 */
+[data-theme='dark'] .domains {
+  background: var(--ifm-background-color);
+}
+
+[data-theme='dark'] .domainCard:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}

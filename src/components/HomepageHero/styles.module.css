@@ -1,0 +1,265 @@
+.heroBanner {
+  position: relative;
+  padding: 8rem 0 6rem;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+}
+
+[data-theme='dark'] .heroBanner {
+  background: linear-gradient(180deg, #1d1d1f 0%, #000000 100%);
+}
+
+.heroContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.heroText {
+  max-width: 800px;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  color: var(--ifm-color-emphasis-1000);
+}
+
+.gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.heroTagline {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.heroDescription {
+  font-size: 1.125rem;
+  color: var(--ifm-color-emphasis-600);
+  max-width: 600px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* 技术标签 */
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.techTag {
+  padding: 0.5rem 1rem;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ifm-color-primary);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.techTag:hover {
+  background: rgba(102, 126, 234, 0.2);
+  transform: translateY(-2px);
+}
+
+/* 按钮 */
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  padding: 1rem 2rem;
+  background: var(--ifm-color-primary);
+  color: white;
+  border-radius: 980px;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.primaryButton:hover {
+  background: #0077ed;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 113, 227, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
+.secondaryButton {
+  padding: 1rem 2rem;
+  background: transparent;
+  color: var(--ifm-color-primary);
+  border: 2px solid var(--ifm-color-primary);
+  border-radius: 980px;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.secondaryButton:hover {
+  background: rgba(0, 113, 227, 0.1);
+  transform: translateY(-2px);
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+/* 动态背景渐变球 */
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.gradientBlob1,
+.gradientBlob2,
+.gradientBlob3 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  animation: float 20s infinite ease-in-out;
+}
+
+.gradientBlob1 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  top: -100px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.gradientBlob2 {
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  bottom: -100px;
+  left: -100px;
+  animation-delay: 7s;
+}
+
+.gradientBlob3 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 14s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(50px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-50px, 50px) scale(0.9);
+  }
+}
+
+/* 特殊处理第三个渐变球的动画 */
+.gradientBlob3 {
+  animation: floatCenter 20s infinite ease-in-out;
+  animation-delay: 14s;
+}
+
+@keyframes floatCenter {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  33% {
+    transform: translate(calc(-50% + 50px), calc(-50% - 50px)) scale(1.1);
+  }
+  66% {
+    transform: translate(calc(-50% - 50px), calc(-50% + 50px)) scale(0.9);
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 996px) {
+  .heroBanner {
+    padding: 6rem 0 4rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .gradientBlob1,
+  .gradientBlob2,
+  .gradientBlob3 {
+    filter: blur(60px);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroBanner {
+    padding: 4rem 0 3rem;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .techTags {
+    gap: 0.5rem;
+  }
+
+  .techTag {
+    font-size: 0.8125rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .gradientBlob1 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .gradientBlob2 {
+    width: 220px;
+    height: 220px;
+  }
+
+  .gradientBlob3 {
+    width: 200px;
+    height: 200px;
+  }
+}

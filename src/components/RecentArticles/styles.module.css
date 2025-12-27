@@ -1,0 +1,201 @@
+.recentArticles {
+  padding: 6rem 0;
+  background: var(--ifm-color-emphasis-100);
+}
+
+[data-theme='dark'] .recentArticles {
+  background: var(--ifm-background-surface-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ifm-color-emphasis-1000);
+}
+
+.viewAll {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.viewAll:hover {
+  color: #0077ed;
+  transform: translateX(4px);
+  text-decoration: none;
+}
+
+.articlesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.articleCard {
+  background: var(--ifm-background-color);
+  border-radius: 12px;
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  display: flex;
+  flex-direction: column;
+}
+
+.articleCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+  color: inherit;
+}
+
+.articleMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.date {
+  font-weight: 500;
+}
+
+.readingTime {
+  color: var(--ifm-color-emphasis-500);
+}
+
+.articleTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--ifm-color-emphasis-1000);
+  line-height: 1.3;
+}
+
+.articleDescription {
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  padding: 0.25rem 0.75rem;
+  background: rgba(0, 113, 227, 0.1);
+  color: var(--ifm-color-primary);
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background: rgba(0, 113, 227, 0.2);
+}
+
+/* 空状态 */
+.emptyState {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--ifm-background-color);
+  border-radius: 12px;
+  border: 2px dashed var(--ifm-color-emphasis-300);
+}
+
+.emptyState p {
+  font-size: 1.125rem;
+  color: var(--ifm-color-emphasis-600);
+  margin: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 996px) {
+  .recentArticles {
+    padding: 4rem 0;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .articlesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .articleCard {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .recentArticles {
+    padding: 3rem 0;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .articlesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .articleTitle {
+    font-size: 1.25rem;
+  }
+
+  .articleDescription {
+    font-size: 0.9375rem;
+  }
+
+  .emptyState {
+    padding: 3rem 1.5rem;
+  }
+
+  .emptyState p {
+    font-size: 1rem;
+  }
+}
+
+/* 暗色模式适配 */
+[data-theme='dark'] .articleCard {
+  border-color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .articleCard:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme='dark'] .emptyState {
+  border-color: var(--ifm-color-emphasis-200);
+}
