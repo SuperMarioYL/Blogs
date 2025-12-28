@@ -1,5 +1,8 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
+import MagneticCard from './MagneticCard';
+import { useRipple } from '@site/src/hooks/useRippleEffect';
+import { useScrollAnimations } from '@site/src/effects/ScrollAnimations';
 import styles from './styles.module.css';
 
 interface Domain {
@@ -50,40 +53,50 @@ const domains: Domain[] = [
 ];
 
 export default function DomainCards(): JSX.Element {
+  const { createRipple } = useRipple();
+  useScrollAnimations();
+
   return (
     <section id="domains" className={styles.domains}>
       <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>技术领域</h2>
-        <p className={styles.sectionSubtitle}>
+        <h2 className={`${styles.sectionTitle} animate-title`}>技术领域</h2>
+        <p className={`${styles.sectionSubtitle} animate-title`}>
           探索前沿技术，分享实战经验
         </p>
 
         <div className={styles.cardsGrid}>
           {domains.map((domain) => (
-            <Link
+            <MagneticCard
               key={domain.title}
-              to={domain.link}
-              className={styles.domainCard}
-              style={{ background: domain.gradient }}
+              className={`${styles.domainCard} animate-fade-in`}
+              magneticStrength={0.12}
+              tiltStrength={12}
             >
-              <div className={styles.cardContent}>
-                <div className={styles.cardIcon}>{domain.icon}</div>
-                <h3 className={styles.cardTitle}>{domain.title}</h3>
-                <p className={styles.cardDescription}>{domain.description}</p>
+              <Link
+                to={domain.link}
+                className={styles.cardLink}
+                style={{ background: domain.gradient }}
+                onClick={createRipple}
+              >
+                <div className={styles.cardContent}>
+                  <div className={styles.cardIcon}>{domain.icon}</div>
+                  <h3 className={styles.cardTitle}>{domain.title}</h3>
+                  <p className={styles.cardDescription}>{domain.description}</p>
 
-                <div className={styles.cardFooter}>
-                  <span className={styles.articleCount}>
-                    {domain.stats.articles > 0 ? `${domain.stats.articles} 篇文章` : '敬请期待'}
-                  </span>
-                  <span className={styles.arrow}>→</span>
+                  <div className={styles.cardFooter}>
+                    <span className={styles.articleCount}>
+                      {domain.stats.articles > 0 ? `${domain.stats.articles} 篇文章` : '敬请期待'}
+                    </span>
+                    <span className={styles.arrow}>→</span>
+                  </div>
                 </div>
-              </div>
 
-              {/* 悬浮光效 */}
-              <div className={styles.cardGlow}></div>
-              {/* Shimmer闪光效果 */}
-              <div className={styles.cardShimmer}></div>
-            </Link>
+                {/* 悬浮光效 */}
+                <div className={styles.cardGlow}></div>
+                {/* Shimmer闪光效果 */}
+                <div className={styles.cardShimmer}></div>
+              </Link>
+            </MagneticCard>
           ))}
         </div>
       </div>

@@ -18,6 +18,11 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
+  // 客户端模块 - 全局效果初始化
+  clientModules: [
+    require.resolve('./src/clientModules/effects.ts'),
+  ],
+
   i18n: {
     defaultLocale: 'zh-CN',
     locales: ['zh-CN'],

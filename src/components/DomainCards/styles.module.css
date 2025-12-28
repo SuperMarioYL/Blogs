@@ -1,12 +1,34 @@
 .domains {
   padding: 6rem 0;
   background: var(--ifm-background-color);
+  position: relative;
+}
+
+/* 几何背景装饰 */
+.domains::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/patterns/hexagon-grid.svg');
+  background-size: 200px 173.2px;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme='dark'] .domains::before {
+  opacity: 0.2;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .sectionTitle {
@@ -33,6 +55,10 @@
 
 /* 域名卡片 - 多层玻璃效果 */
 .domainCard {
+  /* MagneticCard 样式已移至 MagneticCard.module.css */
+}
+
+.cardLink {
   position: relative;
   padding: 2.5rem;
   border-radius: var(--radius-2xl);
@@ -53,7 +79,7 @@
 }
 
 /* 第1层: 玻璃叠加层 */
-.domainCard::before {
+.cardLink::before {
   content: '';
   position: absolute;
   top: 0;
@@ -70,7 +96,7 @@
 }
 
 /* 第2层: 噪点纹理深度 */
-.domainCard::after {
+.cardLink::after {
   content: '';
   position: absolute;
   top: 0;
@@ -84,8 +110,7 @@
   z-index: 1;
 }
 
-.domainCard:hover {
-  transform: translateY(-16px) scale(1.03);
+.cardLink:hover {
   box-shadow:
     0 24px 48px rgba(0, 0, 0, 0.3),
     0 12px 24px rgba(0, 0, 0, 0.2),
@@ -95,24 +120,24 @@
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-.domainCard:hover::before {
+.cardLink:hover::before {
   opacity: 1;
 }
 
-.domainCard:hover .cardGlow {
+.cardLink:hover .cardGlow {
   opacity: 0.8;
   transform: scale(1.2);
 }
 
-.domainCard:hover .arrow {
+.cardLink:hover .arrow {
   transform: translateX(12px) scale(1.2);
 }
 
-.domainCard:hover .cardIcon {
+.cardLink:hover .cardIcon {
   transform: scale(1.1) rotate(5deg);
 }
 
-.domainCard:hover .cardShimmer {
+.cardLink:hover .cardShimmer {
   animation: shimmerSweep 1.5s ease-in-out;
 }
 
@@ -233,7 +258,7 @@
     gap: 1.5rem;
   }
 
-  .domainCard {
+  .cardLink {
     padding: 2rem;
     min-height: 250px;
   }
@@ -248,12 +273,12 @@
     grid-template-columns: 1fr;
   }
 
-  .domainCard {
+  .cardLink {
     min-height: 240px;
   }
 
-  .domainCard:hover {
-    transform: translateY(-8px) scale(1.01);
+  .cardLink:hover {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
   }
 
   .cardIcon {
@@ -274,11 +299,11 @@
   background: var(--ifm-background-color);
 }
 
-[data-theme='dark'] .domainCard {
+[data-theme='dark'] .cardLink {
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-[data-theme='dark'] .domainCard:hover {
+[data-theme='dark'] .cardLink:hover {
   box-shadow:
     0 24px 48px rgba(0, 0, 0, 0.5),
     0 12px 24px rgba(0, 0, 0, 0.4),
@@ -298,5 +323,52 @@
 
   .domainCard:hover .arrow {
     transform: none;
+  }
+}
+
+/* Ripple 水波纹效果 */
+:global(.ripple) {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 0.6s ease-out;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6), transparent);
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Ripple 长按效果 */
+:global(.ripple-long-press) {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-long-press-animation 1s ease-out infinite;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes ripple-long-press-animation {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-fade-out {
+  to {
+    opacity: 0;
+    transform: scale(2);
   }
 }

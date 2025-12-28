@@ -1,4 +1,8 @@
 import React from 'react';
+import ClientOnly from '@site/src/utils/ClientOnly';
+import ThreeGeometryGrid from './ThreeGeometryGrid';
+import ParticleBackground from './ParticleBackground';
+import { PerformanceMonitor } from '@site/src/utils/performanceMonitor';
 import styles from './styles.module.css';
 
 const techStack = [
@@ -55,6 +59,18 @@ export default function HomepageHero(): JSX.Element {
           <div className={styles.gradientBlob2}></div>
           <div className={styles.gradientBlob3}></div>
         </div>
+
+        {/* 3D 几何网格背景 - 仅桌面端加载 */}
+        {typeof window !== 'undefined' && PerformanceMonitor.shouldLoadHeavyEffects() && (
+          <ClientOnly>
+            <ThreeGeometryGrid />
+          </ClientOnly>
+        )}
+
+        {/* 粒子星空背景 - 自适应设备 */}
+        <ClientOnly>
+          <ParticleBackground />
+        </ClientOnly>
       </div>
     </header>
   );
