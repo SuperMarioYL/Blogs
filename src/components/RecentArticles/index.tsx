@@ -18,7 +18,7 @@ const recentArticles: Article[] = [
     description: '分享 AI、Infrastructure 和 Backend 开发的学习心得与实践经验',
     date: '2024-12-27',
     tags: ['Welcome', 'Blog'],
-    link: '/blogs/blog',
+    link: '/aiinfra/intro',
     readingTime: '3 min',
   },
   // 后续可以添加更多文章
@@ -31,7 +31,7 @@ export default function RecentArticles(): JSX.Element {
         <div className={styles.container}>
           <div className={styles.header}>
             <h2 className={styles.sectionTitle}>最新文章</h2>
-            <Link to="/blogs/blog" className={styles.viewAll}>
+            <Link to="/aiinfra/intro" className={styles.viewAll}>
               查看全部 →
             </Link>
           </div>
@@ -48,7 +48,7 @@ export default function RecentArticles(): JSX.Element {
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.sectionTitle}>最新文章</h2>
-          <Link to="/blogs/blog" className={styles.viewAll}>
+          <Link to="/aiinfra/intro" className={styles.viewAll}>
             查看全部 →
           </Link>
         </div>

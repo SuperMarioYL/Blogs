@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from '@docusaurus/Link';
 import ClientOnly from '@site/src/utils/ClientOnly';
 import ThreeGeometryGrid from './ThreeGeometryGrid';
 import ParticleBackground from './ParticleBackground';
@@ -47,9 +48,9 @@ export default function HomepageHero(): JSX.Element {
             <a href="#domains" className={styles.primaryButton}>
               探索文章
             </a>
-            <a href="/blogs/blog" className={styles.secondaryButton}>
+            <Link to="/aiinfra/intro" className={styles.secondaryButton}>
               最新博客
-            </a>
+            </Link>
           </div>
         </div>
 
