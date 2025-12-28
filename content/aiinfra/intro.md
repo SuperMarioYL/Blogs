@@ -1,13 +1,13 @@
 ---
 sidebar_position: 1
-title: AI & LLM 简介
-description: 探索人工智能与大语言模型的技术世界
-keywords: [AI, LLM, 大语言模型, 人工智能, RAG, 向量检索]
+title: AI Infra
+description: 探索 AI 基础设施、大语言模型、RAG 系统与向量检索技术
+keywords: [AI Infrastructure, LLM, 大语言模型, RAG, 向量检索, AI 部署]
 ---
 
-# AI & LLM 技术探索
+# AI Infrastructure
 
-欢迎来到 AI & LLM 技术专区！这里记录了我在人工智能和大语言模型领域的学习与实践。
+欢迎来到 AI Infra 技术专区！这里记录了我在 AI 基础设施、大语言模型和智能应用领域的学习与实践。
 
 ## 主要内容
 

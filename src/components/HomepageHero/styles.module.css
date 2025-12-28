@@ -137,6 +137,7 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 /* 主按钮 - 增强的渐变效果 */
@@ -224,36 +225,56 @@
 .gradientBlob3 {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.4;
-  mix-blend-mode: normal;
+  filter: blur(120px);
+  mix-blend-mode: screen;
 }
 
 .gradientBlob1 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.4) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(102, 126, 234, 0.8) 0%,
+    rgba(102, 126, 234, 0.6) 30%,
+    rgba(118, 75, 162, 0.4) 60%,
+    transparent 100%
+  );
   top: -150px;
   right: -150px;
+  opacity: 0.5;
   animation: floatComplex1 25s infinite ease-in-out;
 }
 
 .gradientBlob2 {
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(240, 147, 251, 0.8) 0%, rgba(245, 87, 108, 0.4) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(240, 147, 251, 0.8) 0%,
+    rgba(240, 147, 251, 0.6) 30%,
+    rgba(245, 87, 108, 0.4) 60%,
+    transparent 100%
+  );
   bottom: -150px;
   left: -150px;
+  opacity: 0.4;
   animation: floatComplex2 30s infinite ease-in-out;
 }
 
 .gradientBlob3 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(79, 172, 254, 0.8) 0%, rgba(0, 242, 254, 0.4) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(79, 172, 254, 0.8) 0%,
+    rgba(79, 172, 254, 0.6) 30%,
+    rgba(0, 242, 254, 0.4) 60%,
+    transparent 100%
+  );
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0.3;
   animation: floatComplex3 22s infinite ease-in-out;
 }
 
@@ -310,7 +331,7 @@
   .gradientBlob1,
   .gradientBlob2,
   .gradientBlob3 {
-    filter: blur(80px);
+    filter: blur(100px);
   }
 }
 
@@ -344,24 +365,24 @@
   .gradientBlob1 {
     width: 300px;
     height: 300px;
-    filter: blur(60px);
-    opacity: 0.2;
+    filter: blur(80px);
+    opacity: 0.15;
     animation: none; /* 移动端禁用复杂动画 */
   }
 
   .gradientBlob2 {
     width: 280px;
     height: 280px;
-    filter: blur(60px);
-    opacity: 0.2;
+    filter: blur(80px);
+    opacity: 0.12;
     animation: none;
   }
 
   .gradientBlob3 {
     width: 250px;
     height: 250px;
-    filter: blur(60px);
-    opacity: 0.2;
+    filter: blur(80px);
+    opacity: 0.1;
     animation: none;
   }
 

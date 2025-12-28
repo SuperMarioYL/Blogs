@@ -1,0 +1,110 @@
+/* 随笔 - 生活化暖色调 */
+.theme-thoughts {
+  /* 主色系统 */
+  --ifm-color-primary: #F59E0B;
+  --ifm-color-primary-dark: #DD8E0A;
+  --ifm-color-primary-darker: #D0860A;
+  --ifm-color-primary-darkest: #AB6F08;
+  --ifm-color-primary-light: #F6AB26;
+  --ifm-color-primary-lighter: #F7B332;
+  --ifm-color-primary-lightest: #F9CA5B;
+
+  /* 渐变系统 */
+  --gradient-primary: linear-gradient(135deg, #F59E0B 0%, #FCD34D 50%, #FB923C 100%);
+  --gradient-subtle: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(252, 211, 77, 0.1) 100%);
+
+  /* 背景系统 */
+  --ifm-background-color: #FFFFFF;
+  --ifm-background-surface-color: #FFFBEB;
+  --ifm-hover-overlay: rgba(245, 158, 11, 0.05);
+
+  /* 文本系统 */
+  --ifm-font-color-base: #1C1917;
+  --ifm-color-content: #44403C;
+  --ifm-color-content-secondary: #78716C;
+
+  /* 链接 */
+  --ifm-link-color: #F59E0B;
+  --ifm-link-hover-color: #DC2626;
+
+  /* 引用块 */
+  --quote-border: #F59E0B;
+  --quote-bg: #FFFBEB;
+
+  /* 代码块 */
+  --ifm-code-background: rgba(245, 158, 11, 0.1);
+  --ifm-code-color: #DC2626;
+  --prism-background-color: #292524;
+  --prism-color: #FCD34D;
+}
+
+/* 暗色模式 */
+[data-theme='dark'] .theme-thoughts {
+  --ifm-background-color: #0C0A09;
+  --ifm-background-surface-color: #1C1917;
+  --ifm-font-color-base: #FFFBEB;
+  --ifm-color-content: #FEF3C7;
+  --ifm-color-content-secondary: #FDE68A;
+  --ifm-code-background: rgba(245, 158, 11, 0.15);
+  --quote-bg: #292524;
+}
+
+/* 组件样式覆盖 */
+.theme-thoughts .navbar {
+  background: var(--gradient-primary);
+  box-shadow: 0 2px 16px rgba(245, 158, 11, 0.2);
+}
+
+.theme-thoughts .navbar__link--active,
+.theme-thoughts .navbar__link:hover {
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-thoughts .menu__link--active {
+  background: var(--gradient-subtle);
+  border-left: 3px solid var(--ifm-color-primary);
+}
+
+.theme-thoughts .markdown h1,
+.theme-thoughts .markdown h2 {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* 随笔特有样式 - 文学感 */
+.theme-thoughts .markdown {
+  font-family: 'Georgia', 'Merriweather', 'Source Serif Pro', serif;
+  line-height: 1.8;
+}
+
+.theme-thoughts .markdown > p {
+  margin-bottom: 1.5em;
+  text-indent: 2em; /* 首行缩进 */
+}
+
+.theme-thoughts blockquote {
+  border-left: 4px solid var(--quote-border);
+  background: var(--quote-bg);
+  padding: 1.5rem;
+  font-style: italic;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.1);
+}
+
+.theme-thoughts .admonition {
+  border-left: 4px solid var(--ifm-color-primary);
+}
+
+.theme-thoughts .button--primary {
+  background: var(--gradient-primary);
+  border: none;
+}
+
+.theme-thoughts .button--primary:hover {
+  background: linear-gradient(135deg, #FCD34D 0%, #FB923C 50%, #F59E0B 100%);
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+}

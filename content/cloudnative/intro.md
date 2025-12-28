@@ -1,13 +1,13 @@
 ---
 sidebar_position: 1
-title: Infrastructure 简介
-description: 探索基础设施与云原生技术
-keywords: [Infrastructure, Kubernetes, Docker, 云原生, DevOps, 容器化]
+title: 云原生
+description: 探索 Kubernetes、Docker、服务网格与云原生技术
+keywords: [云原生, Cloud Native, Kubernetes, Docker, DevOps, 容器化, 服务网格]
 ---
 
-# Infrastructure 技术探索
+# Cloud Native
 
-欢迎来到 Infrastructure 技术专区！这里记录了我在基础设施和云原生领域的实践经验。
+欢迎来到云原生技术专区！这里记录了我在 Kubernetes、容器化和云原生领域的实践经验。
 
 ## 主要内容
 

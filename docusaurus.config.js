@@ -10,7 +10,7 @@ const config = {
 
   // GitHub Pages 配置
   url: 'https://supermarioyl.github.io',
-  baseUrl: '/blogs/',
+  baseUrl: '/Blogs/',
   organizationName: 'SuperMarioYL',
   projectName: 'Blogs',
   trailingSlash: false,
@@ -33,26 +33,74 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          sidebarPath: './sidebars.js',
-          editUrl: 'https://github.com/SuperMarioYL/Blogs/tree/master/',
-          showLastUpdateTime: true,
-          showLastUpdateAuthor: true,
-        },
-        blog: {
-          showReadingTime: true,
-          blogSidebarTitle: '最近文章',
-          blogSidebarCount: 'ALL',
-          postsPerPage: 10,
-          feedOptions: {
-            type: 'all',
-            copyright: `Copyright © ${new Date().getFullYear()} Lei Yu.`,
-          },
-        },
+        docs: false,  // 禁用默认 docs
+        blog: false,  // 禁用默认 blog
         theme: {
-          customCss: ['./src/css/custom.css', './src/css/apple-theme.css'],
+          customCss: [
+            './src/css/custom.css',
+            './src/css/apple-theme.css',
+            './src/css/themes/aiinfra.css',
+            './src/css/themes/cloudnative.css',
+            './src/css/themes/backend.css',
+            './src/css/themes/thoughts.css',
+          ],
         },
       }),
+    ],
+  ],
+
+  plugins: [
+    // AI Infra 领域
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'aiinfra',
+        path: 'content/aiinfra',
+        routeBasePath: 'aiinfra',
+        sidebarPath: './sidebars.aiinfra.js',
+        editUrl: 'https://github.com/SuperMarioYL/Blogs/tree/master/',
+        showLastUpdateTime: true,
+        showLastUpdateAuthor: true,
+      },
+    ],
+    // 云原生领域
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'cloudnative',
+        path: 'content/cloudnative',
+        routeBasePath: 'cloudnative',
+        sidebarPath: './sidebars.cloudnative.js',
+        editUrl: 'https://github.com/SuperMarioYL/Blogs/tree/master/',
+        showLastUpdateTime: true,
+        showLastUpdateAuthor: true,
+      },
+    ],
+    // 后端/平台技术领域
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'backend',
+        path: 'content/backend',
+        routeBasePath: 'backend',
+        sidebarPath: './sidebars.backend.js',
+        editUrl: 'https://github.com/SuperMarioYL/Blogs/tree/master/',
+        showLastUpdateTime: true,
+        showLastUpdateAuthor: true,
+      },
+    ],
+    // 随笔领域
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'thoughts',
+        path: 'content/thoughts',
+        routeBasePath: 'thoughts',
+        sidebarPath: './sidebars.thoughts.js',
+        editUrl: 'https://github.com/SuperMarioYL/Blogs/tree/master/',
+        showLastUpdateTime: true,
+        showLastUpdateAuthor: true,
+      },
     ],
   ],
 
@@ -68,27 +116,28 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'aiSidebar',
+            to: '/aiinfra/intro',
+            label: 'AI Infra',
             position: 'left',
-            label: 'AI & LLM',
+            activeBaseRegex: `/aiinfra/`,
           },
           {
-            type: 'docSidebar',
-            sidebarId: 'infraSidebar',
+            to: '/cloudnative/intro',
+            label: '云原生',
             position: 'left',
-            label: 'Infrastructure',
+            activeBaseRegex: `/cloudnative/`,
           },
           {
-            type: 'docSidebar',
-            sidebarId: 'backendSidebar',
+            to: '/backend/intro',
+            label: '平台技术',
             position: 'left',
-            label: 'Backend',
+            activeBaseRegex: `/backend/`,
           },
           {
-            to: '/blog',
-            label: '博客',
-            position: 'left'
+            to: '/thoughts/intro',
+            label: '随笔',
+            position: 'left',
+            activeBaseRegex: `/thoughts/`,
           },
           {
             href: 'https://github.com/SuperMarioYL',
@@ -104,16 +153,20 @@ const config = {
             title: '技术领域',
             items: [
               {
-                label: 'AI & LLM',
-                to: '/docs/ai-llm/intro',
+                label: 'AI Infra',
+                to: '/aiinfra/intro',
               },
               {
-                label: 'Infrastructure',
-                to: '/docs/infrastructure/intro',
+                label: '云原生',
+                to: '/cloudnative/intro',
               },
               {
-                label: 'Backend',
-                to: '/docs/backend/intro',
+                label: '平台技术',
+                to: '/backend/intro',
+              },
+              {
+                label: '随笔',
+                to: '/thoughts/intro',
               },
             ],
           },
@@ -126,22 +179,13 @@ const config = {
               },
             ],
           },
-          {
-            title: '更多',
-            items: [
-              {
-                label: '博客',
-                to: '/blog',
-              },
-            ],
-          },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Leo. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['java', 'python', 'bash', 'go'],
+        additionalLanguages: ['java', 'python', 'bash', 'go', 'yaml', 'json'],
       },
       colorMode: {
         defaultMode: 'light',

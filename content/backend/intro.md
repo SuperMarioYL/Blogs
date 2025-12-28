@@ -1,13 +1,13 @@
 ---
 sidebar_position: 1
-title: Backend Development 简介
-description: 探索后端开发技术与架构设计
-keywords: [Backend, Java, Python, Spring Boot, 数据库, 系统架构, 微服务]
+title: 平台技术
+description: 探索 Java、Spring、微服务架构与系统设计
+keywords: [平台技术, Platform Engineering, Java, Spring Boot, 微服务, 系统架构]
 ---
 
-# Backend Development 技术探索
+# Platform Engineering
 
-欢迎来到 Backend Development 技术专区！这里记录了我在后端开发领域的学习与实践。
+欢迎来到平台技术专区！这里记录了我在后端开发、系统架构和平台工程领域的学习与实践。
 
 ## 主要内容
 

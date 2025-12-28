@@ -6,6 +6,7 @@ import {AnimatePresence, motion} from 'framer-motion';
 import {useLocation} from '@docusaurus/router';
 import MouseTracker from '@site/src/effects/MouseTracker';
 import {PerformanceMonitor} from '@site/src/utils/performanceMonitor';
+import {ThemeProvider} from '@site/src/contexts/ThemeContext';
 
 type Props = WrapperProps<typeof LayoutType>;
 
@@ -14,7 +15,7 @@ export default function LayoutWrapper(props: Props): ReactNode {
   const shouldLoadMouseTracker = typeof window !== 'undefined' && PerformanceMonitor.shouldLoadHeavyEffects();
 
   return (
-    <>
+    <ThemeProvider>
       {/* 全局鼠标跟踪特效 - 仅桌面端 */}
       {shouldLoadMouseTracker && <MouseTracker />}
 
@@ -33,6 +34,6 @@ export default function LayoutWrapper(props: Props): ReactNode {
           <Layout {...props} />
         </motion.div>
       </AnimatePresence>
-    </>
+    </ThemeProvider>
   );
 }
