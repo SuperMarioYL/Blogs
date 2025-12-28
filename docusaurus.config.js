@@ -8,9 +8,9 @@ const config = {
   tagline: 'AI Infra | 推理加速 | 云原生 | 平台架构',
   favicon: 'img/favicon.ico',
 
-  // GitHub Pages 配置
-  url: 'https://supermarioyl.github.io',
-  baseUrl: '/Blogs/',
+  // 自定义域名配置
+  url: 'https://blog.lei6393.com',
+  baseUrl: '/',
   organizationName: 'SuperMarioYL',
   projectName: 'Blogs',
   trailingSlash: false,
