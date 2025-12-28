@@ -31,57 +31,117 @@
   gap: 2rem;
 }
 
+/* 项目卡片 - 玻璃态效果 */
 .projectCard {
-  background: var(--ifm-background-color);
-  border-radius: 12px;
+  background: var(--glass-bg-medium);
+  backdrop-filter: var(--blur-medium);
+  -webkit-backdrop-filter: var(--blur-medium);
+  border-radius: var(--radius-2xl);
   overflow: hidden;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--glass-border-light);
+  transition: all var(--timing-normal) var(--ease-out);
+  position: relative;
+}
+
+/* 渐变边框效果(蓝色系) */
+.projectCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--radius-2xl);
+  padding: 2px;
+  background: linear-gradient(135deg,
+    rgba(79, 172, 254, 0.6) 0%,
+    rgba(0, 242, 254, 0.6) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--timing-normal) var(--ease-out);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .projectCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
-  border-color: var(--ifm-color-primary);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow:
+    var(--shadow-2xl),
+    var(--shadow-glass-blue);
+  border-color: transparent;
+}
+
+.projectCard:hover::before {
+  opacity: 1;
 }
 
 .projectCard:hover .imageOverlay {
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 .projectCard:hover .projectImage img {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  filter: brightness(1.1);
 }
 
+/* 项目图片 - 多层效果 */
 .projectImage {
   position: relative;
   width: 100%;
-  height: 220px;
+  height: 240px;
   overflow: hidden;
-  background: var(--ifm-color-emphasis-200);
+  background: linear-gradient(135deg,
+    rgba(102, 126, 234, 0.1) 0%,
+    rgba(118, 75, 162, 0.1) 100%);
 }
 
 .projectImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: all var(--timing-slow) var(--ease-out);
 }
 
+/* 渐变遮罩 */
 .imageOverlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg,
+    rgba(79, 172, 254, 0.6) 0%,
+    rgba(0, 242, 254, 0.6) 100%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--timing-normal) var(--ease-out);
   pointer-events: none;
+  z-index: 1;
+}
+
+/* 扫描线纹理 */
+.projectImage::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(0deg,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 2px);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .projectContent {
   padding: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .projectTitle {
@@ -105,18 +165,28 @@
   margin-bottom: 1.5rem;
 }
 
+/* 增强的项目标签 */
 .projectTag {
-  padding: 0.25rem 0.75rem;
-  background: var(--ifm-color-emphasis-200);
-  border-radius: 12px;
+  padding: 0.35rem 0.85rem;
+  background: linear-gradient(135deg,
+    var(--ifm-color-emphasis-200) 0%,
+    var(--ifm-color-emphasis-150) 100%);
+  backdrop-filter: var(--blur-subtle);
+  -webkit-backdrop-filter: var(--blur-subtle);
+  border-radius: var(--radius-md);
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--ifm-color-emphasis-800);
-  transition: all 0.2s ease;
+  color: var(--ifm-color-emphasis-900);
+  transition: all var(--timing-fast) var(--ease-out);
+  border: 1px solid var(--ifm-color-emphasis-300);
 }
 
 .projectTag:hover {
-  background: var(--ifm-color-emphasis-300);
+  background: linear-gradient(135deg,
+    var(--ifm-color-emphasis-300) 0%,
+    var(--ifm-color-emphasis-250) 100%);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: var(--shadow-sm);
 }
 
 .projectLinks {
@@ -124,12 +194,22 @@
   gap: 1rem;
 }
 
+/* 增强的项目链接 */
 .projectLink {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--ifm-color-primary);
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all var(--timing-normal) var(--ease-spring);
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.projectLink::after {
+  content: '→';
+  position: absolute;
+  right: 0;
+  transition: all var(--timing-normal) var(--ease-spring);
 }
 
 .projectLink:hover {
@@ -138,13 +218,19 @@
   text-decoration: none;
 }
 
-/* 空状态 */
+.projectLink:hover::after {
+  transform: translateX(6px) scale(1.2);
+}
+
+/* 空状态 - 玻璃态 */
 .emptyState {
   text-align: center;
   padding: 4rem 2rem;
-  background: var(--ifm-color-emphasis-100);
-  border-radius: 12px;
-  border: 2px dashed var(--ifm-color-emphasis-300);
+  background: var(--glass-bg-medium);
+  backdrop-filter: var(--blur-medium);
+  -webkit-backdrop-filter: var(--blur-medium);
+  border-radius: var(--radius-xl);
+  border: 2px dashed var(--glass-border-medium);
 }
 
 .emptyState p {
@@ -168,6 +254,11 @@
     gap: 1.5rem;
   }
 
+  .projectCard {
+    backdrop-filter: var(--blur-medium);
+    -webkit-backdrop-filter: var(--blur-medium);
+  }
+
   .projectImage {
     height: 200px;
   }
@@ -186,8 +277,13 @@
     grid-template-columns: 1fr;
   }
 
+  .projectCard {
+    backdrop-filter: var(--blur-subtle);
+    -webkit-backdrop-filter: var(--blur-subtle);
+  }
+
   .projectCard:hover {
-    transform: translateY(-4px);
+    transform: translateY(-8px) scale(1.01);
   }
 
   .projectTitle {
@@ -200,32 +296,64 @@
 
   .emptyState {
     padding: 3rem 1.5rem;
+    backdrop-filter: var(--blur-subtle);
+    -webkit-backdrop-filter: var(--blur-subtle);
   }
 
   .emptyState p {
     font-size: 1rem;
   }
+
+  .projectTag {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 }
 
 /* 暗色模式适配 */
 [data-theme='dark'] .projectCard {
-  border-color: var(--ifm-color-emphasis-200);
+  border-color: var(--glass-border-light);
 }
 
 [data-theme='dark'] .projectCard:hover {
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+  box-shadow:
+    var(--shadow-2xl),
+    0 0 20px rgba(79, 172, 254, 0.3);
 }
 
 [data-theme='dark'] .projectTag {
-  background: var(--ifm-color-emphasis-100);
+  background: linear-gradient(135deg,
+    var(--ifm-color-emphasis-100) 0%,
+    var(--ifm-color-emphasis-150) 100%);
   color: var(--ifm-color-emphasis-900);
+  border-color: var(--ifm-color-emphasis-200);
 }
 
 [data-theme='dark'] .projectTag:hover {
-  background: var(--ifm-color-emphasis-200);
+  background: linear-gradient(135deg,
+    var(--ifm-color-emphasis-200) 0%,
+    var(--ifm-color-emphasis-250) 100%);
 }
 
 [data-theme='dark'] .emptyState {
-  background: var(--ifm-background-surface-color);
-  border-color: var(--ifm-color-emphasis-200);
+  border-color: var(--glass-border-medium);
+}
+
+/* 触摸设备优化 */
+@media (hover: none) {
+  .projectCard:hover {
+    transform: none;
+  }
+
+  .projectTag:hover {
+    transform: none;
+  }
+
+  .projectLink:hover {
+    transform: none;
+  }
+
+  .projectLink:hover::after {
+    transform: none;
+  }
 }

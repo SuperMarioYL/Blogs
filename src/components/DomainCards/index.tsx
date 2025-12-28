@@ -81,6 +81,8 @@ export default function DomainCards(): JSX.Element {
 
               {/* 悬浮光效 */}
               <div className={styles.cardGlow}></div>
+              {/* Shimmer闪光效果 */}
+              <div className={styles.cardShimmer}></div>
             </Link>
           ))}
         </div>

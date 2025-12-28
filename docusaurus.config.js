@@ -58,8 +58,8 @@ const config = {
       navbar: {
         title: 'Leo',
         logo: {
-          alt: 'Logo',
-          src: 'img/logo.svg',
+          alt: 'Leo\'s Avatar',
+          src: 'https://avatars.githubusercontent.com/u/20982600?v=4',
         },
         items: [
           {

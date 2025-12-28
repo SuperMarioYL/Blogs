@@ -50,6 +50,110 @@
   --z-modal: 1050;
   --z-popover: 1060;
   --z-tooltip: 1070;
+
+  /* ===== 增强的渐变系统 ===== */
+
+  /* 多层网格渐变 - 用于背景 */
+  --gradient-mesh-1: radial-gradient(at 0% 0%, #667eea 0%, transparent 50%),
+                      radial-gradient(at 100% 0%, #764ba2 0%, transparent 50%),
+                      radial-gradient(at 100% 100%, #f093fb 0%, transparent 50%),
+                      radial-gradient(at 0% 100%, #4facfe 0%, transparent 50%);
+
+  --gradient-mesh-2: radial-gradient(at 40% 20%, #667eea 0%, transparent 50%),
+                      radial-gradient(at 80% 0%, #f093fb 0%, transparent 50%),
+                      radial-gradient(at 0% 50%, #43e97b 0%, transparent 50%),
+                      radial-gradient(at 80% 100%, #764ba2 0%, transparent 50%);
+
+  /* 动画渐变 */
+  --gradient-animated-1: linear-gradient(270deg, #667eea, #764ba2, #f093fb, #f5576c);
+  --gradient-animated-2: linear-gradient(270deg, #4facfe, #00f2fe, #43e97b, #38f9d7);
+
+  /* 增强的领域渐变(5色阶) - 更平滑过渡 */
+  --domain-ai-enhanced: linear-gradient(135deg, #667eea 0%, #7c6fd8 25%, #9760c6 50%, #b251b4 75%, #764ba2 100%);
+  --domain-infra-enhanced: linear-gradient(135deg, #f093fb 0%, #f38aa0 25%, #f68166 50%, #f8785c 75%, #f5576c 100%);
+  --domain-backend-enhanced: linear-gradient(135deg, #4facfe 0%, #42c5fe 25%, #35defe 50%, #28f7fe 75%, #00f2fe 100%);
+  --domain-thoughts-enhanced: linear-gradient(135deg, #43e97b 0%, #40ec87 25%, #3ef093 50%, #3bf39f 75%, #38f9d7 100%);
+
+  /* 玻璃效果渐变叠加层 */
+  --glass-gradient-light: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 100%);
+  --glass-gradient-dark: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+
+  /* ===== 玻璃态设计系统 ===== */
+
+  /* 玻璃背景 - 亮色模式 */
+  --glass-bg-subtle: rgba(255, 255, 255, 0.6);
+  --glass-bg-medium: rgba(255, 255, 255, 0.75);
+  --glass-bg-strong: rgba(255, 255, 255, 0.85);
+
+  /* 玻璃边框 */
+  --glass-border-light: rgba(255, 255, 255, 0.18);
+  --glass-border-medium: rgba(255, 255, 255, 0.3);
+  --glass-border-strong: rgba(255, 255, 255, 0.5);
+
+  /* 渐变边框 */
+  --glass-border-gradient-1: linear-gradient(135deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 100%);
+  --glass-border-gradient-2: linear-gradient(135deg, rgba(102,126,234,0.5) 0%, rgba(118,75,162,0.5) 100%);
+
+  /* 模糊程度 */
+  --blur-subtle: blur(8px);
+  --blur-medium: blur(16px);
+  --blur-strong: blur(24px);
+  --blur-extreme: blur(40px);
+
+  /* 噪点纹理 - 用于玻璃深度感 */
+  --glass-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+
+  /* ===== 增强的阴影系统 ===== */
+
+  /* 多层阴影用于深度感 */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.08);
+  --shadow-2xl: 0 24px 48px rgba(0, 0, 0, 0.15), 0 12px 24px rgba(0, 0, 0, 0.1);
+
+  /* 彩色阴影(用于玻璃卡片) */
+  --shadow-glass-purple: 0 12px 32px rgba(102, 126, 234, 0.2), 0 4px 12px rgba(118, 75, 162, 0.15);
+  --shadow-glass-pink: 0 12px 32px rgba(240, 147, 251, 0.2), 0 4px 12px rgba(245, 87, 108, 0.15);
+  --shadow-glass-blue: 0 12px 32px rgba(79, 172, 254, 0.2), 0 4px 12px rgba(0, 242, 254, 0.15);
+  --shadow-glass-green: 0 12px 32px rgba(67, 233, 123, 0.2), 0 4px 12px rgba(56, 249, 215, 0.15);
+
+  /* 内阴影 */
+  --shadow-inner-subtle: inset 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-inner-strong: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* ===== 标准化间距系统 ===== */
+  --space-xs: 0.25rem;  /* 4px */
+  --space-sm: 0.5rem;   /* 8px */
+  --space-md: 1rem;     /* 16px */
+  --space-lg: 1.5rem;   /* 24px */
+  --space-xl: 2rem;     /* 32px */
+  --space-2xl: 3rem;    /* 48px */
+  --space-3xl: 4rem;    /* 64px */
+  --space-4xl: 6rem;    /* 96px */
+
+  /* ===== 增强的圆角系统 ===== */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+  --radius-glass: 18px;  /* 玻璃卡片专用 */
+
+  /* ===== 动画时长和缓动函数 ===== */
+  --timing-fast: 0.15s;
+  --timing-normal: 0.3s;
+  --timing-slow: 0.5s;
+  --timing-slower: 0.8s;
+
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 /* ===== 暗色模式 ===== */
@@ -60,6 +164,23 @@
   --bg-secondary: #1d1d1f;
   --apple-light: #1d1d1f;
   --apple-dark: #f5f5f7;
+
+  /* 玻璃背景 - 暗色模式 */
+  --glass-bg-subtle: rgba(29, 29, 31, 0.6);
+  --glass-bg-medium: rgba(29, 29, 31, 0.75);
+  --glass-bg-strong: rgba(29, 29, 31, 0.85);
+
+  /* 玻璃边框 - 暗色模式 */
+  --glass-border-light: rgba(255, 255, 255, 0.1);
+  --glass-border-medium: rgba(255, 255, 255, 0.15);
+  --glass-border-strong: rgba(255, 255, 255, 0.25);
+
+  /* 渐变边框 - 暗色模式 */
+  --glass-border-gradient-1: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%);
+
+  /* 增强的阴影 - 暗色模式 */
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.3);
+  --shadow-2xl: 0 24px 48px rgba(0, 0, 0, 0.5), 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 /* ===== 全局样式覆盖 ===== */

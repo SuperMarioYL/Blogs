@@ -2,11 +2,42 @@
   position: relative;
   padding: 8rem 0 6rem;
   overflow: hidden;
-  background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+  /* 多层径向渐变网格背景 */
+  background:
+    radial-gradient(at 0% 0%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(118, 75, 162, 0.15) 0%, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(240, 147, 251, 0.15) 0%, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(79, 172, 254, 0.15) 0%, transparent 50%),
+    linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+}
+
+/* 动画渐变叠加层 */
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg,
+    rgba(102, 126, 234, 0.1),
+    rgba(118, 75, 162, 0.1),
+    rgba(240, 147, 251, 0.1),
+    rgba(245, 87, 108, 0.1));
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
 }
 
 [data-theme='dark'] .heroBanner {
-  background: linear-gradient(180deg, #1d1d1f 0%, #000000 100%);
+  background:
+    radial-gradient(at 0% 0%, rgba(102, 126, 234, 0.12) 0%, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(118, 75, 162, 0.12) 0%, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(240, 147, 251, 0.12) 0%, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(79, 172, 254, 0.12) 0%, transparent 50%),
+    linear-gradient(180deg, #1d1d1f 0%, #000000 100%);
 }
 
 .heroContent {
@@ -53,7 +84,7 @@
   line-height: 1.6;
 }
 
-/* 技术标签 */
+/* 技术标签 - 玻璃态效果 */
 .techTags {
   display: flex;
   flex-wrap: wrap;
@@ -63,63 +94,115 @@
 
 .techTag {
   padding: 0.5rem 1rem;
-  background: rgba(102, 126, 234, 0.1);
-  border-radius: 20px;
+  background: var(--glass-bg-medium);
+  backdrop-filter: var(--blur-medium);
+  -webkit-backdrop-filter: var(--blur-medium);
+  border: 1px solid var(--glass-border-light);
+  border-radius: var(--radius-full);
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--ifm-color-primary);
-  transition: all 0.3s ease;
+  transition: all var(--timing-normal) var(--ease-out);
   cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 光晕叠加层 */
+.techTag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--glass-gradient-light);
+  opacity: 0;
+  transition: opacity var(--timing-normal) var(--ease-out);
 }
 
 .techTag:hover {
-  background: rgba(102, 126, 234, 0.2);
-  transform: translateY(-2px);
+  background: var(--glass-bg-strong);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--glass-border-medium);
 }
 
-/* 按钮 */
+.techTag:hover::before {
+  opacity: 1;
+}
+
+/* 按钮组 */
 .heroButtons {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
+/* 主按钮 - 增强的渐变效果 */
 .primaryButton {
   padding: 1rem 2rem;
-  background: var(--ifm-color-primary);
+  background: linear-gradient(135deg, #0071e3 0%, #0077ed 100%);
   color: white;
-  border-radius: 980px;
+  border-radius: var(--radius-full);
   font-size: 1.0625rem;
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all var(--timing-normal) var(--ease-out);
   display: inline-block;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Shimmer光泽效果 */
+.primaryButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s ease;
 }
 
 .primaryButton:hover {
-  background: #0077ed;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 113, 227, 0.3);
+  background: linear-gradient(135deg, #0077ed 0%, #007df5 100%);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 16px 32px rgba(0, 113, 227, 0.4),
+    0 8px 16px rgba(0, 113, 227, 0.3);
   color: white;
   text-decoration: none;
 }
 
+.primaryButton:hover::before {
+  left: 100%;
+}
+
+/* 次按钮 - 玻璃态效果 */
 .secondaryButton {
   padding: 1rem 2rem;
-  background: transparent;
+  background: var(--glass-bg-medium);
+  backdrop-filter: var(--blur-medium);
+  -webkit-backdrop-filter: var(--blur-medium);
   color: var(--ifm-color-primary);
-  border: 2px solid var(--ifm-color-primary);
-  border-radius: 980px;
+  border: 2px solid var(--glass-border-medium);
+  border-radius: var(--radius-full);
   font-size: 1.0625rem;
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all var(--timing-normal) var(--ease-out);
   display: inline-block;
+  position: relative;
 }
 
 .secondaryButton:hover {
-  background: rgba(0, 113, 227, 0.1);
-  transform: translateY(-2px);
+  background: var(--glass-bg-strong);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--ifm-color-primary);
   color: var(--ifm-color-primary);
   text-decoration: none;
 }
@@ -141,68 +224,76 @@
 .gradientBlob3 {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.3;
-  animation: float 20s infinite ease-in-out;
+  filter: blur(100px);
+  opacity: 0.4;
+  mix-blend-mode: normal;
 }
 
 .gradientBlob1 {
-  width: 400px;
-  height: 400px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  top: -100px;
-  right: -100px;
-  animation-delay: 0s;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.4) 100%);
+  top: -150px;
+  right: -150px;
+  animation: floatComplex1 25s infinite ease-in-out;
 }
 
 .gradientBlob2 {
-  width: 350px;
-  height: 350px;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  bottom: -100px;
-  left: -100px;
-  animation-delay: 7s;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(240, 147, 251, 0.8) 0%, rgba(245, 87, 108, 0.4) 100%);
+  bottom: -150px;
+  left: -150px;
+  animation: floatComplex2 30s infinite ease-in-out;
 }
 
 .gradientBlob3 {
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(79, 172, 254, 0.8) 0%, rgba(0, 242, 254, 0.4) 100%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation-delay: 14s;
+  animation: floatComplex3 22s infinite ease-in-out;
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
+/* 更有机的复杂动画 */
+@keyframes floatComplex1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(80px, -60px) scale(1.15) rotate(5deg);
+  }
+  50% {
+    transform: translate(-40px, 40px) scale(0.95) rotate(-3deg);
+  }
+  75% {
+    transform: translate(60px, 80px) scale(1.08) rotate(4deg);
+  }
+}
+
+@keyframes floatComplex2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
   }
   33% {
-    transform: translate(50px, -50px) scale(1.1);
+    transform: translate(-70px, 50px) scale(1.12) rotate(-4deg);
   }
   66% {
-    transform: translate(-50px, 50px) scale(0.9);
+    transform: translate(50px, -70px) scale(0.92) rotate(5deg);
   }
 }
 
-/* 特殊处理第三个渐变球的动画 */
-.gradientBlob3 {
-  animation: floatCenter 20s infinite ease-in-out;
-  animation-delay: 14s;
-}
-
-@keyframes floatCenter {
-  0%,
-  100% {
-    transform: translate(-50%, -50%) scale(1);
+@keyframes floatComplex3 {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
   }
-  33% {
-    transform: translate(calc(-50% + 50px), calc(-50% - 50px)) scale(1.1);
+  30% {
+    transform: translate(calc(-50% + 60px), calc(-50% - 60px)) scale(1.1) rotate(3deg);
   }
-  66% {
-    transform: translate(calc(-50% - 50px), calc(-50% + 50px)) scale(0.9);
+  60% {
+    transform: translate(calc(-50% - 60px), calc(-50% + 60px)) scale(0.9) rotate(-3deg);
   }
 }
 
@@ -219,7 +310,7 @@
   .gradientBlob1,
   .gradientBlob2,
   .gradientBlob3 {
-    filter: blur(60px);
+    filter: blur(80px);
   }
 }
 
@@ -246,20 +337,49 @@
   .techTag {
     font-size: 0.8125rem;
     padding: 0.4rem 0.8rem;
+    backdrop-filter: var(--blur-subtle);
+    -webkit-backdrop-filter: var(--blur-subtle);
   }
 
   .gradientBlob1 {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
+    filter: blur(60px);
+    opacity: 0.2;
+    animation: none; /* 移动端禁用复杂动画 */
   }
 
   .gradientBlob2 {
-    width: 220px;
-    height: 220px;
+    width: 280px;
+    height: 280px;
+    filter: blur(60px);
+    opacity: 0.2;
+    animation: none;
   }
 
   .gradientBlob3 {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
+    filter: blur(60px);
+    opacity: 0.2;
+    animation: none;
+  }
+
+  /* 简化按钮玻璃效果 */
+  .secondaryButton {
+    backdrop-filter: var(--blur-subtle);
+    -webkit-backdrop-filter: var(--blur-subtle);
+  }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) {
+  .techTag:hover {
+    transform: none;
+  }
+
+  .primaryButton:hover,
+  .secondaryButton:hover {
+    transform: none;
   }
 }
