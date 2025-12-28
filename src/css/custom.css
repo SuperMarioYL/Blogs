@@ -595,3 +595,20 @@ html.theme-backend .navbar__logo img:hover {
 html.theme-thoughts .navbar__logo img:hover {
   filter: drop-shadow(0 0 8px #F59E0B);
 }
+
+/* ===== 导航项动态显示控制 ===== */
+/* 在领域页面隐藏所有左侧领域链接（AI Infra, 云原生等） */
+html.theme-aiinfra .navbar__item:has(a[href*="/cloudnative/"]),
+html.theme-aiinfra .navbar__item:has(a[href*="/backend/"]),
+html.theme-aiinfra .navbar__item:has(a[href*="/thoughts/"]),
+html.theme-cloudnative .navbar__item:has(a[href*="/aiinfra/"]),
+html.theme-cloudnative .navbar__item:has(a[href*="/backend/"]),
+html.theme-cloudnative .navbar__item:has(a[href*="/thoughts/"]),
+html.theme-backend .navbar__item:has(a[href*="/aiinfra/"]),
+html.theme-backend .navbar__item:has(a[href*="/cloudnative/"]),
+html.theme-backend .navbar__item:has(a[href*="/thoughts/"]),
+html.theme-thoughts .navbar__item:has(a[href*="/aiinfra/"]),
+html.theme-thoughts .navbar__item:has(a[href*="/cloudnative/"]),
+html.theme-thoughts .navbar__item:has(a[href*="/backend/"]) {
+  display: none;
+}
