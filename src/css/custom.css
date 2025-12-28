@@ -555,3 +555,43 @@ html {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ===== 领域 Logo 样式 ===== */
+.navbar__logo-emoji {
+  font-size: 2rem;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.navbar__logo-emoji:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.navbar__logo img {
+  height: 32px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.navbar__logo img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px var(--ifm-color-primary));
+}
+
+/* 领域特定悬浮效果 */
+html.theme-aiinfra .navbar__logo img:hover {
+  filter: drop-shadow(0 0 8px #FF9D00);
+}
+
+html.theme-cloudnative .navbar__logo img:hover {
+  filter: drop-shadow(0 0 8px #326CE5);
+}
+
+html.theme-backend .navbar__logo img:hover {
+  filter: drop-shadow(0 0 8px #7C3AED);
+}
+
+html.theme-thoughts .navbar__logo img:hover {
+  filter: drop-shadow(0 0 8px #F59E0B);
+}

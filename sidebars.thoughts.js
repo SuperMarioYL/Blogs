@@ -12,6 +12,7 @@ const sidebars = {
         type: 'generated-index',
         title: 'Thoughts & Essays',
         description: '技术感悟、职业成长、生活思考与观察',
+        slug: '/category/thoughts',
       },
       items: [
         {

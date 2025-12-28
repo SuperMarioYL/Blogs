@@ -12,6 +12,7 @@ const sidebars = {
         type: 'generated-index',
         title: 'AI Infrastructure',
         description: '探索大语言模型、RAG 系统、向量数据库、推理加速等 AI 基础设施技术',
+        slug: '/category/ai-infrastructure',
       },
       items: [
         {

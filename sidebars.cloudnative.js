@@ -12,6 +12,7 @@ const sidebars = {
         type: 'generated-index',
         title: 'Cloud Native',
         description: '探索 Kubernetes、Docker、服务网格、可观测性等云原生技术',
+        slug: '/category/cloud-native',
       },
       items: [
         {

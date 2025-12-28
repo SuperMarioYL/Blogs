@@ -12,6 +12,7 @@ const sidebars = {
         type: 'generated-index',
         title: 'Platform Engineering',
         description: '探索 Java、Spring、微服务架构、系统设计等平台技术',
+        slug: '/category/platform-engineering',
       },
       items: [
         {

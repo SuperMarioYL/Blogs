@@ -1,13 +1,13 @@
 /* AI Infra - HuggingFace 风格 */
-.theme-aiinfra {
+html.theme-aiinfra {
   /* 主色系统 */
-  --ifm-color-primary: #FF9D00;
-  --ifm-color-primary-dark: #E68D00;
-  --ifm-color-primary-darker: #D98400;
-  --ifm-color-primary-darkest: #B36D00;
-  --ifm-color-primary-light: #FFB01A;
-  --ifm-color-primary-lighter: #FFB927;
-  --ifm-color-primary-lightest: #FFCF4D;
+  --ifm-color-primary: #FF9D00 !important;
+  --ifm-color-primary-dark: #E68D00 !important;
+  --ifm-color-primary-darker: #D98400 !important;
+  --ifm-color-primary-darkest: #B36D00 !important;
+  --ifm-color-primary-light: #FFB01A !important;
+  --ifm-color-primary-lighter: #FFB927 !important;
+  --ifm-color-primary-lightest: #FFCF4D !important;
 
   /* 渐变系统 */
   --gradient-primary: linear-gradient(135deg, #FF9D00 0%, #FFB81C 50%, #FF6B35 100%);
@@ -35,7 +35,8 @@
 }
 
 /* 暗色模式 */
-[data-theme='dark'] .theme-aiinfra {
+[data-theme='dark'].theme-aiinfra,
+html[data-theme='dark'].theme-aiinfra {
   --ifm-background-color: #0D0905;
   --ifm-background-surface-color: #1A1308;
   --ifm-font-color-base: #FFF8E7;
@@ -45,24 +46,24 @@
 }
 
 /* 组件样式覆盖 */
-.theme-aiinfra .navbar {
+html.theme-aiinfra .navbar {
   background: var(--gradient-primary);
   box-shadow: 0 2px 16px rgba(255, 157, 0, 0.2);
 }
 
-.theme-aiinfra .navbar__link--active,
-.theme-aiinfra .navbar__link:hover {
+html.theme-aiinfra .navbar__link--active,
+html.theme-aiinfra .navbar__link:hover {
   color: #FFFFFF !important;
   background: rgba(255, 255, 255, 0.1);
 }
 
-.theme-aiinfra .menu__link--active {
+html.theme-aiinfra .menu__link--active {
   background: var(--gradient-subtle);
   border-left: 3px solid var(--ifm-color-primary);
 }
 
-.theme-aiinfra .markdown h1,
-.theme-aiinfra .markdown h2 {
+html.theme-aiinfra .markdown h1,
+html.theme-aiinfra .markdown h2 {
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -70,16 +71,16 @@
   font-weight: 700;
 }
 
-.theme-aiinfra .admonition {
+html.theme-aiinfra .admonition {
   border-left: 4px solid var(--ifm-color-primary);
 }
 
-.theme-aiinfra .button--primary {
+html.theme-aiinfra .button--primary {
   background: var(--gradient-primary);
   border: none;
 }
 
-.theme-aiinfra .button--primary:hover {
+html.theme-aiinfra .button--primary:hover {
   background: linear-gradient(135deg, #FFB81C 0%, #FF6B35 50%, #FF9D00 100%);
   box-shadow: 0 8px 24px rgba(255, 157, 0, 0.3);
 }

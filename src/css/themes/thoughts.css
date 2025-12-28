@@ -1,13 +1,13 @@
 /* 随笔 - 生活化暖色调 */
-.theme-thoughts {
+html.theme-thoughts {
   /* 主色系统 */
-  --ifm-color-primary: #F59E0B;
-  --ifm-color-primary-dark: #DD8E0A;
-  --ifm-color-primary-darker: #D0860A;
-  --ifm-color-primary-darkest: #AB6F08;
-  --ifm-color-primary-light: #F6AB26;
-  --ifm-color-primary-lighter: #F7B332;
-  --ifm-color-primary-lightest: #F9CA5B;
+  --ifm-color-primary: #F59E0B !important;
+  --ifm-color-primary-dark: #DD8E0A !important;
+  --ifm-color-primary-darker: #D0860A !important;
+  --ifm-color-primary-darkest: #AB6F08 !important;
+  --ifm-color-primary-light: #F6AB26 !important;
+  --ifm-color-primary-lighter: #F7B332 !important;
+  --ifm-color-primary-lightest: #F9CA5B !important;
 
   /* 渐变系统 */
   --gradient-primary: linear-gradient(135deg, #F59E0B 0%, #FCD34D 50%, #FB923C 100%);
@@ -39,7 +39,8 @@
 }
 
 /* 暗色模式 */
-[data-theme='dark'] .theme-thoughts {
+[data-theme='dark'].theme-thoughts,
+html[data-theme='dark'].theme-thoughts {
   --ifm-background-color: #0C0A09;
   --ifm-background-surface-color: #1C1917;
   --ifm-font-color-base: #FFFBEB;
@@ -50,24 +51,24 @@
 }
 
 /* 组件样式覆盖 */
-.theme-thoughts .navbar {
+html.theme-thoughts .navbar {
   background: var(--gradient-primary);
   box-shadow: 0 2px 16px rgba(245, 158, 11, 0.2);
 }
 
-.theme-thoughts .navbar__link--active,
-.theme-thoughts .navbar__link:hover {
+html.theme-thoughts .navbar__link--active,
+html.theme-thoughts .navbar__link:hover {
   color: #FFFFFF !important;
   background: rgba(255, 255, 255, 0.1);
 }
 
-.theme-thoughts .menu__link--active {
+html.theme-thoughts .menu__link--active {
   background: var(--gradient-subtle);
   border-left: 3px solid var(--ifm-color-primary);
 }
 
-.theme-thoughts .markdown h1,
-.theme-thoughts .markdown h2 {
+html.theme-thoughts .markdown h1,
+html.theme-thoughts .markdown h2 {
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -76,17 +77,17 @@
 }
 
 /* 随笔特有样式 - 文学感 */
-.theme-thoughts .markdown {
+html.theme-thoughts .markdown {
   font-family: 'Georgia', 'Merriweather', 'Source Serif Pro', serif;
   line-height: 1.8;
 }
 
-.theme-thoughts .markdown > p {
+html.theme-thoughts .markdown > p {
   margin-bottom: 1.5em;
   text-indent: 2em; /* 首行缩进 */
 }
 
-.theme-thoughts blockquote {
+html.theme-thoughts blockquote {
   border-left: 4px solid var(--quote-border);
   background: var(--quote-bg);
   padding: 1.5rem;
@@ -95,16 +96,16 @@
   box-shadow: 0 2px 8px rgba(245, 158, 11, 0.1);
 }
 
-.theme-thoughts .admonition {
+html.theme-thoughts .admonition {
   border-left: 4px solid var(--ifm-color-primary);
 }
 
-.theme-thoughts .button--primary {
+html.theme-thoughts .button--primary {
   background: var(--gradient-primary);
   border: none;
 }
 
-.theme-thoughts .button--primary:hover {
+html.theme-thoughts .button--primary:hover {
   background: linear-gradient(135deg, #FCD34D 0%, #FB923C 50%, #F59E0B 100%);
   box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
 }
