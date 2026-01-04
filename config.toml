@@ -91,6 +91,12 @@ pygmentsCodefences = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true  # 允许 HTML
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [["$$", "$$"], ["\\[", "\\]"]]
+          inline = [["$", "$"], ["\\(", "\\)"]]
 
 # 隐私设置（GDPR）
 [privacy]

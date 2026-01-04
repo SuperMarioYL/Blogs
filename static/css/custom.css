@@ -1,0 +1,8 @@
+/* 图片自适应宽度 */
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+}
