@@ -2,7 +2,7 @@
 title: "LlamaFactory 训练参数详细介绍"
 date: 2024-02-10
 draft: false
-tags: ["LLM", "train", "llamafactory""]
+tags: ["LLM", "train", "llamafactory"]
 categories: ["AI Infra"]
 description: "LlamaFactory 大而全的训练参数详细介绍"
 ---
