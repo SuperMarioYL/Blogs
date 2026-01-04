@@ -441,7 +441,7 @@ Token embedding 是对输入 token 的初步向量表示，而 query、key 和 v
 
 将它们堆叠成一个矩阵 $X$（每一行对应一个 token 的 embedding）：
 
-$X = \begin{bmatrix}1 & 2 \\3 & 4\end{bmatrix}$
+$X = \begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix}$
 
 现在，我们希望生成维度也为 2 的 Query、Key 和 Value。为此，我们需要定义三个不同的权重矩阵 $W_Q$​、$W_K$​、$W_V$来实现线性变换。
 
@@ -455,13 +455,13 @@ $X = \begin{bmatrix}1 & 2 \\3 & 4\end{bmatrix}$
 
 1. **计算 Query，**通过矩阵乘法计算：
 
-$Q = X \times W_Q = \begin{bmatrix}1 & 2 \\3 & 4\end{bmatrix} \times \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix}1 & 2 \\3 & 4\end{bmatrix}$
+$Q = X \times W_Q = \begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix} \times \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix}$
 
 这里因为$W_Q$为单位矩阵，所以$Q$与原始 embedding 相同。
 
 1. **计算 Key，**通过矩阵乘法计算：
 
-$K = X \times W_K = \begin{bmatrix}1 & 2 \\3 & 4\end{bmatrix} \times \begin{bmatrix} 2 & 0 \\ 0 & 2 \end{bmatrix}$
+$K = X \times W_K = \begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix} \times \begin{bmatrix} 2 & 0 \\ 0 & 2 \end{bmatrix}$
 
 计算每个元素：
 
@@ -469,11 +469,11 @@ $K = X \times W_K = \begin{bmatrix}1 & 2 \\3 & 4\end{bmatrix} \times \begin{bmat
 
 第二行：$[3\times2 + 4\times0,\;\; 3\times0 + 4\times2] = [6, 8]$
 
-因此，$K = \begin{bmatrix}2 & 4 \\6 & 8\end{bmatrix}$
+因此，$K = \begin{bmatrix}2 & 4 \\ 6 & 8\end{bmatrix}$
 
 1. **计算 Value，**同样进行矩阵乘法：
 
-$V = X \times W_V = \begin{bmatrix}1 & 2 \\3 & 4\end{bmatrix} \times \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix}V=X×W$
+$V = X \times W_V = \begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix} \times \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix}V=X×W$
 
 计算每个 token 的结果：
 
@@ -481,7 +481,7 @@ $V = X \times W_V = \begin{bmatrix}1 & 2 \\3 & 4\end{bmatrix} \times \begin{bmat
 
 第二行：$[3\times1 + 4\times1,\;\; 3\times1 + 4\times1] = [7, 7]$
 
-1. 得到：$V = \begin{bmatrix}3 & 3 \\7 & 7\end{bmatrix}$
+1. 得到：$V = \begin{bmatrix}3 & 3 \\ 7 & 7\end{bmatrix}$
 
 **不理解的话，举一个更通俗的例子，我们把这个过程想象成调配果汁：**
 
@@ -541,12 +541,12 @@ $a_{ij} = \text{softmax}(\frac{\mathbf{q}_i {\mathbf{k}_j}^\top}{\sqrt{d_k}})= \
 定义：
 
 - Query：$Q = [1,\, 0]$（1×2 向量）
-- Keys：$K_1 = [1,\, 0]$$K_2 = [0,\, 1]$拼接成矩阵：$K = \begin{bmatrix}1 & 0 \\0 & 1\end{bmatrix}$
-- Values：$V_1 = [10,\, 0]$$V_2 = [0,\, 10]$拼接成矩阵：$V = \begin{bmatrix}10 & 0 \\0 & 10\end{bmatrix}$
+- Keys：$K_1 = [1,\, 0]$$K_2 = [0,\, 1]$拼接成矩阵：$K = \begin{bmatrix}1 & 0 \\ 0 & 1\end{bmatrix}$
+- Values：$V_1 = [10,\, 0]$$V_2 = [0,\, 10]$拼接成矩阵：$V = \begin{bmatrix}10 & 0 \\ 0 & 10\end{bmatrix}$
 
 1. **计算** $QK^T$
 
-计算点积：$QK^T = [1,\,0] \begin{bmatrix}1 & 0 \\0 & 1\end{bmatrix} = [1\times1+0\times0,\quad 1\times0+0\times1] = [1,\, 0]$
+计算点积：$QK^T = [1,\,0] \begin{bmatrix}1 & 0 \\ 0 & 1\end{bmatrix} = [1\times1+0\times0,\quad 1\times0+0\times1] = [1,\, 0]$
 
 1. **缩放**
 
@@ -568,7 +568,7 @@ $a_{ij} = \text{softmax}(\frac{\mathbf{q}_i {\mathbf{k}_j}^\top}{\sqrt{d_k}})= \
 
 **整个 Attention 计算过程为：**
 
-$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{[1,0]\begin{bmatrix}1&0\\0&1\end{bmatrix}}{1.414}\right) \begin{bmatrix}10&0\\0&10\end{bmatrix} \approx [6.7,\,3.3]$
+$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{[1,0]\begin{bmatrix}1&0 \\ 0&1\end{bmatrix}}{1.414}\right) \begin{bmatrix}10&0 \\ 0&10\end{bmatrix} \approx [6.7,\,3.3]$
 
 #### 为什么会有 KVCache？
 
@@ -897,11 +897,11 @@ $R = \begin{bmatrix}\cos\theta & -\sin\theta \\\sin\theta & \cos\theta\end{bmatr
 
 当推广到高维空间时，RoPE 将$d$维空间划分为$d/2$个子空间（一般来说，模型的维度都是偶数），并为位置$i$的 token 构造了一个大小为 $d×d$的旋转矩阵$R$,其中$\Theta = {\theta_i = 10000^{-2(i−1)/d}, i \in [1, 2, …, d/2]}$：
 
-$R^d_{\Theta, i} = \begin{bmatrix}\cos i\theta_1 & -\sin i\theta_1 & 0 & 0 & \dots & 0 & 0 \\\sin i\theta_1 & \cos i\theta_1 & 0 & 0 & \dots & 0 & 0 \\0 & 0 & \cos i\theta_2 & -\sin i\theta_2 & \dots & 0 & 0 \\0 & 0 & \sin i\theta_2 & \cos i\theta_2 & \dots & 0 & 0 \\\vdots & \vdots & \vdots & \vdots & \ddots &\vdots & \vdots \\0 & 0 & 0 & 0 & \dots & \cos i\theta_{d/2} & -\sin i\theta_{d/2} \\0 & 0 & 0 & 0 & \dots & \sin i\theta_{d/2} & \cos i\theta_{d/2} \\\end{bmatrix}$
+$R^d_{\Theta, i} = \begin{bmatrix}\cos i\theta_1 & -\sin i\theta_1 & 0 & 0 & \dots & 0 & 0 \\\sin i\theta_1 & \cos i\theta_1 & 0 & 0 & \dots & 0 & 0 \\ 0 & 0 & \cos i\theta_2 & -\sin i\theta_2 & \dots & 0 & 0 \\ 0 & 0 & \sin i\theta_2 & \cos i\theta_2 & \dots & 0 & 0 \\\vdots & \vdots & \vdots & \vdots & \ddots &\vdots & \vdots \\ 0 & 0 & 0 & 0 & \dots & \cos i\theta_{d/2} & -\sin i\theta_{d/2} \\ 0 & 0 & 0 & 0 & \dots & \sin i\theta_{d/2} & \cos i\theta_{d/2} \\\end{bmatrix}$
 
 然后 Key 和 Query 矩阵通过与这个旋转矩阵相乘来包含位置信息：
 
-$\begin{aligned}& \mathbf{q}_i^\top \mathbf{k}_j = (R^d_{\Theta, i} \mathbf{W}^q\mathbf{x}_i)^\top (R^d_{\Theta, j} \mathbf{W}^k\mathbf{x}_j) =\mathbf{x}_i^\top\mathbf{W}^q R^d_{\Theta, j-i}\mathbf{W}^k\mathbf{x}_j \\& \text{ where } R^d_{\Theta, j-i} = (R^d_{\Theta, i})^\top R^d_{\Theta, j}\end{aligned}$
+$\begin{aligned}& \mathbf{q}_i^\top \mathbf{k}_j = (R^d_{\Theta, i} \mathbf{W}^q\mathbf{x}_i)^\top (R^d_{\Theta, j} \mathbf{W}^k\mathbf{x}_j) =\mathbf{x}_i^\top\mathbf{W}^q R^d_{\Theta, j-i}\mathbf{W}^k\mathbf{x}_j \\ & \text{ where } R^d_{\Theta, j-i} = (R^d_{\Theta, i})^\top R^d_{\Theta, j}\end{aligned}$
 
 ![d1111a599b54e62583df8db6ad6edc98_MD5](https://cdn.jsdelivr.net/gh/SuperMarioYL/ImageHostingService@master/resources/blogs/d1111a599b54e62583df8db6ad6edc98_MD5.png)
 
@@ -997,7 +997,7 @@ Label Smoothing（标签平滑）常用于分类任务的模型训练中，它�
 
 在传统的分类任务中，通常使用 one-hot 编码作为目标标签。例如，对于一个包含$K$个类别的分类任务，如果样本的真实类别为$y$，则目标分布 $q$ 通常表示为：
 
-$q(i)=\begin{cases}1, & \text{if } i=y \\0, & \text{otherwise}\end{cases}$
+$q(i)=\begin{cases}1, & \text{if } i=y \\ 0, & \text{otherwise}\end{cases}$
 
 这种硬性分布会使模型在训练时倾向于输出一个过于尖锐（peaked）的概率分布，即模型很容易变得过于自信，认为某个类别的概率几乎为 1，而其他类别为 0。
 
