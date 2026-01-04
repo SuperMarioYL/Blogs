@@ -1,9 +1,0 @@
-{
-  "label": "Infrastructure",
-  "position": 2,
-  "link": {
-    "type": "generated-index",
-    "description": "基础设施与云原生技术 - 涵盖 Kubernetes、Docker、云平台、DevOps 等内容"
-  },
-  "collapsed": false
-}

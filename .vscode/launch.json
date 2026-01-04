@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Hugo Server",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "hugo server -D --port 1313",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Hugo Server (草稿+未来)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "hugo server -D -F --port 1313",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

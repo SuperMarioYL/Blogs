@@ -1,0 +1,98 @@
+baseURL = "https://blog.lei6393.com/"
+languageCode = "zh-CN"
+defaultContentLanguage = "zh-cn"
+title = "Leo's Tech Blog"
+theme = "terminal"
+copyright = "© 2024 Leo"
+[pagination]
+  pagerSize = 10
+
+# 启用 emoji
+enableEmoji = true
+
+# 代码高亮
+pygmentsUseClasses = true
+pygmentsCodefences = true
+
+[params]
+  # Terminal 主题配置
+  contentTypeName = "posts"
+  themeColor = "orange"           # 琥珀色终端风格
+  showMenuItems = 5
+  fullWidthTheme = false
+  centerTheme = true
+  autoCover = true
+  showLastUpdated = true
+
+  # 站点描述
+  description = "AI Infra | 推理加速 | 云原生 | 平台架构"
+  keywords = ["AI", "LLM", "Kubernetes", "云原生", "后端开发"]
+
+  # 作者信息
+  author = "Leo"
+
+  # 阅读更多按钮文字
+  ReadMore = "阅读全文"
+
+
+  # 社交链接
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/SuperMarioYL"
+  [[params.social]]
+    name = "email"
+    url = "mailto:supermario_yl@gmail.com"
+
+# 导航菜单
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "文章"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    name = "标签"
+    url = "/tags/"
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    name = "分类"
+    url = "/categories/"
+    weight = 3
+  [[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 4
+  [[menu.main]]
+    identifier = "search"
+    name = "搜索"
+    url = "/search/"
+    weight = 5
+
+# 分类系统
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# 输出格式（搜索 JSON + RSS）
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+
+# Markdown 渲染配置
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+    lineNumbersInTable = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # 允许 HTML
+
+# 隐私设置（GDPR）
+[privacy]
+  [privacy.googleAnalytics]
+    disable = true

@@ -1,0 +1,47 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Hugo: 启动开发服务器",
+      "type": "shell",
+      "command": "hugo server -D --port 1313",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Hugo: 构建站点",
+      "type": "shell",
+      "command": "hugo --minify",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Hugo: 新建文章",
+      "type": "shell",
+      "command": "hugo new posts/${input:postName}.md",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "postName",
+      "type": "promptString",
+      "description": "文章路径 (如: ai-infra/my-article)"
+    }
+  ]
+}

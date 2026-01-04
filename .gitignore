@@ -1,28 +1,13 @@
-# IDE
-.metals/
-.claude/
-.vscode/
-
 # System
 .DS_Store
 
-# Dependencies
-/node_modules
+# Hugo
+/public/
+/resources/_gen/
+.hugo_build.lock
 
-# Production
-/build
-/.docusaurus
-
-# Generated files
-.docusaurus
-.cache-loader
+# Claude
+.claude/
 
 # Misc
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+*.log

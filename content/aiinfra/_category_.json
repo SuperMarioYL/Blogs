@@ -1,9 +1,0 @@
-{
-  "label": "AI & LLM",
-  "position": 1,
-  "link": {
-    "type": "generated-index",
-    "description": "人工智能与大语言模型技术探索 - 涵盖 LLM 应用开发、RAG 技术、向量检索、模型训练等内容"
-  },
-  "collapsed": false
-}
