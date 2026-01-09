@@ -7616,5 +7616,3 @@ Mooncake 项目代表了 LLM 推理系统优化的一个重要方向。通过创
 2. **代码仓库**：https://github.com/kvcache-ai/Mooncake
 3. **vLLM 项目**：https://github.com/vllm-project/vllm
 4. **SGLang 项目**：https://github.com/sgl-project/sglang
-
----
