@@ -7618,9 +7618,3 @@ Mooncake 项目代表了 LLM 推理系统优化的一个重要方向。通过创
 4. **SGLang 项目**：https://github.com/sgl-project/sglang
 
 ---
-
-_本文档最后更新于 2025 年 1 月_
-
-_作者：Claude (Anthropic)_
-
----
