@@ -6,3 +6,10 @@
   padding: 8px;
   border-radius: 4px;
 }
+
+/* Mermaid 图表白色背景 */
+.mermaid {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 4px;
+}
