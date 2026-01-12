@@ -1448,11 +1448,11 @@ Conductor 查询 Mooncake Store，获取各节点上已缓存的 prefix 情况�
 
 ```mermaid
 graph TB
-    subgraph "Mooncake Store 元数据"
+    subgraph MooncakeStoreMeta[Mooncake Store 元数据]
         M[Prefix Hash 索引]
-        M --> E1[Hash: abc123<br/>节点: [N1, N3]<br/>长度: 4096]
-        M --> E2[Hash: def456<br/>节点: [N2]<br/>长度: 8192]
-        M --> E3[Hash: ghi789<br/>节点: [N1, N2, N4]<br/>长度: 2048]
+        M --> E1["Hash: abc123<br/>节点: [N1, N3]<br/>长度: 4096"]
+        M --> E2["Hash: def456<br/>节点: [N2]<br/>长度: 8192"]
+        M --> E3["Hash: ghi789<br/>节点: [N1, N2, N4]<br/>长度: 2048"]
     end
 ```
 

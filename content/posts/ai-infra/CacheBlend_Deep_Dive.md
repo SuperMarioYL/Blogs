@@ -1,5 +1,3 @@
-# CacheBlend 深度技术解析：RAG 场景下的快速 KV 缓存融合
-
 ---
 
 title: "CacheBlend 深度技术解析：RAG 场景下的快速 KV 缓存融合"
