@@ -85,7 +85,7 @@ pygmentsCodefences = true
 # Markdown 渲染配置
 [markup]
   [markup.highlight]
-    style = "monokai"
+    style = "github"
     lineNos = true
     lineNumbersInTable = true
   [markup.goldmark]

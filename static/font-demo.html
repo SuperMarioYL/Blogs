@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字体预览 Font Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;600&family=Noto+Serif+SC:wght@400;600&family=Source+Code+Pro:wght@400;600&family=Source+Serif+4:wght@400;600&family=LXGW+WenKai:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #fffbf7;
+      color: #45372b;
+      padding: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #e97c00;
+      border-bottom: 2px solid #e97c00;
+      padding-bottom: 10px;
+    }
+    .font-section {
+      margin: 30px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .font-name {
+      font-size: 14px;
+      color: #e97c00;
+      margin-bottom: 10px;
+      font-family: monospace;
+    }
+    .demo-text {
+      font-size: 18px;
+      line-height: 1.8;
+      margin: 10px 0;
+    }
+    .demo-text-large {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 5px 0;
+    }
+    .category {
+      font-size: 12px;
+      background: #e97c00;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 10px;
+    }
+
+    /* 等宽字体 */
+    .fira-code { font-family: 'Fira Code', monospace; }
+    .jetbrains-mono { font-family: 'JetBrains Mono', monospace; }
+    .source-code-pro { font-family: 'Source Code Pro', monospace; }
+
+    /* 无衬线字体 */
+    .inter { font-family: 'Inter', sans-serif; }
+    .noto-sans-sc { font-family: 'Noto Sans SC', sans-serif; }
+
+    /* 衬线字体 */
+    .source-serif { font-family: 'Source Serif 4', serif; }
+    .noto-serif-sc { font-family: 'Noto Serif SC', serif; }
+
+    /* 手写风格 */
+    .lxgw-wenkai { font-family: 'LXGW WenKai', cursive; }
+  </style>
+</head>
+<body>
+  <h1>字体预览 Font Demo</h1>
+
+  <h2>等宽字体 Monospace <span class="category">代码风格</span></h2>
+
+  <div class="font-section">
+    <div class="font-name">Fira Code (当前)</div>
+    <div class="demo-text-large fira-code">AI 基础设施与云原生技术</div>
+    <div class="demo-text fira-code">The quick brown fox jumps over the lazy dog.</div>
+    <div class="demo-text fira-code">探索 Kubernetes 容器编排与微服务架构的最佳实践。</div>
+    <div class="demo-text fira-code">const result = await fetch('/api/data');</div>
+  </div>
+
+  <div class="font-section">
+    <div class="font-name">JetBrains Mono</div>
+    <div class="demo-text-large jetbrains-mono">AI 基础设施与云原生技术</div>
+    <div class="demo-text jetbrains-mono">The quick brown fox jumps over the lazy dog.</div>
+    <div class="demo-text jetbrains-mono">探索 Kubernetes 容器编排与微服务架构的最佳实践。</div>
+    <div class="demo-text jetbrains-mono">const result = await fetch('/api/data');</div>
+  </div>
+
+  <div class="font-section">
+    <div class="font-name">Source Code Pro</div>
+    <div class="demo-text-large source-code-pro">AI 基础设施与云原生技术</div>
+    <div class="demo-text source-code-pro">The quick brown fox jumps over the lazy dog.</div>
+    <div class="demo-text source-code-pro">探索 Kubernetes 容器编排与微服务架构的最佳实践。</div>
+    <div class="demo-text source-code-pro">const result = await fetch('/api/data');</div>
+  </div>
+
+  <h2>无衬线字体 Sans-serif <span class="category">现代简洁</span></h2>
+
+  <div class="font-section">
+    <div class="font-name">Inter</div>
+    <div class="demo-text-large inter">AI 基础设施与云原生技术</div>
+    <div class="demo-text inter">The quick brown fox jumps over the lazy dog.</div>
+    <div class="demo-text inter">探索 Kubernetes 容器编排与微服务架构的最佳实践。</div>
+  </div>
+
+  <div class="font-section">
+    <div class="font-name">Noto Sans SC (思源黑体)</div>
+    <div class="demo-text-large noto-sans-sc">AI 基础设施与云原生技术</div>
+    <div class="demo-text noto-sans-sc">The quick brown fox jumps over the lazy dog.</div>
+    <div class="demo-text noto-sans-sc">探索 Kubernetes 容器编排与微服务架构的最佳实践。</div>
+  </div>
+
+  <h2>衬线字体 Serif <span class="category">阅读友好</span></h2>
+
+  <div class="font-section">
+    <div class="font-name">Source Serif 4</div>
+    <div class="demo-text-large source-serif">AI 基础设施与云原生技术</div>
+    <div class="demo-text source-serif">The quick brown fox jumps over the lazy dog.</div>
+    <div class="demo-text source-serif">探索 Kubernetes 容器编排与微服务架构的最佳实践。</div>
+  </div>
+
+  <div class="font-section">
+    <div class="font-name">Noto Serif SC (思源宋体)</div>
+    <div class="demo-text-large noto-serif-sc">AI 基础设施与云原生技术</div>
+    <div class="demo-text noto-serif-sc">The quick brown fox jumps over the lazy dog.</div>
+    <div class="demo-text noto-serif-sc">探索 Kubernetes 容器编排与微服务架构的最佳实践。</div>
+  </div>
+
+  <h2>手写风格 Handwriting <span class="category">文艺范</span></h2>
+
+  <div class="font-section">
+    <div class="font-name">LXGW WenKai (霞鹜文楷)</div>
+    <div class="demo-text-large lxgw-wenkai">AI 基础设施与云原生技术</div>
+    <div class="demo-text lxgw-wenkai">The quick brown fox jumps over the lazy dog.</div>
+    <div class="demo-text lxgw-wenkai">探索 Kubernetes 容器编排与微服务架构的最佳实践。</div>
+  </div>
+
+</body>
+</html>
