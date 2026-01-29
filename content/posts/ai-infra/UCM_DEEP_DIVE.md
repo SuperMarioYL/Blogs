@@ -201,15 +201,15 @@ UCM采用**多层次、多策略**的统一方案：
 
 ```mermaid
 flowchart TD
-    subgraph GPU内存
+    subgraph gpu["GPU内存"]
         HBM[高速HBM缓存<br/>保留热点KV]
     end
 
-    subgraph 主机内存
+    subgraph host["主机内存"]
         CPU[CPU缓存层<br/>中速访问]
     end
 
-    subgraph 外部存储
+    subgraph external["外部存储"]
         SSD[本地SSD<br/>POSIX/DS3FS]
         NFS[网络存储<br/>NFS/Mooncake]
     end
@@ -321,14 +321,14 @@ sequenceDiagram
 
 ```mermaid
 graph LR
-    subgraph Prefill阶段
+    subgraph prefill["Prefill阶段"]
         P1[Token1] --> K1[KV1]
         P2[Token2] --> K2[KV2]
         P3[...] --> K3[...]
         P4[TokenN] --> KN[KVN]
     end
 
-    subgraph Decode阶段
+    subgraph decode["Decode阶段"]
         D1[TokenN+1] --> DN1[KVN+1]
         D1 -.->|访问| K1
         D1 -.->|访问| K2
