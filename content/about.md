@@ -25,4 +25,4 @@ AI/ML:      vLLM | TensorRT | Milvus | Qdrant
 
 - README: [Leo](https://www.lei6393.com/)
 - GitHub: [SuperMarioYL](https://github.com/SuperMarioYL)
-- Email: supermario_yl@gmail.com
+- Email: leo.stack@outlook.com
