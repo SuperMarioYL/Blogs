@@ -26,45 +26,36 @@ AI/ML:      vLLM | TensorRT | Milvus | Qdrant
 <table>
 <tr>
 <td align="center" width="50%">
-
 <a href="https://cloudnative.cookbook.lei6393.com/">
-  <img src="https://stories.freepiklabs.com/storage/1679/98-Cloud-hosting_Artboard-1.svg" width="140" height="100" alt="Cloud Native">
+<img src="https://stories.freepiklabs.com/storage/1679/98-Cloud-hosting_Artboard-1.svg" width="140" height="100" alt="Cloud Native">
 </a>
-
-**Cloud Native Cookbook**
-
-[![Docs](https://img.shields.io/badge/cloudnative.cookbook.lei6393.com-FF8700?style=for-the-badge&labelColor=1d1e26)](https://cloudnative.cookbook.lei6393.com/)
-
-云原生技术原理解析
-
+<br><strong>Cloud Native Cookbook</strong><br>
+<a href="https://cloudnative.cookbook.lei6393.com/">
+<img src="https://img.shields.io/badge/cloudnative.cookbook.lei6393.com-FF8700?style=for-the-badge&labelColor=1d1e26" alt="Docs">
+</a>
+<br>云原生技术原理解析
 </td>
 <td align="center" width="50%">
-
 <a href="http://inference.cookbook.lei6393.com/">
-  <img src="https://stories.freepiklabs.com/storage/1854/143-Artificial-intelligence_Artboard-1.svg" width="140" height="100" alt="Inference">
+<img src="https://stories.freepiklabs.com/storage/1854/143-Artificial-intelligence_Artboard-1.svg" width="140" height="100" alt="Inference">
 </a>
-
-**Inference Cookbook**
-
-[![Docs](https://img.shields.io/badge/inference.cookbook.lei6393.com-FF8700?style=for-the-badge&labelColor=1d1e26)](http://inference.cookbook.lei6393.com/)
-
-Inference 框架原理解析
-
+<br><strong>Inference Cookbook</strong><br>
+<a href="http://inference.cookbook.lei6393.com/">
+<img src="https://img.shields.io/badge/inference.cookbook.lei6393.com-FF8700?style=for-the-badge&labelColor=1d1e26" alt="Docs">
+</a>
+<br>Inference 框架原理解析
 </td>
 </tr>
 <tr>
 <td align="center" colspan="2">
-
 <a href="http://bison.lei6393.com/">
-  <img src="https://stories.freepiklabs.com/storage/4579/296-Dashboard_Artboard-1.svg" width="140" height="100" alt="Bison">
+<img src="https://stories.freepiklabs.com/storage/4579/296-Dashboard_Artboard-1.svg" width="140" height="100" alt="Bison">
 </a>
-
-**Bison**
-
-[![Platform](https://img.shields.io/badge/bison.lei6393.com-FF8700?style=for-the-badge&labelColor=1d1e26)](http://bison.lei6393.com/)
-
-企业级 GPU 资源计费与多租户管理平台
-
+<br><strong>Bison</strong><br>
+<a href="http://bison.lei6393.com/">
+<img src="https://img.shields.io/badge/bison.lei6393.com-FF8700?style=for-the-badge&labelColor=1d1e26" alt="Platform">
+</a>
+<br>企业级 GPU 资源计费与多租户管理平台
 </td>
 </tr>
 </table>
