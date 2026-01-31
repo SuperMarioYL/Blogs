@@ -23,9 +23,12 @@ AI/ML:      vLLM | TensorRT | Milvus | Qdrant
 
 ## 我的项目
 
+- **[Bison](http://bison.lei6393.com/)** - 企业级 GPU 资源计费与多租户管理平台
+
+## 技术文档
+
 - **[Cloud Native Cookbook](https://cloudnative.cookbook.lei6393.com/)** - 云原生技术原理解析
 - **[Inference Cookbook](http://inference.cookbook.lei6393.com/)** - Inference 框架原理解析
-- **[Bison](http://bison.lei6393.com/)** - 企业级 GPU 资源计费与多租户管理平台
 
 ## 联系方式
 
