@@ -23,38 +23,9 @@ AI/ML:      vLLM | TensorRT | Milvus | Qdrant
 
 ## 我的项目
 
-<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-<div style="text-align: center; flex: 1; min-width: 280px;">
-<a href="https://cloudnative.cookbook.lei6393.com/">
-<img src="https://stories.freepiklabs.com/storage/1679/98-Cloud-hosting_Artboard-1.svg" width="140" height="100" alt="Cloud Native">
-</a>
-<p><strong>Cloud Native Cookbook</strong></p>
-<a href="https://cloudnative.cookbook.lei6393.com/">
-<img src="https://img.shields.io/badge/cloudnative.cookbook.lei6393.com-FF8700?style=for-the-badge&labelColor=1d1e26" alt="Docs">
-</a>
-<p>云原生技术原理解析</p>
-</div>
-<div style="text-align: center; flex: 1; min-width: 280px;">
-<a href="http://inference.cookbook.lei6393.com/">
-<img src="https://stories.freepiklabs.com/storage/1854/143-Artificial-intelligence_Artboard-1.svg" width="140" height="100" alt="Inference">
-</a>
-<p><strong>Inference Cookbook</strong></p>
-<a href="http://inference.cookbook.lei6393.com/">
-<img src="https://img.shields.io/badge/inference.cookbook.lei6393.com-FF8700?style=for-the-badge&labelColor=1d1e26" alt="Docs">
-</a>
-<p>Inference 框架原理解析</p>
-</div>
-<div style="text-align: center; flex: 1; min-width: 280px;">
-<a href="http://bison.lei6393.com/">
-<img src="https://stories.freepiklabs.com/storage/4579/296-Dashboard_Artboard-1.svg" width="140" height="100" alt="Bison">
-</a>
-<p><strong>Bison</strong></p>
-<a href="http://bison.lei6393.com/">
-<img src="https://img.shields.io/badge/bison.lei6393.com-FF8700?style=for-the-badge&labelColor=1d1e26" alt="Platform">
-</a>
-<p>企业级 GPU 资源计费与多租户管理平台</p>
-</div>
-</div>
+- **[Cloud Native Cookbook](https://cloudnative.cookbook.lei6393.com/)** - 云原生技术原理解析
+- **[Inference Cookbook](http://inference.cookbook.lei6393.com/)** - Inference 框架原理解析
+- **[Bison](http://bison.lei6393.com/)** - 企业级 GPU 资源计费与多租户管理平台
 
 ## 联系方式
 
